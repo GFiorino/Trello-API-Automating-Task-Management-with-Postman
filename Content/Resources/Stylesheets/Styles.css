@@ -1,245 +1,235 @@
 /*<meta />*/
 
-@namespace MadCap url(http://www.madcapsoftware.com/Schemas/MadCap.xsd);
-
 /* General Styles */
 
-:root
-{
-	--Dark: #333333;
-	/* Dark text color */
-	--FontFamily: Arial, sans-serif;
-	/* Default font family */
-	--Primary: #0056b3;
-	/* Primary color (used for links, headings, etc.) */
-	--Light: #f5f5f5;
-	/* Light background color */
-	--Darkest: #111111;
-	/* Darkest text color */
+:root {
+  --Dark: #333333;
+  /* Dark text color */
+  --FontFamily: Arial, sans-serif;
+  /* Default font family */
+  --Primary: #0056b3;
+  /* Primary color (used for links, headings, etc.) */
+  --Light: #f5f5f5;
+  /* Light background color */
+  --Darkest: #111111;
+  /* Darkest text color */
 }
 
-body
-{
-	color: #333333;
-	/* Use the --Dark variable for text color */
-	font-family: Arial, sans-serif;
-	/* Use the --FontFamily variable for font */
-	margin: 0;
-	padding: 0;
+body {
+  color: var(--Dark);
+  font-family: var(--FontFamily);
+  margin: 0;
+  padding: 0;
 }
 
-.body-container
-{
-	padding-left: 2%;
-	padding-top: 2%;
+.body-container {
+  padding-left: 2%;
+  padding-top: 2%;
 }
 
 /* Paragraph Styles */
 
-p
-{
-	font-size: 12.0pt;
-	margin-top: 10px;
-	/* Reduced from 20px */
-	margin-bottom: 10px;
-	/* Reduced from 20px */
-	line-height: 20pt;
-	letter-spacing: 0.25px;
-	widows: 3;
-	orphans: 3;
-	page-break-inside: avoid;
-	/* Prevents paragraph splitting across pages */
+p {
+  font-size: 12pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 20pt;
+  letter-spacing: 0.25px;
+  widows: 3;
+  orphans: 3;
+  page-break-inside: avoid;
 }
 
-p.table-text
-{
-	font-size: 12pt;
+p.table-text {
+  font-size: 12pt;
 }
 
 /* Headings */
 
-h1
-{
-	font-weight: bold;
-	font-size: 24.0pt;
-	color: #0056b3;
-	margin-top: 20px;
-	margin-bottom: 10px;
+h1 {
+  font-weight: bold;
+  font-size: 24pt;
+  color: var(--Primary);
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-h2
-{
-	font-weight: bold;
-	font-size: 18.0pt;
-	margin-top: 15px;
-	margin-bottom: 10px;
-	page-break-before: avoid;
-	/* Prevents unnecessary page breaks */
-	page-break-after: avoid;
+h2 {
+  font-weight: bold;
+  font-size: 18pt;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  page-break-before: avoid;
+  page-break-after: avoid;
 }
 
-h3
-{
-	font-weight: bold;
-	font-size: 14.0pt;
-	margin-top: 10px;
-	margin-bottom: 8px;
+h3 {
+  font-weight: bold;
+  font-size: 14pt;
+  margin-top: 10px;
+  margin-bottom: 8px;
 }
 
 /* Lists */
 
 dl,
 ol,
-ul
-{
-	letter-spacing: .25px;
-	line-height: 20pt;
-	margin-top: 0px;
-	margin-bottom: 0px;
+ul {
+  letter-spacing: 0.25px;
+  line-height: 20pt;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 li,
-li p
-{
-	margin-bottom: 8px;
-	margin-top: 8px;
+li p {
+  margin-bottom: 8px;
+  margin-top: 8px;
 }
 
 /* Links */
 
-a
-{
-	color: #0056b3;
+a {
+  color: var(--Primary);
+  text-decoration: none;
 }
 
 a:link,
-a:visited
-{
-	color: #0056b3;
+a:visited {
+  color: var(--Primary);
+}
+
+a:hover {
+  color: var(--Darkest);
+  text-decoration: underline;
+}
+
+/* Navigation Bar Styles */
+
+.navbar {
+  display: flex;
+  background-color: var(--Primary);
+  padding: 10px;
+  margin: 0;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: var(--Light);
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: var(--Darkest);
+  text-decoration: underline;
 }
 
 /* Images */
 
-img
-{
-	border: none;
-	max-width: 100%;
+img {
+  border: none;
+  max-width: 100%;
 }
 
-.screenshot
-{
-	display: block;
-	/* Ensures each image is on a new line */
-	margin: 10px auto;
-	/* Centers the image horizontally */
-	width: 554px;
-	/* Keeps the width consistent */
-	height: auto;
-	/* Maintains the aspect ratio */
+.screenshot {
+  display: block;
+  margin: 10px auto;
+  width: 554px;
+  height: auto;
 }
 
-.caption
-{
-	font-size: 12px;
-	color: gray;
-	text-align: center;
-	margin-top: 5px;
-	margin-bottom: 15px;
+.caption {
+  font-size: 12px;
+  color: gray;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 /* Frontmatter and Page Layout */
 
-hr.title-page
-{
-	border: solid 0px transparent;
-	background-color: #f5f5f5;
-	height: 1px;
-	width: 100%;
-	margin-bottom: 30px;
-	margin-top: 370px;
+hr.title-page {
+  border: solid 0px transparent;
+  background-color: var(--Light);
+  height: 1px;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 370px;
 }
 
-p.title
-{
-	font-size: 55pt;
-	line-height: 65pt;
-	margin-top: 30px;
-	mc-hyphenate: never;
+p.title {
+  font-size: 55pt;
+  line-height: 65pt;
+  margin-top: 30px;
+  hyphenate: none;
 }
 
-p.title-page-footer
-{
-	color: #333333;
-	font-size: 9pt;
-	frame-break-before: always;
-	line-height: 15pt;
-	margin-top: 30px;
+p.title-page-footer {
+  color: var(--Dark);
+  font-size: 9pt;
+  line-height: 15pt;
+  margin-top: 30px;
 }
 
-p.created-using-flare
-{
-	color: #111111;
-	font-weight: bold;
-	margin-top: 18px;
-	font-size: 9pt;
-	line-height: 15pt;
-	text-transform: uppercase;
+p.created-using-flare {
+  color: var(--Darkest);
+  font-weight: bold;
+  margin-top: 18px;
+  font-size: 9pt;
+  line-height: 15pt;
+  text-transform: uppercase;
 }
 
 /* Breadcrumbs */
 
-MadCap|breadcrumbsProxy
-{
-	border-bottom-width: 0;
-	color: #333333;
+MadCap|breadcrumbsProxy {
+  border-bottom-width: 0;
+  color: var(--Dark);
 }
 
 /* Print-Specific Styles */
 
-@media print
-{
-	body
-	{
-		font-size: 11pt;
-		line-height: 13pt;
-		margin: 8px;
-	}
+@media print {
+  body {
+    font-size: 11pt;
+    line-height: 13pt;
+    margin: 8px;
+  }
 
-	p
-	{
-		margin-bottom: 10px;
-		margin-top: 10px;
-	}
+  p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 
-	h1
-	{
-		font-size: 25pt;
-		line-height: 27pt;
-		margin-bottom: 20px;
-	}
+  h1 {
+    font-size: 25pt;
+    line-height: 27pt;
+    margin-bottom: 20px;
+  }
 
-	h2
-	{
-		font-size: 21pt;
-		line-height: 23pt;
-		margin-bottom: 18px;
-		margin-top: 15px;
-	}
+  h2 {
+    font-size: 21pt;
+    line-height: 23pt;
+    margin-bottom: 18px;
+    margin-top: 15px;
+  }
 
-	h3
-	{
-		font-size: 15pt;
-		line-height: 17pt;
-		margin-bottom: 15px;
-	}
+  h3 {
+    font-size: 15pt;
+    line-height: 17pt;
+    margin-bottom: 15px;
+  }
 }
 
 /* Page-Break Controls */
 
 h2,
 h3,
-p
-{
-	page-break-inside: avoid;
+p {
+  page-break-inside: avoid;
 }
-
