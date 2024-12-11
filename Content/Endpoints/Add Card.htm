@@ -1,81 +1,83 @@
 <!DOCTYPE html>
-<nav>
-  <ul class="navbar">
-    <li><a href="../index.htm">Home</a></li>
-    <li><a href="../Content/Authentication/index.htm">Authentication</a></li>
-    <li><a href="../Content/Endpoints/index.htm">Endpoints</a></li>
-    <li><a href="../Content/Real-World User Cases/index.htm">Use Cases</a></li>
-  </ul>
-</nav>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Add Card</title>
-    </head>
-    <body>
-        <h1>Add Card</h1>
-        <p>This endpoint allows you to add a new card to a specified list within a Trello board. It is commonly used to create tasks or items in project management workflows.</p>
-        <h2>Request Details</h2>
-        <ul>
-            <li><b>Method:</b> POST</li>
-            <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/cards</code></li>
-            <li><b>Authentication:</b> Requires <code>key</code> and <code>token</code> as query parameters.</li>
-        </ul>
-        <h2>Required Parameters</h2>
-        <table border="1">
-            <tr>
-                <th>Parameter</th>
-                <th>Type</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>name</td>
-                <td>String</td>
-                <td>The name of the card.</td>
-            </tr>
-            <tr>
-                <td>idList</td>
-                <td>String</td>
-                <td>The ID of the list where the card will be added.</td>
-            </tr>
-        </table>
-        <h2>Optional Parameters</h2>
-        <table border="1">
-            <tr>
-                <th>Parameter</th>
-                <th>Type</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>desc</td>
-                <td>String</td>
-                <td>A description for the card.</td>
-            </tr>
-            <tr>
-                <td>due</td>
-                <td>Date</td>
-                <td>A due date for the card in ISO 8601 format.</td>
-            </tr>
-            <tr>
-                <td>pos</td>
-                <td>String</td>
-                <td>Position of the card in the list (e.g., "top" or "bottom").</td>
-            </tr>
-        </table>
-        <h2>Retrieving the idList</h2>
-        <p>
-            The <code>idList</code> is required to specify the list where the card will be added. 
-            To retrieve the <code>idList</code>:
-        </p>
-        <ol>
-            <li>Log into Trello and navigate to the desired board.</li>
-            <li>Use the <code>https://api.trello.com/1/boards/[board_id]/lists</code> endpoint to retrieve all list IDs for the board. Replace <code>[board_id]</code> with the ID of the board.</li>
-        </ol>
-        <p>See the <a href="Automating_Task_Creation.html">Automating Task Creation</a> topic for a practical example of using the <code>idList</code>.</p>
-        <h2>Example Request</h2>
-        <pre><code>
-POST https://api.trello.com/1/cards
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed guide for adding cards using Trello API. Learn the request structure, parameters, and common errors.">
+    <title>Add Card</title>
+    <link rel="stylesheet" href="../../Styles.css">
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li><a href="../../index.htm">Home</a></li>
+        <li><a href="../Authentication/index.htm">Authentication</a></li>
+        <li><a href="../Endpoints/index.htm">Endpoints</a></li>
+        <li><a href="../Real-World_User_Cases/index.htm">Use Cases</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Add Card</h1>
+      <p>This endpoint allows you to add a new card to a specified list within a Trello board. It is commonly used to create tasks or items in project management workflows.</p>
+      <h2>Request Details</h2>
+      <ul>
+        <li><b>Method:</b> POST</li>
+        <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/cards</code></li>
+        <li><b>Authentication:</b> Requires <code>key</code> and <code>token</code> as query parameters.</li>
+      </ul>
+      <h2>Required Parameters</h2>
+      <table>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>String</td>
+          <td>The name of the card.</td>
+        </tr>
+        <tr>
+          <td>idList</td>
+          <td>String</td>
+          <td>The ID of the list where the card will be added.</td>
+        </tr>
+      </table>
+      <h2>Optional Parameters</h2>
+      <table>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>desc</td>
+          <td>String</td>
+          <td>A description for the card.</td>
+        </tr>
+        <tr>
+          <td>due</td>
+          <td>Date</td>
+          <td>A due date for the card in ISO 8601 format.</td>
+        </tr>
+        <tr>
+          <td>pos</td>
+          <td>String</td>
+          <td>Position of the card in the list (e.g., "top" or "bottom").</td>
+        </tr>
+      </table>
+      <h2>Retrieving the idList</h2>
+      <p>
+        The <code>idList</code> is required to specify the list where the card will be added.
+        To retrieve the <code>idList</code>:
+      </p>
+      <ol>
+        <li>Log into Trello and navigate to the desired board.</li>
+        <li>Use the <code>https://api.trello.com/1/boards/[board_id]/lists</code> endpoint to retrieve all list IDs for the board. Replace <code>[board_id]</code> with the ID of the board.</li>
+      </ol>
+      <p>See the <a href="../Real-World_User_Cases/Automating_Task_Creation.htm">Automating Task Creation</a> topic for a practical example of using the <code>idList</code>.</p>
+      <h2>Example Request</h2>
+      <pre><code>POST https://api.trello.com/1/cards
 Content-Type: application/json
 
 {
@@ -84,36 +86,34 @@ Content-Type: application/json
     "desc": "This is an example card.",
     "key": "your_api_key",
     "token": "your_access_token"
-}
-        </code></pre>
-        <h2>Example Response</h2>
-        <pre><code>
-{
+}</code></pre>
+      <h2>Example Response</h2>
+      <pre><code>{
     "id": "60d21b4967d0d810b8f8b456",
     "name": "New Card Example",
     "desc": "This is an example card.",
     "idList": "12345abcde",
     "pos": "top",
     "due": null
-}
-        </code></pre>
-        <h2>Common Errors</h2>
-        <table border="1">
-            <tr>
-                <th>Error</th>
-                <th>Possible Cause</th>
-                <th>Solution</th>
-            </tr>
-            <tr>
-                <td>401 Unauthorized</td>
-                <td>Invalid API key or token.</td>
-                <td>Verify your API key and token are correct.</td>
-            </tr>
-            <tr>
-                <td>400 Bad Request</td>
-                <td>Missing required parameters (e.g., <code>idList</code> or <code>name</code>).</td>
-                <td>Ensure all required parameters are provided.</td>
-            </tr>
-        </table>
-    </body>
+}</code></pre>
+      <h2>Common Errors</h2>
+      <table>
+        <tr>
+          <th>Error</th>
+          <th>Possible Cause</th>
+          <th>Solution</th>
+        </tr>
+        <tr>
+          <td>401 Unauthorized</td>
+          <td>Invalid API key or token.</td>
+          <td>Verify your API key and token are correct.</td>
+        </tr>
+        <tr>
+          <td>400 Bad Request</td>
+          <td>Missing required parameters (e.g., <code>idList</code> or <code>name</code>).</td>
+          <td>Ensure all required parameters are provided.</td>
+        </tr>
+      </table>
+    </main>
+  </body>
 </html>
