@@ -228,3 +228,26 @@ h3,
 p {
   page-break-inside: avoid;
 }
+/* Table Styles */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0; /* Adds spacing above and below tables */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--Light);
+    color: var(--Dark);
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
