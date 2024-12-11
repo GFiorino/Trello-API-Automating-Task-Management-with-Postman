@@ -1,95 +1,77 @@
 <!DOCTYPE html>
-<nav>
-  <ul class="navbar">
-    <li><a href="../index.htm">Home</a></li>
-    <li><a href="../Content/Authentication/index.htm">Authentication</a></li>
-    <li><a href="../Content/Endpoints/index.htm">Endpoints</a></li>
-    <li><a href="../Content/Real-World User Cases/index.htm">Use Cases</a></li>
-  </ul>
-</nav>
-<html>
-    <head>
-        <title>Managing Cards and Lists</title>
-        <!-- Link to your stylesheet if applicable -->
-        <!-- <link rel="stylesheet" type="text/css" href="../Resources/Stylesheets/styles.css"> -->
-    </head>
-    <body>
-        <h1>Managing Cards and Lists</h1>
-        <p>This section demonstrates how to manage cards and lists using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive guide to managing cards and lists in Trello using the API. Includes steps for moving cards, adding labels, and archiving lists.">
+    <title>Managing Cards and Lists</title>
+    <link rel="stylesheet" href="../../Styles.css">
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li><a href="../../index.htm">Home</a></li>
+        <li><a href="../Authentication/index.htm">Authentication</a></li>
+        <li><a href="../Endpoints/index.htm">Endpoints</a></li>
+        <li><a href="../Real-World_User_Cases/index.htm">Use Cases</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Managing Cards and Lists</h1>
+      <p>This section demonstrates how to manage cards and lists using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
 
-        <h2>Step 1: Retrieve the Card ID</h2>
-        <p>To move or update a specific card, you first need to retrieve its ID. In Postman, make a GET request to the following endpoint using your API Key and Token:</p>
-        <pre><code>https://api.trello.com/1/boards/{boardID}/cards</code></pre>
-        <p>The response will include the card's details, including the ID.</p>
-        <img src="../Resources/Images/ID-Card.png" alt="Trello Card ID Retrieval Screenshot" class="screenshot" />
-        <p class="caption">Figure 1: Retrieving the card ID using a GET request in Postman.</p>
+      <h2>Step 1: Retrieve the Card ID</h2>
+      <p>To move or update a specific card, you first need to retrieve its ID. In Postman, make a GET request to the following endpoint using your API Key and Token:</p>
+      <pre><code>https://api.trello.com/1/boards/{boardID}/cards</code></pre>
+      <p>The response will include the card's details, including the ID.</p>
+      <img src="../../Resources/Images/ID-Card.png" alt="Trello Card ID Retrieval Screenshot" class="screenshot" />
+      <p class="caption">Figure 1: Retrieving the card ID using a GET request in Postman.</p>
 
-        <h2>Step 2: Move a Card to Another List</h2>
-        <p>
-            Once you have the Card ID, you can move the card to a different list by making a PUT request. Use the following endpoint and include the new List ID as a parameter:
-        </p>
-        <pre><code>https://api.trello.com/1/cards/{cardID}?idList={newListID}</code></pre>
-        <ol>
-            <li>Set the <strong>HTTP method</strong> to <code>PUT</code>.</li>
-            <li>Enter the endpoint, replacing <code>{cardID}</code> and <code>{newListID}</code> with the respective IDs.</li>
-            <li>Click <strong>Send</strong> to execute the request.</li>
-        </ol>
-        <img src="../Resources/Images/PUT_to_move.png" alt="Move Card Step" class="screenshot" />
-        <p class="caption">Figure 2: Initiating the PUT request to move a card.</p>
-        <img src="../Resources/Images/Original_list.png" alt="Original List Screenshot" class="screenshot" />
-        <p class="caption">Figure 3: The card in its original list before moving.</p>
-        <img src="../Resources/Images/New_List.png" alt="New List Screenshot" class="screenshot" />
-        <p class="caption">Figure 4: The card successfully moved to the new list.</p>
-        <img src="../Resources/Images/Json-A1.png" alt="JSON Response Part 1" class="screenshot" />
-        <p class="caption">Figure 5: JSON response showing the updated list ID for the card (Part 1).</p>
-        <img src="../Resources/Images/Json-A2.png" alt="JSON Response Part 2" class="screenshot" />
-        <p class="caption">Figure 6: JSON response showing the updated list ID for the card (Part 2).</p>
+      <h2>Step 2: Move a Card to Another List</h2>
+      <p>Once you have the Card ID, you can move the card to a different list by making a PUT request. Use the following endpoint and include the new List ID as a parameter:</p>
+      <pre><code>https://api.trello.com/1/cards/{cardID}?idList={newListID}</code></pre>
+      <ol>
+        <li>Set the <strong>HTTP method</strong> to <code>PUT</code>.</li>
+        <li>Enter the endpoint, replacing <code>{cardID}</code> and <code>{newListID}</code> with the respective IDs.</li>
+        <li>Click <strong>Send</strong> to execute the request.</li>
+      </ol>
+      <img src="../../Resources/Images/PUT_to_move.png" alt="Move Card Step" class="screenshot" />
+      <p class="caption">Figure 2: Initiating the PUT request to move a card.</p>
+      <img src="../../Resources/Images/Original_list.png" alt="Original List Screenshot" class="screenshot" />
+      <p class="caption">Figure 3: The card in its original list before moving.</p>
+      <img src="../../Resources/Images/New_List.png" alt="New List Screenshot" class="screenshot" />
+      <p class="caption">Figure 4: The card successfully moved to the new list.</p>
 
-        <h2>Step 3: Add a Label to a Card</h2>
-        <p>
-            To organize your cards, you can add labels. First, retrieve the available labels for your board by making a GET request to:
-        </p>
-        <pre><code>https://api.trello.com/1/boards/{boardID}/labels</code></pre>
-        <p>
-            Then, add a label to a card by making a POST request to:
-        </p>
-        <pre><code>https://api.trello.com/1/cards/{cardID}/idLabels</code></pre>
-        <p>Include the Label ID in the request body.</p>
-        <ol>
-            <li>Retrieve the Label ID using the GET endpoint above.</li>
-            <li>Set the <strong>HTTP method</strong> to <code>POST</code>.</li>
-            <li>Include the Label ID in the body of your request.</li>
-            <li>Click <strong>Send</strong> to apply the label.</li>
-        </ol>
-        <img src="../Resources/Images/Label_ID.png" alt="Retrieve Label ID" class="screenshot" />
-        <p class="caption">Figure 7: Retrieving the Label ID using the GET endpoint.</p>
-        <img src="../Resources/Images/Json_Label1.png" alt="Label ID JSON Response" class="screenshot" />
-        <p class="caption">Figure 8: The Label ID JSON response.</p>
-        <img src="../Resources/Images/Json_Label2.png" alt="Select Label ID" class="screenshot" />
-        <p class="caption">Figure 9: Selecting the Label ID for the POST request.</p>
-        <img src="../Resources/Images/Label_with_POST.png" alt="Using Label ID in POST Request" class="screenshot" />
-        <p class="caption">Figure 10: Using the Label ID in the POST request.</p>
-        <img src="../Resources/Images/Yellow_new_Label.png" alt="Label Applied to Card" class="screenshot" />
-        <p class="caption">Figure 11: Label successfully applied to the card.</p>
+      <h2>Step 3: Add a Label to a Card</h2>
+      <p>To organize your cards, you can add labels. First, retrieve the available labels for your board by making a GET request to:</p>
+      <pre><code>https://api.trello.com/1/boards/{boardID}/labels</code></pre>
+      <p>Then, add a label to a card by making a POST request to:</p>
+      <pre><code>https://api.trello.com/1/cards/{cardID}/idLabels</code></pre>
+      <p>Include the Label ID in the request body.</p>
+      <ol>
+        <li>Retrieve the Label ID using the GET endpoint above.</li>
+        <li>Set the <strong>HTTP method</strong> to <code>POST</code>.</li>
+        <li>Include the Label ID in the body of your request.</li>
+        <li>Click <strong>Send</strong> to apply the label.</li>
+      </ol>
+      <img src="../../Resources/Images/Label_ID.png" alt="Retrieve Label ID" class="screenshot" />
+      <p class="caption">Figure 5: Retrieving the Label ID using the GET endpoint.</p>
+      <img src="../../Resources/Images/Label_with_POST.png" alt="Using Label ID in POST Request" class="screenshot" />
+      <p class="caption">Figure 6: Using the Label ID in the POST request.</p>
 
-        <h2>Step 4: Archive a List</h2>
-        <p>
-            To clean up your board, you may want to archive an entire list. Use the following endpoint and set the <code>closed</code> parameter to <code>true</code>:
-        </p>
-        <pre><code>https://api.trello.com/1/lists/{listID}</code></pre>
-        <ol>
-            <li>Set the <strong>HTTP method</strong> to <code>PUT</code>.</li>
-            <li>Enter the endpoint, replacing <code>{listID}</code> with the ID of the list you want to archive.</li>
-            <li>Click <strong>Send</strong> to archive the list.</li>
-        </ol>
-        <img src="../Resources/Images/Archiving_with_PUT.png" alt="Archive List Request" class="screenshot" />
-        <p class="caption">Figure 12: Setting the PUT request to archive a list.</p>
-        <img src="../Resources/Images/Archived.png" alt="List Archived" class="screenshot" />
-        <p class="caption">Figure 13: The list successfully archived in the Trello board.</p>
+      <h2>Step 4: Archive a List</h2>
+      <p>To clean up your board, you may want to archive an entire list. Use the following endpoint and set the <code>closed</code> parameter to <code>true</code>:</p>
+      <pre><code>https://api.trello.com/1/lists/{listID}</code></pre>
+      <ol>
+        <li>Set the <strong>HTTP method</strong> to <code>PUT</code>.</li>
+        <li>Enter the endpoint, replacing <code>{listID}</code> with the ID of the list you want to archive.</li>
+        <li>Click <strong>Send</strong> to archive the list.</li>
+      </ol>
+      <img src="../../Resources/Images/Archived.png" alt="List Archived" class="screenshot" />
+      <p class="caption">Figure 7: The list successfully archived in the Trello board.</p>
 
-        <h2>Expected Outcome</h2>
-        <p>
-            By completing the steps above, you will have successfully managed cards and lists on your Trello board. This includes moving cards between lists, adding labels, and archiving lists for better organization.
-        </p>
-    </body>
+      <h2>Expected Outcome</h2>
+      <p>By completing the steps above, you will have successfully managed cards and lists on your Trello board. This includes moving cards between lists, adding labels, and archiving lists for better organization.</p>
+    </main>
+  </body>
 </html>
