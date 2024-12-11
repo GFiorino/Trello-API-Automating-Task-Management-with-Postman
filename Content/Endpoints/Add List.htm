@@ -1,73 +1,95 @@
 <!DOCTYPE html>
-<nav>
-  <ul class="navbar">
-    <li><a href="../index.htm">Home</a></li>
-    <li><a href="../Content/Authentication/index.htm">Authentication</a></li>
-    <li><a href="../Content/Endpoints/index.htm">Endpoints</a></li>
-    <li><a href="../Content/Real-World User Cases/index.htm">Use Cases</a></li>
-  </ul>
-</nav>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Add List</title>
-    </head>
-    <body>
-        <h1>Add List</h1>
-        <p>The Add List endpoint allows you to create a new list on an existing board. You need to provide the board ID and the list name to use this endpoint.</p>
-        <h2>Request Structure</h2>
-        <p><b>Method:</b> POST</p>
-        <p><b>URL:</b> <code>https://api.trello.com/1/lists</code></p>
-        <h2>Required Parameters</h2>
-        <ul>
-            <li><b>name</b> (string): The name of the list.</li>
-            <li><b>idBoard</b> (string): The ID of the board where the list will be created.</li>
-            <li>Authentication parameters (<b>key</b> and <b>token</b>).</li>
-        </ul>
-        <h2>Example Request</h2>
-        <pre><code>
-POST https://api.trello.com/1/lists
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guide for adding lists using Trello API. Includes request details, required parameters, and troubleshooting tips.">
+    <title>Add List</title>
+    <link rel="stylesheet" href="../../Styles.css">
+  </head>
+  <body>
+    <nav>
+      <ul class="navbar">
+        <li><a href="../../index.htm">Home</a></li>
+        <li><a href="../Authentication/index.htm">Authentication</a></li>
+        <li><a href="../Endpoints/index.htm">Endpoints</a></li>
+        <li><a href="../Real-World_User_Cases/index.htm">Use Cases</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Add List</h1>
+      <p>The Add List endpoint allows you to create a new list on an existing board. You need to provide the board ID and the list name to use this endpoint.</p>
+      <h2>Request Structure</h2>
+      <ul>
+        <li><b>Method:</b> POST</li>
+        <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/lists</code></li>
+      </ul>
+      <h2>Required Parameters</h2>
+      <table>
+        <tr>
+          <th>Parameter</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>String</td>
+          <td>The name of the list.</td>
+        </tr>
+        <tr>
+          <td>idBoard</td>
+          <td>String</td>
+          <td>The ID of the board where the list will be created.</td>
+        </tr>
+      </table>
+      <h2>Authentication Parameters</h2>
+      <ul>
+        <li><b>key</b>: Your API key.</li>
+        <li><b>token</b>: Your access token.</li>
+      </ul>
+      <h2>Example Request</h2>
+      <pre><code>POST https://api.trello.com/1/lists
 Content-Type: application/json
+
 {
     "name": "New List Example",
     "idBoard": "12345abcdef",
-    "pos": "top"
-}
-        </code></pre>
-        <h2>Example Response</h2>
-        <pre><code>
-{
+    "pos": "top",
+    "key": "your_api_key",
+    "token": "your_access_token"
+}</code></pre>
+      <h2>Example Response</h2>
+      <pre><code>{
     "id": "60d21b4967d0d810b8f8b456",
     "name": "New List Example",
     "idBoard": "12345abcdef",
     "pos": "top",
     "subscribed": false,
     "closed": false
-}
-        </code></pre>
-        <h2>Common Errors</h2>
-        <table border="1">
-            <tr>
-                <th>Error</th>
-                <th>Possible Cause</th>
-                <th>Solution</th>
-            </tr>
-            <tr>
-                <td>401 Unauthorized</td>
-                <td>Invalid API key or token.</td>
-                <td>Verify your API key and token are correct.</td>
-            </tr>
-            <tr>
-                <td>400 Bad Request</td>
-                <td>Missing required parameters.</td>
-                <td>Ensure <b>idBoard</b> and <b>name</b> are provided.</td>
-            </tr>
-            <tr>
-                <td>404 Not Found</td>
-                <td>Board ID does not exist or is invalid.</td>
-                <td>Check the <b>idBoard</b> value.</td>
-            </tr>
-        </table>
-    </body>
+}</code></pre>
+      <h2>Common Errors</h2>
+      <table>
+        <tr>
+          <th>Error</th>
+          <th>Possible Cause</th>
+          <th>Solution</th>
+        </tr>
+        <tr>
+          <td>401 Unauthorized</td>
+          <td>Invalid API key or token.</td>
+          <td>Verify your API key and token are correct.</td>
+        </tr>
+        <tr>
+          <td>400 Bad Request</td>
+          <td>Missing required parameters.</td>
+          <td>Ensure <b>idBoard</b> and <b>name</b> are provided.</td>
+        </tr>
+        <tr>
+          <td>404 Not Found</td>
+          <td>Board ID does not exist or is invalid.</td>
+          <td>Check the <b>idBoard</b> value.</td>
+        </tr>
+      </table>
+    </main>
+  </body>
 </html>
