@@ -1,1 +1,0 @@
-define({r:0.5,st:'Stem',n:1,t:[0],m:[],u:['../Content/Authentication/Setting Up API Authentication.htm'],s:['0'],p:[['0',4],['tech',0]]});
