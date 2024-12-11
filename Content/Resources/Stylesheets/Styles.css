@@ -4,15 +4,10 @@
 
 :root {
   --Dark: #333333;
-  /* Dark text color */
-  --FontFamily: Arial, sans-serif;
-  /* Default font family */
-  --Primary: #0056b3;
-  /* Primary color (used for links, headings, etc.) */
-  --Light: #f5f5f5;
-  /* Light background color */
   --Darkest: #111111;
-  /* Darkest text color */
+  --Light: #f5f5f5;
+  --Primary: #0056b3;
+  --FontFamily: Arial, sans-serif;
 }
 
 body {
