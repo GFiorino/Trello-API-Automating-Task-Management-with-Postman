@@ -332,3 +332,16 @@ body {
 main {
     margin: 20px; /* Adds consistent margin around content */
 }
+/* Add margins to main content */
+main {
+    margin: 0 auto; /* Center the content */
+    padding: 20px; /* Adds space around the content */
+    max-width: 1200px; /* Optional: Limits the content width for readability */
+    box-sizing: border-box; /* Ensures padding is included in the total width */
+}
+
+/* Add consistent spacing for images inside main */
+main img {
+    max-width: 100%;
+    margin: 10px 0; /* Adds space above and below images */
+}
