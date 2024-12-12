@@ -251,62 +251,84 @@ th {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-/* Make the navigation bar span the full screen width */
+/* Full-width navigation bar */
 .navbar {
     display: flex;
     justify-content: flex-end;
     background-color: var(--Primary);
-    padding: 10px 20px; /* Add padding for better spacing */
-    margin: 0; /* Remove margins */
-    width: 100%; /* Full width */
-    list-style-type: none;
-    position: relative; /* For dropdown positioning */
+    padding: 10px 20px;
+    margin: 0;
+    width: 100vw; /* Full width of the viewport */
     box-sizing: border-box;
+    list-style-type: none;
+    position: relative;
 }
 
 /* Navigation links styling */
 .navbar a {
     color: var(--Light);
     font-weight: bold;
-    padding: 10px 15px; /* Add spacing around links */
+    padding: 10px 15px;
     text-decoration: none;
-}
-
-.navbar a:hover {
-    color: var(--Darkest);
-    text-decoration: underline;
+    white-space: nowrap; /* Prevents text wrapping */
 }
 
 /* Dropdown menu container */
 .navbar li {
-    position: relative; /* Required for dropdown menu */
+    position: relative;
+    margin: 0; /* Removes margin to align items */
 }
 
 /* Dropdown menu styling */
 .navbar .dropdown {
-    display: none; /* Hide dropdown by default */
+    display: none;
     position: absolute;
     background-color: var(--Primary);
     padding: 10px 0;
     list-style: none;
-    min-width: 150px; /* Adjust dropdown width */
+    min-width: 180px;
     z-index: 1;
-    top: 100%; /* Position below the parent item */
+    top: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow for better appearance */
+    border-radius: 4px; /* Rounded corners */
+    transition: opacity 0.2s ease; /* Smooth hover effect */
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction when hidden */
 }
 
 /* Dropdown menu links */
 .navbar .dropdown a {
     display: block;
-    padding: 8px 15px; /* Padding for dropdown links */
+    padding: 8px 15px;
+    color: var(--Light);
+    text-align: left;
+    font-size: 14px;
+}
+
+.navbar .dropdown a:hover {
+    background-color: var(--Dark);
+    color: var(--Light);
+    border-radius: 3px; /* Adds subtle hover effect */
 }
 
 /* Show dropdown on hover */
 .navbar li:hover .dropdown {
     display: block;
+    opacity: 1;
+    pointer-events: auto; /* Allows interaction */
 }
 
-/* Add margins to paragraphs only */
-main p, main ul, main ol {
-    margin-left: 20px; /* Add left margin for content */
-    margin-right: 20px;
+/* Fix dropdown alignment */
+.navbar li .dropdown {
+    left: 0; /* Align dropdown with parent link */
+}
+
+/* Ensure body content is readable */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 20px; /* Adds consistent margin around content */
 }
