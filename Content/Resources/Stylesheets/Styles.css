@@ -251,65 +251,62 @@ th {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-/* Nav Bar Styles */
+/* Make the navigation bar span the full screen width */
 .navbar {
-    display: flex;               /* Use flexbox for layout */
-    justify-content: flex-end;   /* Align links to the right */
-    background-color: var(--Primary); /* Background color */
-    padding: 10px 20px;          /* Add padding around navbar */
-    list-style-type: none;       /* Remove bullets */
-    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--Primary);
+    padding: 10px 20px; /* Add padding for better spacing */
+    margin: 0; /* Remove margins */
+    width: 100%; /* Full width */
+    list-style-type: none;
+    position: relative; /* For dropdown positioning */
+    box-sizing: border-box;
 }
 
-.navbar > li {
-    position: relative;          /* Needed for dropdown positioning */
-    margin: 0 10px;              /* Add spacing between links */
-}
-
+/* Navigation links styling */
 .navbar a {
-    color: var(--Light);         /* Link color */
-    font-weight: bold;           /* Make text bold */
-    text-decoration: none;       /* Remove underline */
+    color: var(--Light);
+    font-weight: bold;
+    padding: 10px 15px; /* Add spacing around links */
+    text-decoration: none;
 }
 
 .navbar a:hover {
-    color: var(--Darkest);       /* Change color on hover */
-    text-decoration: underline;  /* Underline on hover */
+    color: var(--Darkest);
+    text-decoration: underline;
 }
 
-/* Dropdown Styles */
-.dropdown {
-    display: none;               /* Hide dropdown by default */
-    position: absolute;          /* Position relative to parent */
-    top: 100%;                   /* Place below the parent link */
-    left: 0;
-    background-color: var(--Light); /* Background color for dropdown */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow */
+/* Dropdown menu container */
+.navbar li {
+    position: relative; /* Required for dropdown menu */
+}
+
+/* Dropdown menu styling */
+.navbar .dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: var(--Primary);
     padding: 10px 0;
-    z-index: 10;
+    list-style: none;
+    min-width: 150px; /* Adjust dropdown width */
+    z-index: 1;
+    top: 100%; /* Position below the parent item */
 }
 
-.dropdown li {
-    margin: 0;
-    padding: 5px 15px;
-}
-
-.dropdown li a {
-    color: var(--Dark);          /* Dropdown link color */
-}
-
-.dropdown li a:hover {
-    color: var(--Darkest);       /* Change color on hover */
-    background-color: var(--Light); /* Highlight on hover */
+/* Dropdown menu links */
+.navbar .dropdown a {
+    display: block;
+    padding: 8px 15px; /* Padding for dropdown links */
 }
 
 /* Show dropdown on hover */
-.navbar > li:hover .dropdown {
-    display: block;              /* Show dropdown when parent is hovered */
+.navbar li:hover .dropdown {
+    display: block;
 }
 
-/* General Layout Fix for Content */
-body {
-    margin: 20px;                /* Add margin around the page */
-    padding: 0;
+/* Add margins to paragraphs only */
+main p, main ul, main ol {
+    margin-left: 20px; /* Add left margin for content */
+    margin-right: 20px;
 }
