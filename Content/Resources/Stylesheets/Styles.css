@@ -251,3 +251,65 @@ th {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+/* Nav Bar Styles */
+.navbar {
+    display: flex;               /* Use flexbox for layout */
+    justify-content: flex-end;   /* Align links to the right */
+    background-color: var(--Primary); /* Background color */
+    padding: 10px 20px;          /* Add padding around navbar */
+    list-style-type: none;       /* Remove bullets */
+    margin: 0;
+}
+
+.navbar > li {
+    position: relative;          /* Needed for dropdown positioning */
+    margin: 0 10px;              /* Add spacing between links */
+}
+
+.navbar a {
+    color: var(--Light);         /* Link color */
+    font-weight: bold;           /* Make text bold */
+    text-decoration: none;       /* Remove underline */
+}
+
+.navbar a:hover {
+    color: var(--Darkest);       /* Change color on hover */
+    text-decoration: underline;  /* Underline on hover */
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: none;               /* Hide dropdown by default */
+    position: absolute;          /* Position relative to parent */
+    top: 100%;                   /* Place below the parent link */
+    left: 0;
+    background-color: var(--Light); /* Background color for dropdown */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.dropdown li {
+    margin: 0;
+    padding: 5px 15px;
+}
+
+.dropdown li a {
+    color: var(--Dark);          /* Dropdown link color */
+}
+
+.dropdown li a:hover {
+    color: var(--Darkest);       /* Change color on hover */
+    background-color: var(--Light); /* Highlight on hover */
+}
+
+/* Show dropdown on hover */
+.navbar > li:hover .dropdown {
+    display: block;              /* Show dropdown when parent is hovered */
+}
+
+/* General Layout Fix for Content */
+body {
+    margin: 20px;                /* Add margin around the page */
+    padding: 0;
+}
