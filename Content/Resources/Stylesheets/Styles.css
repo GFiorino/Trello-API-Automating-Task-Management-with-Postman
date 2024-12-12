@@ -15,72 +15,115 @@ body {
 }
 
 main {
-  margin: 0 auto; /* Center the content */
-  padding: 20px; /* Adds space around the content */
-  max-width: 1200px; /* Limits the content width for readability */
-  box-sizing: border-box; /* Ensures padding is included in the total width */
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
-/* Paragraph Styles */
-p {
-  font-size: 12pt;
-  margin: 10px 0;
-  line-height: 20pt;
-  letter-spacing: 0.25px;
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  background-color: var(--Primary);
+  padding: 10px 20px;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Headings */
-h1 {
+.navbar li {
+  position: relative;
+  margin: 0 20px; /* Adds spacing between menu items */
+}
+
+.navbar a {
+  color: var(--Light);
   font-weight: bold;
-  font-size: 32px;
-  color: var(--Primary);
-  margin: 20px 0;
-  text-align: left; /* Align with the paragraph */
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: var(--Dark);
-  margin: 30px 0 15px;
-  text-decoration: none; /* Removed underline */
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 20px;
-  color: var(--Darkest);
-  margin: 20px 0 10px;
-  font-style: italic;
-}
-
-/* Lists */
-ul,
-ol {
-  padding-left: 40px; /* Adjusted for proper indentation */
-  margin: 10px 0;
-}
-
-li {
-  margin: 8px 0;
-  line-height: 20pt; /* Matches paragraph line height */
-}
-
-/* Links */
-a {
-  color: var(--Primary);
   text-decoration: none;
+  padding: 10px 15px;
 }
 
-a:hover {
+.navbar a:hover {
   color: var(--Darkest);
   text-decoration: underline;
 }
 
-/* Images */
-img {
-  max-width: 100%;
+/* Dropdown Menu */
+.navbar .dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--Primary);
+  padding: 10px 0;
+  list-style: none;
+  min-width: 180px;
+  z-index: 1;
+  top: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.navbar .dropdown a {
+  display: block;
+  padding: 8px 15px;
+  color: var(--Light);
+  text-align: left;
+}
+
+.navbar .dropdown a:hover {
+  background-color: var(--Dark);
+  color: var(--Light);
+}
+
+.navbar li:hover .dropdown {
+  display: block;
+}
+
+/* Prevent dropdown from overflowing the screen */
+.navbar li .dropdown {
+  right: 0;
+  left: auto;
+}
+
+/* Headings */
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--Primary);
+  margin: 20px 0;
+  text-align: left;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--Dark);
+  margin: 20px 0 10px;
+  text-decoration: none; /* Removed underline */
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--Darkest);
+  margin: 15px 0 10px;
+  font-style: italic;
+}
+
+/* Paragraphs and Lists */
+p {
+  font-size: 14px;
+  line-height: 1.6;
   margin: 10px 0;
+}
+
+ul, ol {
+  padding-left: 40px;
+}
+
+li {
+  margin: 8px 0;
 }
 
 /* Table Styles */
@@ -90,8 +133,7 @@ table {
   margin: 20px 0;
 }
 
-th,
-td {
+th, td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ddd;
@@ -107,9 +149,13 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* Dropdown Menu - No Changes (Kept as is) */
+/* Images */
+img {
+  max-width: 100%;
+  margin: 10px 0;
+}
 
-/* Remove visible CSS instructions */
+/* Fix Footer Content Visibility */
 body::after {
   content: "";
   display: none;
