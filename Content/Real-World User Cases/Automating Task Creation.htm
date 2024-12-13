@@ -39,17 +39,17 @@
         Navigate to your Trello account and retrieve your API Key from the API settings page.  
         Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.
       </p>
-      <img src="../../Resources/Images/APIkey.png" alt="Trello API Key Screenshot" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/APIkey.png" alt="Trello API Key Screenshot" class="screenshot" />
       <p class="caption">Figure 1: Retrieving the API Key from Trello's API settings page.</p>
 
       <h2>Step 2: Generate a Token</h2>
       <p>After obtaining your API Key, click the "Generate Token" link. Copy the generated token for use in Postman.</p>
-      <img src="../../Resources/Images/Token.png" alt="Trello API Token Screenshot" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Token.png" alt="Trello API Token Screenshot" class="screenshot" />
       <p class="caption">Figure 2: Generating and copying the Token for use in API requests.</p>
 
       <h2>Step 3: Retrieve the Short ID from the Trello Board</h2>
       <p>Navigate to your Trello board. Locate the short ID in the board's URL to reference the specific board or list.</p>
-      <img src="../../Resources/Images/Short_id.png" alt="Trello Short ID Screenshot" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Short_id.png" alt="Trello Short ID Screenshot" class="screenshot" />
       <p class="caption">Figure 3: Locating the Short ID in the Trello board URL.</p>
 
       <h2>Step 4: Use Postman to Retrieve the Full List ID</h2>
@@ -57,7 +57,7 @@
         In Postman, make a GET request to the following endpoint with your API Key and Token:  
         <code>https://api.trello.com/1/boards/{shortID}/lists</code>.
       </p>
-      <img src="../../Resources/Images/Postman_Idlist.png" alt="Postman List ID Retrieval Screenshot" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Postman_Idlist.png" alt="Postman List ID Retrieval Screenshot" class="screenshot" />
       <p class="caption">Figure 4: Using Postman to retrieve the List ID from Trello's API.</p>
 
       <h2>Step 5: Create a New Task Using POST</h2>
@@ -76,13 +76,13 @@
   "due": "2024-12-10T09:00:00.000Z"
 }</code></pre>
       <p>Click the <strong>Send</strong> button to execute the request.</p>
-      <img src="../../Resources/Images/Add_BODY.png" alt="Postman Body for Task Creation Screenshot" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Add_BODY.png" alt="Postman Body for Task Creation Screenshot" class="screenshot" />
       <p class="caption">Figure 5: Configuring the POST request in Postman to create a new task.</p>
       <p>Once the request is successfully sent, a new task will be created in Trello under the specified list.</p>
 
       <h2>Step 6: Verify the Task in Trello</h2>
       <p>Check your Trello board to ensure the task has been created successfully. The task should appear in the specified list with the provided details.</p>
-      <img src="../../Resources/Images/New_Card.png" alt="Newly Created Trello Card Screenshot" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/New_Card.png" alt="Newly Created Trello Card Screenshot" class="screenshot" />
       <p class="caption">Figure 6: Verifying the newly created task on the Trello board.</p>
 
       <h2>Expected Outcome</h2>
