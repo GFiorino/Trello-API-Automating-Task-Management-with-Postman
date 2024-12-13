@@ -8,17 +8,29 @@
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
   </head>
   <body>
-    <nav>
-        <ul class="navbar">
-            <!-- Updated absolute paths for the navigation links -->
-            <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
-            <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
-            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Endpoints - Add Card</a></li>
-            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Endpoints - Add List</a></li>
-            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Endpoints - Create Board</a></li>
-            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/index.htm">Use Cases</a></li>
-        </ul>
-    </nav>    <main>
+<nav>
+    <ul class="navbar">
+        <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
+        <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
+        <li>
+            <a href="#">End-Points</a>
+            <ul class="dropdown">
+                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">User-Cases</a>
+            <ul class="dropdown">
+                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
+                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+    <main>
       <h1>Setting Up API Authentication</h1>
       <p>To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication between your application and its servers.</p>
       <h3>Steps to Authenticate</h3>
