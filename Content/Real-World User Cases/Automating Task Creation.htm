@@ -5,63 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Step-by-step guide for automating task creation using the Trello API, including screenshots and detailed instructions.">
     <title>Automating Task Creation</title>
-   <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
+    <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
   </head>
   <body>
-  <nav>
-    <ul class="navbar">
+    <nav>
+      <ul class="navbar">
         <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
         <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
         <li>
-            <a href="#">End-Points</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-            </ul>
+          <a href="#">End-Points</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+          </ul>
         </li>
         <li>
-            <a href="#">User-Cases</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-            </ul>
+          <a href="#">User-Cases</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+          </ul>
         </li>
-    </ul>
-</nav>  
+      </ul>
+    </nav>
     <main>
       <h1>Automating Task Creation</h1>
       <p>This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
 
       <h2>Step 1: Obtain Your API Key</h2>
       <p>
-        Navigate to your Trello account and retrieve your API Key from the API settings page.  
-        Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.
+        Navigate to your Trello account and retrieve your <strong>API Key</strong> from the API settings page. Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.
       </p>
-      <img src="/Trello_Automating_Guide/Content/Resources/Images/APIkey.png" alt="Trello API Key Screenshot" class="screenshot" />
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/APIkey.png" alt="Retrieving the API Key from Trello's API settings page" class="screenshot" />
       <p class="caption">Figure 1: Retrieving the API Key from Trello's API settings page.</p>
 
+      <h3>Expected Outcome</h3>
+      <p>You will obtain your unique <strong>API Key</strong>, which is required for authentication in subsequent steps.</p>
+
       <h2>Step 2: Generate a Token</h2>
-      <p>After obtaining your API Key, click the "Generate Token" link. Copy the generated token for use in Postman.</p>
-      <img src="/Trello_Automating_Guide/Content/Resources/Images/Token.png" alt="Trello API Token Screenshot" class="screenshot" />
+      <p>
+        After obtaining your API Key, click the <strong>Generate Token</strong> link. Copy the generated token for use in Postman.
+      </p>
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Token.png" alt="Generating and copying the Token for API requests" class="screenshot" />
       <p class="caption">Figure 2: Generating and copying the Token for use in API requests.</p>
 
+      <h3>Expected Outcome</h3>
+      <p>You will generate and copy your <strong>API Token</strong>, which allows secure communication with the Trello API.</p>
+
       <h2>Step 3: Retrieve the Short ID from the Trello Board</h2>
-      <p>Navigate to your Trello board. Locate the short ID in the board's URL to reference the specific board or list.</p>
-      <img src="/Trello_Automating_Guide/Content/Resources/Images/Short_id.png" alt="Trello Short ID Screenshot" class="screenshot" />
+      <p>
+        Navigate to your Trello board. Locate the <strong>Short ID</strong> in the board's URL to reference the specific board or list.
+      </p>
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Short_id.png" alt="Locating the Short ID in the Trello board URL" class="screenshot" />
       <p class="caption">Figure 3: Locating the Short ID in the Trello board URL.</p>
 
       <h2>Step 4: Use Postman to Retrieve the Full List ID</h2>
       <p>
-        In Postman, make a GET request to the following endpoint with your API Key and Token:  
-        <code>https://api.trello.com/1/boards/{shortID}/lists</code>.
+        In Postman, make a <strong>GET</strong> request to the following endpoint with your API Key and Token:
       </p>
-      <img src="/Trello_Automating_Guide/Content/Resources/Images/Postman_Idlist.png" alt="Postman List ID Retrieval Screenshot" class="screenshot" />
+      <pre><code>https://api.trello.com/1/boards/{shortID}/lists</code></pre>
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Postman_Idlist.png" alt="Using Postman to retrieve the List ID" class="screenshot" />
       <p class="caption">Figure 4: Using Postman to retrieve the List ID from Trello's API.</p>
 
+      <h3>Expected Outcome</h3>
+      <p>You will retrieve the <strong>List ID</strong> required for creating a new task.</p>
+
       <h2>Step 5: Create a New Task Using POST</h2>
-      <p>Using the retrieved List ID, create a new task by making a POST request in Postman. Follow these steps:</p>
+      <p>
+        Using the retrieved List ID, create a new task by making a <strong>POST</strong> request in Postman. Follow these steps:
+      </p>
       <ol>
         <li>Set the <strong>HTTP method</strong> to <code>POST</code>.</li>
         <li>Enter the following endpoint: <code>https://api.trello.com/1/cards?key={APIKey}&amp;token={Token}</code>.</li>
@@ -76,19 +90,27 @@
   "due": "2024-12-10T09:00:00.000Z"
 }</code></pre>
       <p>Click the <strong>Send</strong> button to execute the request.</p>
-      <img src="/Trello_Automating_Guide/Content/Resources/Images/Add_BODY.png" alt="Postman Body for Task Creation Screenshot" class="screenshot" />
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Add_BODY.png" alt="Configuring the POST request in Postman to create a new task" class="screenshot" />
       <p class="caption">Figure 5: Configuring the POST request in Postman to create a new task.</p>
-      <p>Once the request is successfully sent, a new task will be created in Trello under the specified list.</p>
 
-      <h2>Step 6: Verify the Task in Trello</h2>
-      <p>Check your Trello board to ensure the task has been created successfully. The task should appear in the specified list with the provided details.</p>
-      <img src="/Trello_Automating_Guide/Content/Resources/Images/New_Card.png" alt="Newly Created Trello Card Screenshot" class="screenshot" />
-      <p class="caption">Figure 6: Verifying the newly created task on the Trello board.</p>
-
-      <h2>Expected Outcome</h2>
+      <h3>Expected Outcome</h3>
       <p>
         A new task titled <strong>"Automated Task Example"</strong> will appear in the specified list on your Trello board, complete with a description, due date, and position settings.
       </p>
+
+      <h2>Step 6: Verify the Task in Trello</h2>
+      <p>
+        Check your Trello board to ensure the task has been created successfully. The task should appear in the specified list with the provided details.
+      </p>
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/New_Card.png" alt="Newly created Trello card" class="screenshot" />
+      <p class="caption">Figure 6: Verifying the newly created task on the Trello board.</p>
+
+      <h2>Troubleshooting Tips</h2>
+      <ul>
+        <li><strong>Error 404:</strong> Ensure the List ID is correct and the list exists on the specified board.</li>
+        <li><strong>Error 401:</strong> Verify your API Key and Token are accurate and have the correct permissions.</li>
+        <li>Ensure the JSON body is properly formatted before sending the POST request.</li>
+      </ul>
     </main>
   </body>
 </html>
