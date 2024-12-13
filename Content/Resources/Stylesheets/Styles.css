@@ -36,6 +36,7 @@ h1 {
   color: var(--Primary);
   text-align: left; /* Aligns title to the left */
   margin: 20px 0;
+  padding-left: 20px; /* Aligns with paragraph padding */
 }
 
 h2 {
@@ -57,8 +58,8 @@ h3 {
 /* Lists */
 ul,
 ol {
-  padding-left: 20px; /* Indents lists to align with paragraphs */
-  margin: 0 0 20px;
+  padding-left: 40px; /* Indents lists to align with paragraphs */
+  margin: 10px 0 20px;
 }
 
 li {
@@ -110,10 +111,9 @@ a:hover {
   min-width: 200px; /* Ensure dropdown is wide enough */
   z-index: 1;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%); /* Center the dropdown menu */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  left: 0; /* Align dropdown with parent */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+  border-radius: 6px; /* Rounded edges */
   transition: opacity 0.2s ease;
   opacity: 0;
   pointer-events: none;
@@ -121,9 +121,9 @@ a:hover {
 
 .navbar .dropdown a {
   display: block;
-  padding: 8px 15px;
-  color: var(--Light);
+  padding: 10px 20px; /* Adds more padding for better readability */
   text-align: left;
+  color: var(--Light);
   font-size: 14px;
 }
 
