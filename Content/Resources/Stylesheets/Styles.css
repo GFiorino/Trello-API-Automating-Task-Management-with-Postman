@@ -1,189 +1,163 @@
-/* General Styles */
-:root {
-  --Dark: #333333;
-  --Darkest: #111111;
-  --Light: #f5f5f5;
-  --Primary: #0056b3;
-  --FontFamily: Arial, sans-serif;
-}
-
+/* General Body Styles */
 body {
-  color: var(--Dark);
-  font-family: var(--FontFamily);
-  margin: 0;
-  padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-main {
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 1200px;
-  box-sizing: border-box;
-}
-
-/* Paragraph Styles */
-p {
-  font-size: 12pt;
-  margin: 10px 0;
-  line-height: 20pt;
-  letter-spacing: 0.25px;
-}
-
-/* Headings */
-.index-header h1 {
-  font-weight: bold;
-  font-size: 32px;
-  color: var(--Primary);
-  text-align: left;
-  margin: 20px 0;
-  padding-left: 20px; /* Aligns with paragraph on Index page */
-}
-
-h1:not(.index-header h1) {
-  font-weight: bold;
-  font-size: 32px;
-  color: var(--Primary);
-  text-align: left;
-  margin: 20px 0;
-  padding-left: 0; /* For other pages, no extra padding */
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: var(--Dark);
-  margin: 30px 0 15px;
-  text-decoration: none;
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 20px;
-  color: var(--Darkest);
-  margin: 20px 0 10px;
-  font-style: italic;
-}
-
-/* Lists */
-ul,
-ol {
-  padding-left: 40px;
-  margin: 0 0 20px;
-}
-
-li {
-  margin: 8px 0;
-}
-
-/* Links */
-a {
-  color: var(--Primary);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--Darkest);
-  text-decoration: underline;
-}
-
-/* Navigation Bar */
+/* Navbar Styles */
 .navbar {
-  display: flex;
-  justify-content: flex-end;
-  background-color: var(--Primary);
-  padding: 10px 20px;
-  margin: 0;
-  list-style: none;
-  box-sizing: border-box;
+    background-color: #0056b3;
+    overflow: hidden;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: center;
+    border-bottom: 2px solid #004494;
 }
 
 .navbar li {
-  position: relative; /* Ensures dropdowns are positioned relative to the parent */
-  margin-right: 20px;
-}
-
-.navbar li:last-child {
-  margin-right: 0; /* No margin for the last item */
+    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar a {
-  color: var(--Light);
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px 15px;
-  white-space: nowrap; /* Prevents wrapping */
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-/* Dropdown Menu */
-.navbar .dropdown {
-  display: none;
-  position: absolute;
-  background-color: var(--Primary);
-  padding: 10px 0;
-  list-style: none;
-  z-index: 1;
-  top: 100%;
-  left: auto;
-  right: 0; /* Align dropdowns to the right edge */
-  min-width: 200px; /* Ensures enough width for items */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  transition: opacity 0.2s ease;
-  opacity: 0;
-  pointer-events: none;
+.navbar a:hover {
+    background-color: #004494;
 }
 
-.navbar li:hover .dropdown {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
+/* Active Navbar Link */
+.navbar .active a {
+    background-color: #003366;
+    font-weight: bold;
 }
 
-.navbar .dropdown a {
-  display: block;
-  padding: 8px 15px;
-  color: var(--Light);
-  text-align: left;
-  font-size: 14px;
+/* Container for Header and Main */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.navbar .dropdown a:hover {
-  background-color: var(--Dark);
-  border-radius: 3px;
+/* Header Styles */
+.index-header h1 {
+    font-size: 2.5rem;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-/* Fix for User-Cases Alignment */
-.navbar li:last-child .dropdown {
-  left: auto;
-  right: 0; /* Aligns User-Cases dropdown properly */
+/* Section Headings */
+main h2 {
+    font-size: 1.8rem;
+    color: #004494;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Paragraph and Text Styling */
+main p {
+    margin: 10px 0 20px;
+    font-size: 16px;
+}
+
+/* Unordered List Styling */
+main ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+main ul li {
+    list-style-type: disc;
+    margin-bottom: 10px;
 }
 
 /* Table Styles */
 table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 20px 0;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
 }
 
-th,
-td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ddd;
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
 }
 
-th {
-  background-color: var(--Light);
-  color: var(--Dark);
-  font-weight: bold;
+table th {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+/* Button Hover Effect */
+a:hover {
+    text-decoration: underline;
 }
 
-/* Images */
-img {
-  max-width: 100%;
-  margin: 10px 0;
+/* Preformatted Code Blocks */
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+    font-size: 14px;
+    color: #333;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    color: #d63384;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Footer (Optional) */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    font-size: 14px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .index-header h1 {
+        font-size: 2rem;
+    }
+
+    main h2 {
+        font-size: 1.6rem;
+    }
+
+    main p {
+        font-size: 14px;
+    }
 }
