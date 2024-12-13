@@ -34,8 +34,9 @@ h1 {
   font-weight: bold;
   font-size: 32px;
   color: var(--Primary);
-  text-align: center;
+  text-align: left; /* Aligns title to the left */
   margin: 20px 0;
+  padding-left: 20px; /* Optional: Adds padding to align with paragraph margin */
 }
 
 h2 {
