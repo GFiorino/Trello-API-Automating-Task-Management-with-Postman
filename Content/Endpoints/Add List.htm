@@ -9,101 +9,119 @@
   </head>
   <body>
     <nav>
-    <ul class="navbar">
+      <ul class="navbar">
         <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
         <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
         <li>
-            <a href="#">End-Points</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-            </ul>
+          <a href="#">End-Points</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+          </ul>
         </li>
         <li>
-            <a href="#">User-Cases</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-            </ul>
+          <a href="#">User-Cases</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+          </ul>
         </li>
-    </ul>
-</nav>  
+      </ul>
+    </nav>
     <main>
       <h1>Add List</h1>
       <p>The Add List endpoint allows you to create a new list on an existing board. You need to provide the board ID and the list name to use this endpoint.</p>
-      <h2>Request Structure</h2>
+
+      <h2>Request Details</h2>
       <ul>
         <li><b>Method:</b> POST</li>
         <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/lists</code></li>
+        <li><b>Authentication:</b> Requires <code>key</code> and <code>token</code> as query parameters.</li>
       </ul>
+
       <h2>Required Parameters</h2>
       <table>
-        <tr>
-          <th>Parameter</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>String</td>
-          <td>The name of the list.</td>
-        </tr>
-        <tr>
-          <td>idBoard</td>
-          <td>String</td>
-          <td>The ID of the board where the list will be created.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>name</td>
+            <td>String</td>
+            <td>The name of the list.</td>
+          </tr>
+          <tr>
+            <td>idBoard</td>
+            <td>String</td>
+            <td>The ID of the board where the list will be created.</td>
+          </tr>
+        </tbody>
       </table>
-      <h2>Authentication Parameters</h2>
-      <ul>
-        <li><b>key</b>: Your API key.</li>
-        <li><b>token</b>: Your access token.</li>
-      </ul>
+
       <h2>Example Request</h2>
       <pre><code>POST https://api.trello.com/1/lists
 Content-Type: application/json
 
 {
-    "name": "New List Example",
-    "idBoard": "12345abcdef",
-    "pos": "top",
-    "key": "your_api_key",
-    "token": "your_access_token"
+  "name": "New List Example",
+  "idBoard": "12345abcdef",
+  "pos": "top",
+  "key": "your_api_key",
+  "token": "your_access_token"
 }</code></pre>
+
       <h2>Example Response</h2>
       <pre><code>{
-    "id": "60d21b4967d0d810b8f8b456",
-    "name": "New List Example",
-    "idBoard": "12345abcdef",
-    "pos": "top",
-    "subscribed": false,
-    "closed": false
+  "id": "60d21b4967d0d810b8f8b456",
+  "name": "New List Example",
+  "idBoard": "12345abcdef",
+  "pos": "top",
+  "subscribed": false,
+  "closed": false
 }</code></pre>
+
       <h2>Common Errors</h2>
       <table>
-        <tr>
-          <th>Error</th>
-          <th>Possible Cause</th>
-          <th>Solution</th>
-        </tr>
-        <tr>
-          <td>401 Unauthorized</td>
-          <td>Invalid API key or token.</td>
-          <td>Verify your API key and token are correct.</td>
-        </tr>
-        <tr>
-          <td>400 Bad Request</td>
-          <td>Missing required parameters.</td>
-          <td>Ensure <b>idBoard</b> and <b>name</b> are provided.</td>
-        </tr>
-        <tr>
-          <td>404 Not Found</td>
-          <td>Board ID does not exist or is invalid.</td>
-          <td>Check the <b>idBoard</b> value.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Error</th>
+            <th>Possible Cause</th>
+            <th>Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>401 Unauthorized</td>
+            <td>Invalid API key or token.</td>
+            <td>Verify your API key and token are correct.</td>
+          </tr>
+          <tr>
+            <td>400 Bad Request</td>
+            <td>Missing required parameters.</td>
+            <td>Ensure <b>idBoard</b> and <b>name</b> are provided.</td>
+          </tr>
+          <tr>
+            <td>404 Not Found</td>
+            <td>Board ID does not exist or is invalid.</td>
+            <td>Check the <b>idBoard</b> value.</td>
+          </tr>
+        </tbody>
       </table>
+
+      <h2>Retrieving the idBoard</h2>
+      <p>
+        To retrieve the <code>idBoard</code>, use the <code>https://api.trello.com/1/members/me/boards</code> endpoint with your API key and token. This will return all boards associated with your account.
+      </p>
+      <ol>
+        <li>Log in to Trello and navigate to the board you want to use.</li>
+        <li>Retrieve the board's ID using the API endpoint mentioned above.</li>
+      </ol>
     </main>
   </body>
 </html>
