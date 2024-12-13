@@ -8,28 +8,28 @@
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
   </head>
   <body>
-  <nav>
-    <ul class="navbar">
+    <nav>
+      <ul class="navbar">
         <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
         <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
         <li>
-            <a href="#">End-Points</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-            </ul>
+          <a href="#">End-Points</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+          </ul>
         </li>
         <li>
-            <a href="#">User-Cases</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-            </ul>
+          <a href="#">User-Cases</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+          </ul>
         </li>
-    </ul>
-</nav>  
+      </ul>
+    </nav>  
     <main>
       <h1>Deleting a Card</h1>
       <p>
@@ -38,16 +38,21 @@
 
       <h2>Step 1: Retrieve the Card ID</h2>
       <p>
-        To delete a card, you first need to retrieve its ID. Make a GET request to the following endpoint:
+        To delete a card, you first need to retrieve its ID. Make a <strong>GET</strong> request to the following endpoint:
       </p>
       <pre><code>https://api.trello.com/1/cards/{cardID}</code></pre>
-      <p>The response will include the card's details, including its ID.</p>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Card_ID_Retrieval.png" alt="Delete Card Screenshot" class="screenshot" />
+      <p>The response will include the card's details, including its unique <strong>Card ID</strong>.</p>
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Card_ID_Retrieval.png" alt="Retrieving the Card ID with GET request in Trello API" class="screenshot" />
       <p class="caption">Figure 1: Retrieving the card ID using a GET request.</p>
+
+      <h3>Expected Outcome</h3>
+      <p>
+        You will retrieve the card's unique <strong>ID</strong>, which will be required for the next step.
+      </p>
 
       <h2>Step 2: Delete the Card</h2>
       <p>
-        Once you have the Card ID, make a DELETE request to the following endpoint:
+        Once you have the Card ID, make a <strong>DELETE</strong> request to the following endpoint:
       </p>
       <pre><code>https://api.trello.com/1/cards/{cardID}</code></pre>
       <p>
@@ -55,16 +60,23 @@
       </p>
       <ol>
         <li>Set the <strong>HTTP method</strong> to <code>DELETE</code>.</li>
-        <li>Enter the endpoint with the appropriate Card ID.</li>
+        <li>Enter the endpoint, replacing <code>{cardID}</code> with the card's unique ID.</li>
         <li>Click <strong>Send</strong> to execute the request.</li>
       </ol>
-      <img src="/Trello_Automating_Guide/Content/Resources/Images/Confirmation_Delete.png" alt="Delete Card Confirmation Screenshot" class="screenshot" />
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Confirmation_Delete.png" alt="Confirmation of Card Deletion in Trello API" class="screenshot" />
       <p class="caption">Figure 2: Executing the DELETE request to remove the card.</p>
 
-      <h2>Expected Outcome</h2>
+      <h3>Expected Outcome</h3>
       <p>
-        The specified card will be successfully deleted from your Trello board, and it will no longer appear in the list.
+        The specified card will be successfully deleted from your Trello board, and it will no longer appear in the list. A <strong>200 OK</strong> response will confirm the deletion.
       </p>
+
+      <h2>Troubleshooting Tips</h2>
+      <ul>
+        <li><strong>Error 404:</strong> Ensure the Card ID is correct and the card exists on the specified board.</li>
+        <li><strong>Error 401:</strong> Verify your API Key and Token are accurate and have the correct permissions.</li>
+        <li>Use Postman to inspect the API request and confirm all parameters are properly set.</li>
+      </ul>
     </main>
   </body>
 </html>
