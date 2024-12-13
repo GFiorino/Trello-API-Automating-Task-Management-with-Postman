@@ -112,8 +112,8 @@ a:hover {
 
 /* Dropdown Menu Adjustment for User-Cases */
 .navbar li:nth-child(4) .dropdown {
-  left: auto; /* Reset auto alignment */
-  right: 0; /* Align to the right of the parent item */
+  left: 0; /* Reset auto alignment */
+  right: auto; /* Align to the right of the parent item */
   transform: none; /* Remove centering transform */
 }
 
