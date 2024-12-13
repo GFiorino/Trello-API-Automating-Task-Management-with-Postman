@@ -30,22 +30,19 @@ p {
 }
 
 /* Headings */
-.index-header h1 {
+/* General H1 Styling */
+h1 {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 32px; /* Keep size consistent */
   color: var(--Primary);
   text-align: left;
   margin: 20px 0;
-  padding-left: 20px; /* Aligns with paragraph on Index page */
+  padding-left: 0; /* Remove unnecessary padding */
 }
 
-h1:not(.index-header h1) {
-  font-weight: bold;
-  font-size: 32px;
-  color: var(--Primary);
-  text-align: left;
-  margin: 20px 0;
-  padding-left: 0; /* For other pages, no extra padding */
+/* Specific Styling for the Landing Page H1 */
+.index-header h1 {
+  padding-left: 20px; /* Keep the landing page H1 aligned differently */
 }
 
 h2 {
