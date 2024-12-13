@@ -8,35 +8,36 @@
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
   </head>
   <body>
-<nav>
-    <ul class="navbar">
+    <nav>
+      <ul class="navbar">
         <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
         <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
         <li>
-            <a href="#">End-Points</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-            </ul>
+          <a href="#">End-Points</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+          </ul>
         </li>
         <li>
-            <a href="#">User-Cases</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-            </ul>
+          <a href="#">User-Cases</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+          </ul>
         </li>
-    </ul>
-</nav>
+      </ul>
+    </nav>
     <main>
       <h1>Setting Up API Authentication</h1>
       <p>To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication between your application and its servers.</p>
-      <h3>Steps to Authenticate</h3>
+
+      <h2>Steps to Authenticate</h2>
       <ol>
         <li>
-          <p>Generate an API Key:</p>
+          <p><b>Generate an API Key:</b></p>
           <ul>
             <li>Log in to your Trello account.</li>
             <li>Visit the Trello API Key page at <a href="https://trello.com/app-key" target="_blank" rel="noopener">https://trello.com/app-key</a>.</li>
@@ -44,7 +45,7 @@
           </ul>
         </li>
         <li>
-          <p>Generate an Access Token:</p>
+          <p><b>Generate an Access Token:</b></p>
           <ul>
             <li>Scroll down on the API Key page and click the link to generate a token.</li>
             <li>Grant the required permissions when prompted.</li>
@@ -52,16 +53,40 @@
           </ul>
         </li>
         <li>
-          <p>Include the Key and Token in Requests:</p>
+          <p><b>Include the Key and Token in Requests:</b></p>
           <ul>
             <li>Add your API key and token as query parameters in your request URLs.</li>
           </ul>
           <pre><code>https://api.trello.com/1/resource?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
         </li>
       </ol>
-      <h3>Example Request</h3>
+
+      <h2>Example Request</h2>
       <pre><code>GET https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
       <p>This example retrieves information about the authenticated user.</p>
+
+      <h2>Common Errors</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Error</th>
+            <th>Possible Cause</th>
+            <th>Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>401 Unauthorized</td>
+            <td>Invalid API key or token.</td>
+            <td>Verify that your API key and token are correct.</td>
+          </tr>
+          <tr>
+            <td>400 Bad Request</td>
+            <td>Malformed or missing query parameters.</td>
+            <td>Ensure the <code>key</code> and <code>token</code> are included in the request URL.</td>
+          </tr>
+        </tbody>
+      </table>
     </main>
   </body>
 </html>
