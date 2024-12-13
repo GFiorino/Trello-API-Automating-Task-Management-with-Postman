@@ -1,62 +1,55 @@
 /* Navigation Bar Styling */
 .navbar {
-    background-color: #0056b3;
-    overflow: hidden;
-    padding: 0;
+    background-color: #0056b3; /* Blue background */
     margin: 0;
+    padding: 0;
 }
 
-/* Aligning the nav bar items horizontally */
+/* Horizontal Menu */
 .navbar ul {
-    list-style: none;
+    list-style: none; /* Remove bullet points */
     margin: 0;
     padding: 0;
     display: flex; /* Horizontal alignment */
-    justify-content: flex-start; /* Align items to the left */
+    justify-content: center; /* Center the menu items */
 }
 
+/* Menu Items */
 .navbar li {
-    position: relative; /* For dropdown */
+    margin: 0;
+    padding: 0;
 }
 
 .navbar li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 15px 20px;
-    font-size: 16px;
-    text-align: left; /* Left align the text */
-    transition: background-color 0.3s;
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline */
+    padding: 15px 20px; /* Spacing for better usability */
+    font-size: 16px; /* Adjust font size */
+    display: block; /* Ensure clickable area is consistent */
+    text-align: center; /* Center align the text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
+/* Hover Effect for Menu Items */
 .navbar li a:hover {
-    background-color: #003d80;
+    background-color: #003d80; /* Slightly darker blue on hover */
+}
+/* General Paragraph Styling */
+p {
+    font-family: Arial, sans-serif; /* Match the font style */
+    font-size: 16px; /* Adjust font size for readability */
+    line-height: 1.8; /* Increase line spacing for clarity */
+    color: #333; /* Dark grey text for contrast */
+    margin: 15px 0; /* Add spacing above and below paragraphs */
+    text-align: left; /* Ensure left alignment for all paragraphs */
 }
 
-/* Dropdown Menu */
-.navbar li ul {
-    position: absolute;
-    top: 100%; /* Align below the parent menu item */
-    left: 0;
-    background-color: #0056b3;
-    display: none; /* Hidden by default */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    min-width: 150px;
-    z-index: 1000;
-}
-
-.navbar li ul li a {
-    padding: 10px 15px;
-    font-size: 14px;
-}
-
-.navbar li ul li a:hover {
-    background-color: #003d80;
-}
-
-/* Show Dropdown on Hover */
-.navbar li:hover ul {
-    display: block;
+/* Section Headings */
+h2 {
+    color: #0056b3; /* Match the blue color for headings */
+    margin: 30px 0 10px; /* Adjust spacing for a clean look */
+    font-size: 1.8em; /* Slightly larger size for emphasis */
+    font-weight: bold; /* Bold to make headings stand out */
+    border-bottom: 2px solid #0056b3; /* Add a blue underline */
+    padding-bottom: 5px; /* Add some padding to separate heading from content */
 }
