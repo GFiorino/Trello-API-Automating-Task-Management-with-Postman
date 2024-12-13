@@ -110,11 +110,11 @@ a:hover {
   position: relative;
 }
 
-/* User-Cases Dropdown (Unchanged) */
-.navbar li:hover .dropdown:not(.endpoints-dropdown) {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
+/* Dropdown Menu Adjustment for User-Cases */
+.navbar li:nth-child(4) .dropdown {
+  left: auto; /* Reset auto alignment */
+  right: 0; /* Align to the right of the parent item */
+  transform: none; /* Remove centering transform */
 }
 
 .navbar .dropdown {
