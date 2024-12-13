@@ -15,53 +15,108 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 1200px;
-  box-sizing: border-box;
+  margin: 0 auto; /* Center the content */
+  padding: 20px; /* Adds space around the content */
+  max-width: 1200px; /* Limits the content width for readability */
+  box-sizing: border-box; /* Ensures padding is included in the total width */
 }
 
-/* Navigation Bar */
+/* Paragraph Styles */
+p {
+  font-size: 12pt;
+  margin: 10px 0;
+  line-height: 20pt;
+  letter-spacing: 0.25px;
+}
+
+/* Headings */
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  color: var(--Primary);
+  text-align: center;
+  margin: 20px 0;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--Dark);
+  margin: 30px 0 15px;
+  text-decoration: underline;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--Darkest);
+  margin: 20px 0 10px;
+  font-style: italic;
+}
+
+/* Lists */
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* Links */
+a {
+  color: var(--Primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--Darkest);
+  text-decoration: underline;
+}
+
+/* Navigation Bar Styles */
 .navbar {
   display: flex;
-  justify-content: flex-start; /* Align menu items to the left */
+  justify-content: flex-end;
   background-color: var(--Primary);
   padding: 10px 20px;
   margin: 0;
-  list-style-type: none;
-  width: 100%;
+  width: 100vw; /* Full width of the viewport */
   box-sizing: border-box;
-}
-
-.navbar li {
-  position: relative;
-  margin: 0 20px; /* Adds spacing between menu items */
+  list-style-type: none;
 }
 
 .navbar a {
   color: var(--Light);
   font-weight: bold;
-  text-decoration: none;
   padding: 10px 15px;
-}
-
-.navbar a:hover {
-  color: var(--Darkest);
-  text-decoration: underline;
+  text-decoration: none;
+  white-space: nowrap; /* Prevents text wrapping */
 }
 
 /* Dropdown Menu */
+.navbar li {
+  position: relative;
+}
+
 .navbar .dropdown {
   display: none;
   position: absolute;
   background-color: var(--Primary);
   padding: 10px 0;
   list-style: none;
-  min-width: 180px;
+  min-width: 200px; /* Ensure dropdown is wide enough */
   z-index: 1;
   top: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* Center the dropdown menu */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navbar .dropdown a {
@@ -69,60 +124,18 @@ main {
   padding: 8px 15px;
   color: var(--Light);
   text-align: left;
+  font-size: 14px;
 }
 
 .navbar .dropdown a:hover {
   background-color: var(--Dark);
-  color: var(--Light);
+  border-radius: 3px;
 }
 
 .navbar li:hover .dropdown {
   display: block;
-}
-
-/* Prevent dropdown from overflowing the screen */
-.navbar li .dropdown {
-  right: 0;
-  left: auto;
-}
-
-/* Headings */
-h1 {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--Primary);
-  margin: 20px 0;
-  text-align: left; /* Align title with the paragraph */
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--Dark);
-  margin: 20px 0 10px;
-  text-decoration: none; /* Removed underline */
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--Darkest);
-  margin: 15px 0 10px;
-}
-
-/* Paragraphs and Lists */
-p {
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 10px 0;
-}
-
-ul, ol {
-  padding-left: 40px;
-}
-
-li {
-  margin: 8px 0;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Table Styles */
@@ -132,7 +145,8 @@ table {
   margin: 20px 0;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ddd;
@@ -154,8 +168,8 @@ img {
   margin: 10px 0;
 }
 
-/* Fix Footer Content Visibility */
-body::after {
-  content: "";
-  display: none;
+/* Dropdown menu responsiveness fix */
+.navbar .dropdown {
+  right: auto;
+  left: auto; /* Ensures dropdown doesn't go outside the viewport */
 }
