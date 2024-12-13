@@ -34,9 +34,12 @@ h1 {
   font-weight: bold;
   font-size: 32px;
   color: var(--Primary);
-  text-align: left; /* Aligns title to the left */
+  text-align: left;
   margin: 20px 0;
-  padding-left: 20px; /* Adds padding to align with paragraph margin */
+}
+
+.index-header h1 {
+  padding-left: 20px; /* Specific padding for Index page header */
 }
 
 h2 {
@@ -111,8 +114,7 @@ a:hover {
   min-width: 200px; /* Ensure dropdown is wide enough */
   z-index: 1;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%); /* Center the dropdown menu */
+  right: 0; /* Opens outward instead of inward */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   transition: opacity 0.2s ease;
@@ -171,6 +173,6 @@ img {
 
 /* Dropdown menu responsiveness fix */
 .navbar .dropdown {
-  right: auto;
+  right: 0;
   left: auto; /* Ensures dropdown doesn't go outside the viewport */
 }
