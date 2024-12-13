@@ -15,11 +15,12 @@ body {
     padding: 0 15px;
 }
 
-/* Navigation Bar Styling - Clean and Practical */
+/* Navigation Bar Styling */
 .navbar {
     background-color: #0056b3;
-    padding: 10px 0;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar ul {
@@ -31,26 +32,55 @@ body {
 }
 
 .navbar li {
-    margin: 0 15px;
+    position: relative; /* For dropdown */
 }
 
 .navbar li a {
     color: #fff;
     text-decoration: none;
+    display: block;
+    padding: 15px 20px;
     font-size: 16px;
-    padding: 5px 10px;
+    text-align: center;
     transition: background-color 0.3s;
 }
 
 .navbar li a:hover {
     background-color: #003d80;
-    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.navbar li ul {
+    position: absolute;
+    top: 100%; /* Align below the parent menu item */
+    left: 0;
+    background-color: #0056b3;
+    display: none; /* Hidden by default */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.navbar li ul li a {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.navbar li ul li a:hover {
+    background-color: #003d80;
+}
+
+/* Show Dropdown on Hover */
+.navbar li:hover ul {
+    display: block;
 }
 
 /* Header Styling */
 header h1 {
     color: #0056b3;
-    text-align: center; /* Align center */
+    text-align: center;
     margin: 20px 0;
     font-size: 2.5em;
 }
