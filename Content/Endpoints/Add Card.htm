@@ -8,78 +8,90 @@
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
   </head>
   <body>
-<nav>
-    <ul class="navbar">
+    <nav>
+      <ul class="navbar">
         <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
         <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
         <li>
-            <a href="#">End-Points</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-            </ul>
+          <a href="#">End-Points</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+          </ul>
         </li>
         <li>
-            <a href="#">User-Cases</a>
-            <ul class="dropdown">
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-                <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-            </ul>
+          <a href="#">User-Cases</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+          </ul>
         </li>
-    </ul>
-</nav>
+      </ul>
+    </nav>
     <main>
       <h1>Add Card</h1>
       <p>This endpoint allows you to add a new card to a specified list within a Trello board. It is commonly used to create tasks or items in project management workflows.</p>
+
       <h2>Request Details</h2>
       <ul>
         <li><b>Method:</b> POST</li>
         <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/cards</code></li>
         <li><b>Authentication:</b> Requires <code>key</code> and <code>token</code> as query parameters.</li>
       </ul>
+
       <h2>Required Parameters</h2>
       <table>
-        <tr>
-          <th>Parameter</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>String</td>
-          <td>The name of the card.</td>
-        </tr>
-        <tr>
-          <td>idList</td>
-          <td>String</td>
-          <td>The ID of the list where the card will be added.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>name</td>
+            <td>String</td>
+            <td>The name of the card.</td>
+          </tr>
+          <tr>
+            <td>idList</td>
+            <td>String</td>
+            <td>The ID of the list where the card will be added.</td>
+          </tr>
+        </tbody>
       </table>
+
       <h2>Optional Parameters</h2>
       <table>
-        <tr>
-          <th>Parameter</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>desc</td>
-          <td>String</td>
-          <td>A description for the card.</td>
-        </tr>
-        <tr>
-          <td>due</td>
-          <td>Date</td>
-          <td>A due date for the card in ISO 8601 format.</td>
-        </tr>
-        <tr>
-          <td>pos</td>
-          <td>String</td>
-          <td>Position of the card in the list (e.g., "top" or "bottom").</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>desc</td>
+            <td>String</td>
+            <td>A description for the card.</td>
+          </tr>
+          <tr>
+            <td>due</td>
+            <td>Date</td>
+            <td>A due date for the card in ISO 8601 format.</td>
+          </tr>
+          <tr>
+            <td>pos</td>
+            <td>String</td>
+            <td>Position of the card in the list (e.g., "top" or "bottom").</td>
+          </tr>
+        </tbody>
       </table>
+
       <h2>Retrieving the idList</h2>
       <p>
         The <code>idList</code> is required to specify the list where the card will be added.
@@ -90,43 +102,50 @@
         <li>Use the <code>https://api.trello.com/1/boards/[board_id]/lists</code> endpoint to retrieve all list IDs for the board. Replace <code>[board_id]</code> with the ID of the board.</li>
       </ol>
       <p>See the <a href="../Real-World_User_Cases/Automating_Task_Creation.htm">Automating Task Creation</a> topic for a practical example of using the <code>idList</code>.</p>
+
       <h2>Example Request</h2>
       <pre><code>POST https://api.trello.com/1/cards
 Content-Type: application/json
 
 {
-    "name": "New Card Example",
-    "idList": "12345abcde",
-    "desc": "This is an example card.",
-    "key": "your_api_key",
-    "token": "your_access_token"
+  "name": "New Card Example",
+  "idList": "12345abcde",
+  "desc": "This is an example card.",
+  "key": "your_api_key",
+  "token": "your_access_token"
 }</code></pre>
+
       <h2>Example Response</h2>
       <pre><code>{
-    "id": "60d21b4967d0d810b8f8b456",
-    "name": "New Card Example",
-    "desc": "This is an example card.",
-    "idList": "12345abcde",
-    "pos": "top",
-    "due": null
+  "id": "60d21b4967d0d810b8f8b456",
+  "name": "New Card Example",
+  "desc": "This is an example card.",
+  "idList": "12345abcde",
+  "pos": "top",
+  "due": null
 }</code></pre>
+
       <h2>Common Errors</h2>
       <table>
-        <tr>
-          <th>Error</th>
-          <th>Possible Cause</th>
-          <th>Solution</th>
-        </tr>
-        <tr>
-          <td>401 Unauthorized</td>
-          <td>Invalid API key or token.</td>
-          <td>Verify your API key and token are correct.</td>
-        </tr>
-        <tr>
-          <td>400 Bad Request</td>
-          <td>Missing required parameters (e.g., <code>idList</code> or <code>name</code>).</td>
-          <td>Ensure all required parameters are provided.</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Error</th>
+            <th>Possible Cause</th>
+            <th>Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>401 Unauthorized</td>
+            <td>Invalid API key or token.</td>
+            <td>Verify your API key and token are correct.</td>
+          </tr>
+          <tr>
+            <td>400 Bad Request</td>
+            <td>Missing required parameters (e.g., <code>idList</code> or <code>name</code>).</td>
+            <td>Ensure all required parameters are provided.</td>
+          </tr>
+        </tbody>
       </table>
     </main>
   </body>
