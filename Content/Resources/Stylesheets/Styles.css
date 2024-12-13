@@ -196,3 +196,13 @@ p {
   color: #333333; /* Dark text for readability */
   text-align: left; /* Ensure left-aligned text */
 }
+/* Subheadings with Gray Lines */
+h2 {
+  font-weight: bold;
+  font-size: 24px; /* Matches the size in your screenshot */
+  color: #0056b3; /* Blue color for subheadings */
+  margin: 30px 0 15px; /* Adjusted spacing for a cleaner layout */
+  text-align: left; /* Left-aligned like in the screenshot */
+  border-bottom: 1px solid #cccccc; /* Thin gray line for separation */
+  padding-bottom: 5px; /* Adds space between text and line */
+}
