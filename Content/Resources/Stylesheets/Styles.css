@@ -1,84 +1,86 @@
 /* General Body Styling */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
 }
 
-/* Container for Content */
+/* Container Styling */
 .container {
-    max-width: 1100px;
+    max-width: 960px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 0 15px;
 }
 
-/* Navigation Bar */
+/* Navigation Bar Styling - Clean and Practical */
 .navbar {
     background-color: #0056b3;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 10px 15px;
 }
 
 .navbar ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
 }
 
-.navbar ul li {
-    margin: 0 10px;
+.navbar li {
+    margin-right: 20px;
 }
 
-.navbar ul li a {
-    color: white;
+.navbar li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
     font-size: 16px;
 }
 
-.navbar ul li a:hover {
+.navbar li a:hover {
     text-decoration: underline;
 }
 
 /* Header Styling */
 header h1 {
     color: #0056b3;
-    text-align: center;
+    text-align: left; /* Fix alignment */
     margin: 20px 0;
-    font-size: 2.2em;
+    font-size: 2em;
 }
 
 /* Section Headings */
 h2 {
     color: #333;
+    margin: 30px 0 10px;
+    font-size: 1.6em;
     border-bottom: 2px solid #0056b3;
     padding-bottom: 5px;
-    margin-top: 40px;
-    font-size: 1.8em;
 }
 
 /* Paragraph and List Styling */
 p {
-    margin: 15px 0;
-    font-size: 1em;
+    margin: 10px 0;
 }
 
 ul {
-    margin: 15px 0;
+    margin: 10px 0 20px;
     padding-left: 20px;
 }
 
 ul li {
-    margin-bottom: 10px;
-    font-size: 1em;
+    margin-bottom: 5px;
 }
 
-/* Table Styling */
+/* Horizontal Lines for Sections */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -86,23 +88,49 @@ table {
 }
 
 table th, table td {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
 }
 
 table th {
-    background-color: #f5f5f5;
+    background-color: #f9f9f9;
+    color: #333;
     font-weight: bold;
 }
 
-/* Code Block Styling */
+/* Preformatted Code Blocks */
 pre code {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #f4f4f4;
     padding: 10px;
     display: block;
+    border: 1px solid #ddd;
     font-family: monospace;
     overflow-x: auto;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin: 10px 0;
+}
+
+.caption {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.9em;
 }
