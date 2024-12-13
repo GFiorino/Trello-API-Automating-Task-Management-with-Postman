@@ -18,7 +18,8 @@ body {
 /* Navigation Bar Styling - Clean and Practical */
 .navbar {
     background-color: #0056b3;
-    padding: 10px 15px;
+    padding: 10px 0;
+    overflow: hidden;
 }
 
 .navbar ul {
@@ -26,28 +27,32 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 .navbar li {
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
 .navbar li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
 
 .navbar li a:hover {
-    text-decoration: underline;
+    background-color: #003d80;
+    border-radius: 5px;
 }
 
 /* Header Styling */
 header h1 {
     color: #0056b3;
-    text-align: left; /* Fix alignment */
+    text-align: center; /* Align center */
     margin: 20px 0;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 /* Section Headings */
