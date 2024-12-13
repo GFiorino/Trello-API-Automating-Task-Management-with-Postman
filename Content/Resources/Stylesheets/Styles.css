@@ -173,3 +173,9 @@ img {
   right: auto;
   left: auto; /* Ensures dropdown doesn't go outside the viewport */
 }
+.container {
+  margin: 0 auto;
+  padding: 20px; /* Aligns the content consistently */
+  max-width: 1200px;
+  box-sizing: border-box;
+}
