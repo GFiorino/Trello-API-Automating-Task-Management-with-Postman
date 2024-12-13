@@ -187,3 +187,12 @@ img {
   max-width: 100%;
   margin: 10px 0;
 }
+/* Paragraph Styling */
+p {
+  font-family: Arial, sans-serif; /* Consistent font */
+  font-size: 16px; /* Match the font size */
+  line-height: 1.8; /* Adjust spacing between lines */
+  margin: 10px 0 20px; /* Add space above and below paragraphs */
+  color: #333333; /* Dark text for readability */
+  text-align: left; /* Ensure left-aligned text */
+}
