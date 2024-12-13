@@ -36,7 +36,7 @@ h1 {
   color: var(--Primary);
   text-align: left; /* Aligns title to the left */
   margin: 20px 0;
-  padding-left: 20px; /* Aligns with paragraph margin */
+  padding-left: 20px; /* Adds padding to align with paragraph margin */
 }
 
 h2 {
@@ -58,7 +58,7 @@ h3 {
 /* Lists */
 ul,
 ol {
-  padding-left: 20px; /* Indents lists to align with paragraphs */
+  padding-left: 40px; /* Aligns lists with paragraphs */
   margin: 0 0 20px;
 }
 
@@ -111,8 +111,8 @@ a:hover {
   min-width: 200px; /* Ensure dropdown is wide enough */
   z-index: 1;
   top: 100%;
-  left: auto;
-  transform: translateX(-50%); /* Keeps the dropdown visible */
+  left: 50%;
+  transform: translateX(-50%); /* Center the dropdown menu */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   transition: opacity 0.2s ease;
@@ -137,12 +137,6 @@ a:hover {
   display: block;
   opacity: 1;
   pointer-events: auto;
-}
-
-.navbar li:nth-last-child(1) .dropdown {
-  right: 0; /* Ensures the User-Cases dropdown stays within the page */
-  left: auto;
-  transform: none; /* Disables centering */
 }
 
 /* Table Styles */
@@ -173,4 +167,10 @@ tr:nth-child(even) {
 img {
   max-width: 100%;
   margin: 10px 0;
+}
+
+/* Dropdown menu responsiveness fix */
+.navbar .dropdown {
+  right: auto;
+  left: auto; /* Ensures dropdown doesn't go outside the viewport */
 }
