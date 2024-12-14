@@ -213,3 +213,8 @@ h2 {
 .navbar li a.active {
     color: #ccc;
 }
+.navbar a:hover {
+    color: #fff;
+    background-color: #003d80;
+    transition: 0.3s ease;
+}
