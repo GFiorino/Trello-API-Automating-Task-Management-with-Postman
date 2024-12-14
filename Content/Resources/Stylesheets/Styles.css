@@ -24,49 +24,52 @@ main {
 /* Paragraph Styles */
 p {
   font-size: 12pt;
-  margin: 20px 0; /* Consistent spacing above and below paragraphs */
-  line-height: 1.8; /* Adjust spacing between lines */
+  margin: 10px 0;
+  line-height: 20pt;
   letter-spacing: 0.25px;
-  color: var(--Dark);
 }
 
 /* Headings */
 /* General H1 Styling */
 h1 {
   font-weight: bold;
-  font-size: 32px;
+  font-size: 32px; /* Keep size consistent */
   color: var(--Primary);
   text-align: left;
-  margin: 30px 0; /* Space above and below */
+  margin: 20px 0;
+  padding-left: 0; /* Remove unnecessary padding */
+}
+
+/* Specific Styling for the Landing Page H1 */
+.index-header h1 {
+  padding-left: 20px; /* Keep the landing page H1 aligned differently */
 }
 
 h2 {
   font-weight: bold;
   font-size: 24px;
   color: var(--Dark);
-  margin: 40px 0 20px; /* Larger space above and moderate space below */
-  text-align: left;
-  border-bottom: 1px solid #cccccc; /* Optional: Separator line below headings */
-  padding-bottom: 5px;
+  margin: 30px 0 15px;
+  text-decoration: none;
 }
 
 h3 {
   font-weight: bold;
   font-size: 20px;
   color: var(--Darkest);
-  margin: 30px 0 15px; /* Consistent spacing around subheadings */
+  margin: 20px 0 10px;
   font-style: italic;
 }
 
 /* Lists */
 ul,
 ol {
-  margin: 20px 0; /* Space above and below lists */
   padding-left: 40px;
+  margin: 0 0 20px;
 }
 
 li {
-  margin: 8px 0; /* Space between list items */
+  margin: 8px 0;
 }
 
 /* Links */
@@ -92,12 +95,12 @@ a:hover {
 }
 
 .navbar li {
-  position: relative;
+  position: relative; /* Ensures dropdowns are positioned relative to the parent */
   margin-right: 20px;
 }
 
 .navbar li:last-child {
-  margin-right: 0;
+  margin-right: 0; /* No margin for the last item */
 }
 
 .navbar a {
@@ -105,7 +108,7 @@ a:hover {
   font-weight: bold;
   text-decoration: none;
   padding: 10px 15px;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevents wrapping */
 }
 
 /* Dropdown Menu */
@@ -117,13 +120,14 @@ a:hover {
   list-style: none;
   z-index: 1;
   top: 100%;
-  right: 0;
-  min-width: 200px;
+  left: auto;
+  right: 0; /* Align dropdowns to the right edge */
+  min-width: 200px; /* Ensures enough width for items */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  transition: opacity 0.2s ease;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease;
 }
 
 .navbar li:hover .dropdown {
@@ -148,7 +152,7 @@ a:hover {
 /* Fix for User-Cases Alignment */
 .navbar li:last-child .dropdown {
   left: auto;
-  right: 0;
+  right: 0; /* Aligns User-Cases dropdown properly */
 }
 
 /* Table Styles */
@@ -178,47 +182,47 @@ tr:nth-child(even) {
 /* Images */
 img {
   max-width: 100%;
-  height: auto;
   margin: 10px 0;
 }
-
 .screenshot {
-  max-width: 60%; /* Scale images to 60% of the container's width */
+  max-width: 60%; /* Adjust width to 60% of container */
   height: auto; /* Maintain aspect ratio */
-  margin: 30px auto; /* Center images and add consistent spacing */
+  margin: 20px auto; /* Center align images */
   display: block; /* Block-level element */
   border: 1px solid #ddd; /* Optional border */
   border-radius: 4px; /* Rounded corners */
 }
-
-.caption {
-  text-align: center;
-  font-size: 0.9em;
-  color: #555;
-  margin: 10px 0 30px; /* Space above captions and extra space below */
-}
-
 /* Paragraph Styling */
 p {
   font-family: Arial, sans-serif; /* Consistent font */
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 20px 0; /* Add consistent spacing */
-  text-align: left;
+  font-size: 16px; /* Match the font size */
+  line-height: 1.8; /* Adjust spacing between lines */
+  margin: 10px 0 20px; /* Add space above and below paragraphs */
+  color: #333333; /* Dark text for readability */
+  text-align: left; /* Ensure left-aligned text */
 }
-
-/* Active Navbar Link */
+/* Subheadings with Gray Lines */
+h2 {
+  font-weight: bold;
+  font-size: 24px; /* Matches the size in your screenshot */
+  color: #0056b3; /* Blue color for subheadings */
+  margin: 30px 0 15px; /* Adjusted spacing for a cleaner layout */
+  text-align: left; /* Left-aligned like in the screenshot */
+  border-bottom: 1px solid #cccccc; /* Thin gray line for separation */
+  padding-bottom: 5px; /* Adds space between text and line */
+}
+/* Gray color for the active page */
 .navbar a.active {
-  color: #ccc; /* Gray text for the active link */
-  text-decoration: none;
+    color: #ccc; /* Gray text for the active link */
+    text-decoration: none; /* Keep the underline removed */
 }
 
+/* Ensure the active parent link in dropdown is styled */
 .navbar li a.active {
-  color: #ccc;
+    color: #ccc;
 }
-
 .navbar a:hover {
-  color: #fff;
-  background-color: #003d80;
-  transition: 0.3s ease;
+    color: #fff;
+    background-color: #003d80;
+    transition: 0.3s ease;
 }
