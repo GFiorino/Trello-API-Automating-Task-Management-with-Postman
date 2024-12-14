@@ -117,22 +117,22 @@ a:hover {
   padding: 10px 0;
   list-style: none;
   z-index: 1;
-  top: calc(100% + 5px); /* Place dropdown below the navbar */
-  left: 0; /* Align dropdown to the left of parent item */
-  min-width: 200px;
+  top: 100%; /* Correctly place it directly below the parent menu item */
+  left: 0; /* Align dropdown to the left edge of the parent item */
+  min-width: 200px; /* Ensure a minimum width for dropdown */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  transform: translateY(-10px); /* Start slightly above for animation */
+  transform: translateY(-5px); /* Slightly offset for animation effect */
 }
 
 .navbar li:hover .dropdown {
   display: block;
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0); /* Animate dropdown into position */
+  transform: translateY(0); /* Dropdown slides into view */
 }
 
 .navbar .dropdown a {
@@ -141,14 +141,13 @@ a:hover {
   color: var(--Light);
   text-align: left;
   font-size: 14px;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .navbar .dropdown a:hover {
   background-color: var(--Dark);
   border-radius: 3px;
 }
-
 /* Table Styles */
 table {
   border-collapse: collapse;
