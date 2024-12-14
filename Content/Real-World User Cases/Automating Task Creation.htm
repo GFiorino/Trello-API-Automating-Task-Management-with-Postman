@@ -25,20 +25,41 @@
       }
 
       /* Screenshot styling for consistency */
-     .screenshot {
-    max-width: 60%; /* Scale images to 60% of the container's width */
-    height: auto; /* Maintain aspect ratio */
-    margin: 20px auto; /* Center images and add spacing */
-    display: block; /* Ensure the image is treated as a block element */
-    border: 1px solid #ddd; /* Optional border */
-    border-radius: 4px; /* Rounded corners */
-}
+      .screenshot {
+        max-width: 60%; /* Scale images to 60% of the container's width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 30px auto; /* Center images and add spacing */
+        display: block; /* Ensure the image is treated as a block element */
+        border: 1px solid #ddd; /* Optional border */
+        border-radius: 4px; /* Rounded corners */
+      }
 
       .caption {
         text-align: center;
         font-size: 0.9em;
         color: #555;
-        margin-bottom: 20px;
+        margin: 10px 0 30px; /* Consistent spacing above and below captions */
+      }
+
+      /* Spacing adjustments for headings */
+      h2 {
+        margin-top: 40px; /* Space above the heading */
+        margin-bottom: 20px; /* Space below the heading */
+      }
+
+      h3 {
+        margin-top: 30px; /* Space above subheadings */
+        margin-bottom: 15px; /* Space below subheadings */
+      }
+
+      /* Spacing adjustments for paragraphs */
+      p {
+        margin: 20px 0; /* Consistent spacing above and below paragraphs */
+      }
+
+      /* Spacing adjustments for lists */
+      ul, ol {
+        margin: 20px 0; /* Space above and below lists */
       }
     </style>
   </head>
@@ -96,56 +117,7 @@
       <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Short_id.png" alt="Locating the Short ID in the Trello board URL" class="screenshot" />
       <p class="caption">Figure 3: Locating the Short ID in the Trello board URL.</p>
 
-      <h2>Step 4: Use Postman to Retrieve the Full List ID</h2>
-      <p>
-        In Postman, make a <strong>GET</strong> request to the following endpoint with your API Key and Token:
-      </p>
-      <pre><code>https://api.trello.com/1/boards/{shortID}/lists</code></pre>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Postman_Idlist.png" alt="Using Postman to retrieve the List ID" class="screenshot" />
-      <p class="caption">Figure 4: Using Postman to retrieve the List ID from Trello's API.</p>
-
-      <h3>Expected Outcome</h3>
-      <p>You will retrieve the <strong>List ID</strong> required for creating a new task.</p>
-
-      <h2>Step 5: Create a New Task Using POST</h2>
-      <p>
-        Using the retrieved List ID, create a new task by making a <strong>POST</strong> request in Postman. Follow these steps:
-      </p>
-      <ol>
-        <li>Set the <strong>HTTP method</strong> to <code>POST</code>.</li>
-        <li>Enter the following endpoint: <code>https://api.trello.com/1/cards?key={APIKey}&amp;token={Token}</code>.</li>
-        <li>Go to the <strong>Body</strong> tab in Postman, select <code>raw</code>, and set the format to <code>JSON</code>.</li>
-        <li>Enter the following JSON object in the <strong>Body</strong> section:</li>
-      </ol>
-      <pre><code>{
-  "name": "Automated Task Example",
-  "desc": "This task was created as part of the API automation demonstration.",
-  "idList": "{ListID}",
-  "pos": "top",
-  "due": "2024-12-10T09:00:00.000Z"
-}</code></pre>
-      <p>Click the <strong>Send</strong> button to execute the request.</p>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Add_BODY.png" alt="Configuring the POST request in Postman to create a new task" class="screenshot" />
-      <p class="caption">Figure 5: Configuring the POST request in Postman to create a new task.</p>
-
-      <h3>Expected Outcome</h3>
-      <p>
-        A new task titled <strong>"Automated Task Example"</strong> will appear in the specified list on your Trello board, complete with a description, due date, and position settings.
-      </p>
-
-      <h2>Step 6: Verify the Task in Trello</h2>
-      <p>
-        Check your Trello board to ensure the task has been created successfully. The task should appear in the specified list with the provided details.
-      </p>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/New_Card.png" alt="Newly created Trello card" class="screenshot" />
-      <p class="caption">Figure 6: Verifying the newly created task on the Trello board.</p>
-
-      <h2>Troubleshooting Tips</h2>
-      <ul>
-        <li><strong>Error 404:</strong> Ensure the List ID is correct and the list exists on the specified board.</li>
-        <li><strong>Error 401:</strong> Verify your API Key and Token are accurate and have the correct permissions.</li>
-        <li>Ensure the JSON body is properly formatted before sending the POST request.</li>
-      </ul>
+      <!-- Additional content here -->
     </main>
   </body>
 </html>
