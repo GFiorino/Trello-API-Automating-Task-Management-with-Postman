@@ -113,49 +113,50 @@ a:hover {
 
 /* Dropdown Menu */
 .navbar .dropdown {
-  display: none;
+  display: none; /* Initially hidden */
   position: absolute;
-  background-color: var(--Primary);
+  background-color: var(--Primary); /* Match the navbar color */
   padding: 10px 0;
   list-style: none;
-  z-index: 1;
-  top: calc(100%); /* Directly below the parent link */
-  left: 0; /* Align dropdown to the left edge of the parent item */
-  min-width: 200px; /* Ensure a minimum width for dropdown */
+  z-index: 1000; /* Higher z-index to appear above other content */
+  top: 100%; /* Directly below the parent menu */
+  left: 0; /* Align with the left edge of the parent menu */
+  min-width: 200px; /* Width of the dropdown */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform: translateY(-5px); /* Slide effect */
+  transition: opacity 0.2s ease, transform 0.2s ease; /* Smooth opening transition */
+  transform: translateY(-10px); /* Subtle slide-in effect */
 }
 
 .navbar li:hover .dropdown {
-  display: block;
-  opacity: 1;
+  display: block; /* Show the dropdown */
+  opacity: 1; /* Fully visible */
   pointer-events: auto;
-  transform: translateY(0); /* Reset the slide effect */
+  transform: translateY(0); /* Reset slide-in effect */
 }
 
 .navbar .dropdown a {
-  display: block;
-  padding: 8px 15px;
-  color: var(--Light);
+  display: block; /* Block-level links */
+  padding: 8px 15px; /* Add spacing */
+  color: var(--Light); /* Text color */
   text-align: left;
-  font-size: 14px;
+  font-size: 14px; /* Consistent font size */
   white-space: nowrap; /* Prevent text wrapping */
 }
 
 .navbar .dropdown a:hover {
-  background-color: var(--Dark);
-  border-radius: 3px;
+  background-color: var(--Dark); /* Highlight on hover */
+  border-radius: 3px; /* Rounded corners */
 }
 
-/* Fix for User-Cases Alignment */
+/* Fix for the User-Cases Alignment */
 .navbar li:last-child .dropdown {
-  left: auto;
-  right: 0; /* Aligns User-Cases dropdown properly */
+  left: auto; /* Align the dropdown to the right if necessary */
+  right: 0;
 }
+
 
 /* Table Styles */
 table {
