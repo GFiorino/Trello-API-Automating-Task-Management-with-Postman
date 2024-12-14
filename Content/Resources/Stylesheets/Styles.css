@@ -1,3 +1,83 @@
+/* General Styles */
+:root {
+  --Dark: #333333;
+  --Darkest: #111111;
+  --Light: #f5f5f5;
+  --Primary: #0056b3;
+  --FontFamily: Arial, sans-serif;
+}
+
+body {
+  color: var(--Dark);
+  font-family: var(--FontFamily);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* Paragraph Styles */
+p {
+  font-size: 12pt;
+  margin: 20px 0;
+  line-height: 1.8;
+  letter-spacing: 0.25px;
+}
+
+/* Headings */
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  color: var(--Primary);
+  text-align: left;
+  margin: 20px 0;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--Dark);
+  margin: 30px 0 15px;
+  text-decoration: none;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--Darkest);
+  margin: 20px 0 10px;
+  font-style: italic;
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: 40px;
+  margin: 0 0 20px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* Links */
+a {
+  color: var(--Primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--Darkest);
+  text-decoration: underline;
+}
+
 /* Navigation Bar */
 .navbar {
   display: flex;
@@ -6,11 +86,12 @@
   padding: 10px 20px;
   margin: 0;
   list-style: none;
-  position: relative; /* Ensure dropdown is relative to the navbar */
+  box-sizing: border-box;
+  border-bottom: 2px solid #cccccc; /* Divider below navbar */
 }
 
 .navbar li {
-  position: relative; /* Dropdown will align relative to this */
+  position: relative;
   margin-right: 20px;
 }
 
@@ -23,25 +104,25 @@
   font-weight: bold;
   text-decoration: none;
   padding: 10px 15px;
-  white-space: nowrap; /* Prevents wrapping */
+  white-space: nowrap;
 }
 
 /* Dropdown Menu */
 .navbar .dropdown {
-  display: none; /* Hidden initially */
-  position: absolute; /* Positioned relative to parent li */
-  background-color: var(--Primary); /* Match navbar color */
+  display: none;
+  position: absolute;
+  background-color: var(--Primary);
   padding: 10px 0;
   list-style: none;
-  z-index: 10; /* Ensure it appears above other content */
-  top: calc(100% + 2px); /* Slightly below the parent */
-  left: 0; /* Align with parent */
+  z-index: 1000;
+  top: 100%;
+  left: 0;
   min-width: 200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   transform: translateY(-10px);
 }
 
@@ -58,7 +139,6 @@
   color: var(--Light);
   text-align: left;
   font-size: 14px;
-  white-space: nowrap;
 }
 
 .navbar .dropdown a:hover {
@@ -66,8 +146,66 @@
   border-radius: 3px;
 }
 
-/* Fix User-Cases Alignment */
+/* Fix for User-Cases Alignment */
 .navbar li:last-child .dropdown {
-  right: 0;
   left: auto;
+  right: 0;
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--Light);
+  color: var(--Dark);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+.screenshot {
+  max-width: 60%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  margin: 10px 0 30px;
+}
+
+/* Active Navbar Link */
+.navbar a.active {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #fff;
+  background-color: #003d80;
+  transition: 0.3s ease;
 }
