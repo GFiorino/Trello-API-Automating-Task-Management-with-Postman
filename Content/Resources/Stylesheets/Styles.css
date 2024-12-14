@@ -203,3 +203,9 @@ h2 {
   border-bottom: 1px solid #cccccc; /* Thin gray line for separation */
   padding-bottom: 5px; /* Adds space between text and line */
 }
+.navbar a.active {
+    background-color: #003d80; /* A slightly darker blue for highlight */
+    color: #fff; /* Keep the text white */
+    border-radius: 4px; /* Optional: rounded corners for a polished look */
+    padding: 8px 15px; /* Match existing navbar spacing */
+}
