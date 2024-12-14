@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +7,24 @@
     <meta name="description" content="Guide for adding lists using Trello API. Includes request details, required parameters, and troubleshooting tips.">
     <title>Add List</title>
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
+    <style>
+      /* Highlight active navbar link */
+      .navbar a.active {
+        color: #ccc; /* Gray color for active link */
+      }
+
+      /* Clean code block styling */
+      pre code {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        display: block;
+        font-family: monospace;
+        color: #333;
+        overflow-x: auto;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -13,10 +32,10 @@
         <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
         <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
         <li>
-          <a href="#">End-Points</a>
+          <a href="#" class="active">End-Points</a>
           <ul class="dropdown">
             <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm" class="active">Add List</a></li>
             <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
           </ul>
         </li>
