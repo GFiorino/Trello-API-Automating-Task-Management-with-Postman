@@ -26,18 +26,43 @@
 
       /* Screenshot styling for consistency */
       .screenshot {
-        max-width: 100%;
-        height: auto;
-        margin: 20px 0;
-        border: 1px solid #ddd;
-        border-radius: 4px;
+        max-width: 60%; /* Scale images to 60% of the container's width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 30px auto; /* Center align images */
+        display: block; /* Ensure the image is treated as a block element */
+        border: 1px solid #ddd; /* Optional border */
+        border-radius: 4px; /* Rounded corners */
       }
 
       .caption {
         text-align: center;
         font-size: 0.9em;
         color: #555;
+        margin: 10px 0 30px; /* Consistent spacing above and below captions */
+      }
+
+      /* Headings for better readability */
+      h2 {
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 5px;
         margin-bottom: 20px;
+        margin-top: 40px;
+        color: #0056b3;
+      }
+
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      /* Paragraph and list spacing */
+      p {
+        margin: 20px 0;
+      }
+
+      ul, ol {
+        margin: 20px 0;
       }
     </style>
   </head>
@@ -92,6 +117,7 @@
       </ol>
       <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/PUT_to_move.png" alt="Moving a card to a new list" class="screenshot" />
       <p class="caption">Figure 2: Initiating the PUT request to move a card.</p>
+
       <h3>Expected Outcome</h3>
       <p>The card will successfully move from its original list to the specified new list.</p>
 
