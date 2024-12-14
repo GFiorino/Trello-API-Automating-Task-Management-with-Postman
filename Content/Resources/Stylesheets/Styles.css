@@ -119,21 +119,22 @@ a:hover {
   padding: 10px 0;
   list-style: none;
   z-index: 1;
-  top: 100%;
-  left: auto;
-  right: 0; /* Align dropdowns to the right edge */
-  min-width: 200px; /* Ensures enough width for items */
+  top: calc(100%); /* Directly below the parent link */
+  left: 0; /* Align dropdown to the left edge of the parent item */
+  min-width: 200px; /* Ensure a minimum width for dropdown */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  transition: opacity 0.2s ease;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-5px); /* Slide effect */
 }
 
 .navbar li:hover .dropdown {
   display: block;
   opacity: 1;
   pointer-events: auto;
+  transform: translateY(0); /* Reset the slide effect */
 }
 
 .navbar .dropdown a {
@@ -142,6 +143,7 @@ a:hover {
   color: var(--Light);
   text-align: left;
   font-size: 14px;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .navbar .dropdown a:hover {
