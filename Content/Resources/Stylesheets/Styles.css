@@ -17,7 +17,7 @@ body {
 
 main {
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 20px 40px; /* Added bottom padding */
   max-width: 1200px;
   box-sizing: border-box;
 }
@@ -25,7 +25,7 @@ main {
 /* Paragraph Styles */
 p {
   font-size: 14pt;
-  margin: 20px 0;
+  margin: 25px 0; /* Added vertical spacing */
   line-height: 1.8;
   letter-spacing: 0.25px;
 }
@@ -36,7 +36,7 @@ h1 {
   font-size: 36px;
   color: var(--Primary);
   text-align: center;
-  margin: 20px 0;
+  margin: 40px 0 30px; /* More spacing */
   letter-spacing: 1px;
 }
 
@@ -44,16 +44,17 @@ h2 {
   font-weight: bold;
   font-size: 28px;
   color: var(--Dark);
-  margin: 30px 0 15px;
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 5px;
+  margin: 50px 0 20px; /* Added spacing before and after */
+  border-bottom: 2px solid #e0e0e0; /* Subtle underline */
+  padding-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
 h3 {
   font-weight: bold;
   font-size: 22px;
   color: var(--Darkest);
-  margin: 20px 0 10px;
+  margin: 30px 0 15px;
   font-style: italic;
 }
 
@@ -61,11 +62,11 @@ h3 {
 ul,
 ol {
   padding-left: 40px;
-  margin: 0 0 20px;
+  margin: 20px 0; /* Added spacing */
 }
 
 li {
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
 /* Links */
@@ -84,7 +85,7 @@ a:hover {
   background-color: var(--Secondary);
   color: white;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 5px 0;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
@@ -98,167 +99,94 @@ a:hover {
   transform: translateY(-3px);
 }
 
-/* Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  background-color: var(--Primary);
-  padding: 10px 20px;
-  margin: 0;
-  list-style: none;
-  box-sizing: border-box;
-  border-bottom: 2px solid #cccccc; /* Divider below navbar */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.navbar li {
-  position: relative;
-  margin-right: 20px;
-}
-
-.navbar li:last-child {
-  margin-right: 0;
-}
-
-.navbar a {
-  color: var(--Light);
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px 15px;
-  white-space: nowrap;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar a.active {
-  color: #ccc;
-  background-color: #003d80;
-  border-radius: 3px;
-}
-
-.navbar a:hover {
-  color: #fff;
-  background-color: #003d80;
-}
-
-/* Dropdown Menu */
-.navbar .dropdown {
-  display: none;
-  position: absolute;
-  background-color: var(--Primary);
-  padding: 10px 0;
-  list-style: none;
-  z-index: 1000;
-  top: 100%;
-  left: 0;
-  min-width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform: translateY(-10px);
-}
-
-.navbar li:hover .dropdown {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.navbar .dropdown a {
-  display: block;
-  padding: 8px 15px;
-  color: var(--Light);
-  text-align: left;
-  font-size: 14px;
-}
-
-.navbar .dropdown a:hover {
-  background-color: var(--Dark);
-  border-radius: 3px;
-}
-/* Fix for User-Cases Dropdown Alignment */
-.navbar li:last-child .dropdown {
-  left: auto; /* Remove alignment to the far left */
-  right: 0;   /* Align to the right of its parent */
-  text-align: left; /* Ensure readability */
-}
-/* Footer */
-footer {
-  background-color: var(--Darkest);
-  color: var(--Light);
-  padding: 20px 0;
-  text-align: center;
-  font-size: 14px;
-  margin-top: 40px;
-}
-
-footer a {
-  color: var(--Light);
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: var(--Secondary);
-}
 /* Navigation Links for Endpoints and User-Cases */
 .navigation-links {
   display: flex;
   justify-content: space-between; /* Align Previous and Next links */
-  margin: 40px 0; /* Add vertical spacing */
+  margin: 60px 0; /* Increased spacing */
 }
 
 .navigation-links a {
   font-weight: bold;
-  color: var(--Primary); /* Use primary theme color */
+  color: var(--Primary);
   text-decoration: none;
-  padding: 10px 15px; /* Add padding for clickable area */
-  border: 1px solid #ddd; /* Subtle border for buttons */
-  border-radius: 4px; /* Rounded corners */
+  padding: 12px 18px; /* Slightly larger clickable area */
+  border: 1px solid #ddd;
+  border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .navigation-links a:hover {
-  background-color: var(--Primary); /* Change background on hover */
-  color: #fff; /* White text on hover */
+  background-color: var(--Primary);
+  color: #fff;
 }
+
 /* Tip Box Styling */
 .tip-box {
-  background-color: #e6f7ff; /* Light blue background */
-  border-left: 5px solid #007bff; /* Blue highlight */
-  padding: 10px 15px;
-  margin: 20px 0;
-  color: #004085; /* Dark blue text */
+  background-color: #e6f7ff;
+  border-left: 5px solid #007bff;
+  padding: 15px 20px;
+  margin: 25px 0;
+  color: #004085;
   font-size: 14px;
-  border-radius: 4px; /* Smooth edges */
+  border-radius: 4px;
+  line-height: 1.6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 /* Code Block Styling */
 pre code {
-  background-color: #f4f4f4; /* Light gray background */
-  border: 1px solid #ddd; /* Subtle border */
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
-  padding: 10px 15px;
+  padding: 15px;
   display: block;
   font-family: "Courier New", monospace;
-  font-size: 14px; /* Slightly smaller font for better readability */
-  color: #333; /* Dark text */
-  overflow-x: auto; /* Horizontal scroll for long lines */
+  font-size: 14px;
+  color: #333;
+  overflow-x: auto;
   line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 /* Screenshot Styling */
 .screenshot {
-  max-width: 60%; /* Scale image width */
+  max-width: 60%;
   height: auto;
-  margin: 30px auto; /* Center the image */
+  margin: 40px auto; /* Added spacing */
   display: block;
-  border: 1px solid #ddd; /* Light border */
-  border-radius: 4px; /* Rounded corners */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
 }
 
 .caption {
   text-align: center;
   font-size: 0.9em;
   color: #555;
-  margin: 10px 0 30px;
+  margin: 10px 0 50px; /* More spacing below the caption */
+}
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--Primary);
+  border-radius: 4px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+#back-to-top a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#back-to-top a:hover {
+  background-color: #003d80;
+  transition: background-color 0.3s ease;
 }
