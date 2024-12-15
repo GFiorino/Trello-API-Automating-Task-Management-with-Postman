@@ -23,6 +23,25 @@
         color: #333;
         overflow-x: auto;
       }
+
+      /* Footer navigation style */
+      .footer-nav {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 0.9em;
+      }
+
+      .footer-nav a {
+        color: var(--Primary);
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+
+      .footer-nav a:hover {
+        text-decoration: underline;
+        color: var(--Dark);
+      }
     </style>
   </head>
   <body>
@@ -165,6 +184,10 @@ Content-Type: application/json
         <li>Log in to Trello and ensure you are a member of an organization.</li>
         <li>Use the endpoint above to retrieve the ID of the desired organization.</li>
       </ol>
+
+      <div class="footer-nav">
+        <a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Previous: Add List</a>
+      </div>
     </main>
   </body>
 </html>
