@@ -6,9 +6,40 @@
     <meta name="description" content="An introductory guide to the Trello API, highlighting its purpose, benefits, and practical applications.">
     <title>Introduction to Trello API</title>
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
+    <style>
+        /* Style for the Trello logo */
+        .trello-logo {
+            display: block;
+            margin: 20px auto; /* Center the logo */
+            max-width: 250px; /* Slightly larger logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Call-to-action buttons */
+        .cta-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            background-color: #70B500;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #61A700;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav>
         <ul class="navbar">
             <li><a href="/Trello_Automating_Guide/index.htm" class="active">Home</a></li>
@@ -31,15 +62,44 @@
             </li>
         </ul>
     </nav>
-    <!-- Main Content -->
-    <header style="background-color: #0079BF; color: white; text-align: center; padding: 20px;">
-        <img src="Content/Resources/Images/trello_Logo.png" alt="Trello Logo" style="max-width: 150px; display: block; margin: 0 auto;">
-        <h1>Welcome to the Trello Automating Guide</h1>
-        <p>Master the Trello API with this comprehensive guide, designed for developers and project managers to automate tasks and enhance workflows.</p>
-        <div style="margin-top: 20px;">
-            <a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm" class="cta-button">Get Started</a>
-            <a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm" class="cta-button">Explore Endpoints</a>
-        </div>
-    </header>
+    <!-- Add a spacing div to create consistent space under the nav bar -->
+    <div style="height: 30px;"></div>
+
+    <div class="container">
+        <header class="index-header">
+            <!-- Trello Logo -->
+            <img src="/Trello_Automating_Guide/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+            <h1 style="text-align: center;">Welcome to the Trello API Guide</h1>
+            <p style="text-align: center;">Master the Trello API with this step-by-step guide for developers and project managers.</p>
+            <div class="cta-buttons">
+                <a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm" class="cta-button">Get Started</a>
+                <a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm" class="cta-button">Explore Endpoints</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <h2>Purpose of This Documentation</h2>
+                <p>
+                    This guide is designed for developers and tech-savvy project managers who wish to leverage the Trello API 
+                    for building custom integrations, automating tasks, or streamlining project management processes.
+                </p>
+                <p>By the end of this guide, you will know how to:</p>
+                <ul>
+                    <li>Authenticate with the Trello API.</li>
+                    <li>Use key endpoints to create boards, lists, and cards.</li>
+                    <li>Apply real-world use cases to improve your workflows.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Why Use the Trello API?</h2>
+                <p>The Trello API offers a range of benefits that make it an essential tool for developers and project managers, such as:</p>
+                <ul>
+                    <li><strong>Automation:</strong> Save time by automating repetitive tasks, such as creating boards, lists, and cards.</li>
+                    <li><strong>Integration:</strong> Seamlessly connect Trello with other tools and systems.</li>
+                    <li><strong>Customization:</strong> Build tailored workflows to suit your team’s unique processes.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
