@@ -178,7 +178,12 @@ a:hover {
   background-color: var(--Dark);
   border-radius: 3px;
 }
-
+/* Fix for User-Cases Dropdown Alignment */
+.navbar li:last-child .dropdown {
+  left: auto; /* Remove alignment to the far left */
+  right: 0;   /* Align to the right of its parent */
+  text-align: left; /* Ensure readability */
+}
 /* Footer */
 footer {
   background-color: var(--Darkest);
