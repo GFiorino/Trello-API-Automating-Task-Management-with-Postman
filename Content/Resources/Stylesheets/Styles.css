@@ -202,3 +202,63 @@ footer a {
 footer a:hover {
   color: var(--Secondary);
 }
+/* Navigation Links for Endpoints and User-Cases */
+.navigation-links {
+  display: flex;
+  justify-content: space-between; /* Align Previous and Next links */
+  margin: 40px 0; /* Add vertical spacing */
+}
+
+.navigation-links a {
+  font-weight: bold;
+  color: var(--Primary); /* Use primary theme color */
+  text-decoration: none;
+  padding: 10px 15px; /* Add padding for clickable area */
+  border: 1px solid #ddd; /* Subtle border for buttons */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation-links a:hover {
+  background-color: var(--Primary); /* Change background on hover */
+  color: #fff; /* White text on hover */
+}
+/* Tip Box Styling */
+.tip-box {
+  background-color: #e6f7ff; /* Light blue background */
+  border-left: 5px solid #007bff; /* Blue highlight */
+  padding: 10px 15px;
+  margin: 20px 0;
+  color: #004085; /* Dark blue text */
+  font-size: 14px;
+  border-radius: 4px; /* Smooth edges */
+}
+/* Code Block Styling */
+pre code {
+  background-color: #f4f4f4; /* Light gray background */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 14px; /* Slightly smaller font for better readability */
+  color: #333; /* Dark text */
+  overflow-x: auto; /* Horizontal scroll for long lines */
+  line-height: 1.5;
+}
+/* Screenshot Styling */
+.screenshot {
+  max-width: 60%; /* Scale image width */
+  height: auto;
+  margin: 30px auto; /* Center the image */
+  display: block;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  margin: 10px 0 30px;
+}
