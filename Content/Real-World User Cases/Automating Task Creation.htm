@@ -34,6 +34,24 @@
         color: #555;
         margin: 10px 0 30px;
       }
+      .navigation-links {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+      }
+      .navigation-links a {
+        font-weight: bold;
+        color: #0056b3;
+        text-decoration: none;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+      }
+      .navigation-links a:hover {
+        background-color: #0056b3;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -118,6 +136,11 @@
       <p>
         A new task titled "Automated Task Example" will appear in the specified list on your Trello board, complete with a description, due date, and position settings.
       </p>
+
+      <div class="navigation-links">
+        <a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">← Previous: Create Board</a>
+        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Next: Deleting a Card or List →</a>
+      </div>
     </main>
   </body>
 </html>
