@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A comprehensive guide to managing cards and lists in Trello using the API. Includes steps for moving cards, adding labels, and archiving lists.">
+    <meta name="description" content="Comprehensive guide to managing cards and lists using Trello API, including screenshots and detailed instructions.">
     <title>Managing Cards and Lists</title>
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
     <style>
@@ -23,7 +23,7 @@
       .screenshot {
         max-width: 60%;
         height: auto;
-        margin: 30px auto;
+        margin: 40px auto;
         display: block;
         border: 1px solid #ddd;
         border-radius: 4px;
@@ -32,18 +32,18 @@
         text-align: center;
         font-size: 0.9em;
         color: #555;
-        margin: 10px 0 30px;
+        margin: 10px 0 40px;
       }
       .navigation-links {
         display: flex;
         justify-content: space-between;
-        margin: 30px 0;
+        margin: 50px 0;
       }
       .navigation-links a {
         font-weight: bold;
         color: #0056b3;
         text-decoration: none;
-        padding: 8px 12px;
+        padding: 10px 15px;
         border: 1px solid #ddd;
         border-radius: 4px;
         transition: background-color 0.2s, color 0.2s;
@@ -52,14 +52,12 @@
         background-color: #0056b3;
         color: #fff;
       }
-      .tip-box {
-        background-color: #f9f9f9;
-        border-left: 4px solid #0056b3;
-        padding: 10px 15px;
-        margin: 20px 0;
-        font-style: italic;
-        color: #333;
-        border-radius: 4px;
+      h2, h3 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+      p, ol, ul {
+        margin-bottom: 30px;
       }
     </style>
   </head>
@@ -91,81 +89,48 @@
       <p>This section demonstrates how to manage cards and lists using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
 
       <h2>Step 1: Retrieve the Card ID</h2>
-      <p>
-        To move or update a specific card, you first need to retrieve its ID. In Postman, make a <strong>GET</strong> request to the following endpoint using your API Key and Token:
-      </p>
+      <p>To move or update a specific card, you first need to retrieve its ID. In Postman, make a <strong>GET</strong> request to the following endpoint using your API Key and Token:</p>
       <pre><code>https://api.trello.com/1/boards/{boardID}/cards</code></pre>
       <p>The response will include the card's details, including the ID.</p>
-      <div class="tip-box">
-        <p><strong>Tip:</strong> Ensure your API credentials are correct and add the API Key and Token as query parameters.</p>
-      </div>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Card_ID_Retrieval.png" alt="Retrieving the card ID in Postman" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/ID-Card.png" alt="Trello Card ID Retrieval Screenshot" class="screenshot">
       <p class="caption">Figure 1: Retrieving the card ID using a GET request in Postman.</p>
 
-      <h3>Expected Outcome</h3>
-      <p>You will retrieve the unique <strong>Card ID</strong>, which is required for managing the card in subsequent steps.</p>
-
       <h2>Step 2: Move a Card to Another List</h2>
-      <p>
-        Once you have the Card ID, you can move the card to a different list by making a <strong>PUT</strong> request. Use the following endpoint and include the new List ID as a parameter:
-      </p>
+      <p>Once you have the Card ID, you can move the card to a different list by making a <strong>PUT</strong> request. Use the following endpoint and include the new List ID as a parameter:</p>
       <pre><code>https://api.trello.com/1/cards/{cardID}?idList={newListID}</code></pre>
       <ol>
         <li>Set the <strong>HTTP method</strong> to <code>PUT</code>.</li>
         <li>Enter the endpoint, replacing <code>{cardID}</code> and <code>{newListID}</code> with the respective IDs.</li>
         <li>Click <strong>Send</strong> to execute the request.</li>
       </ol>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/PUT_to_move.png" alt="Moving a card to a new list" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/PUT_to_move.png" alt="Move Card Step 3" class="screenshot">
       <p class="caption">Figure 2: Initiating the PUT request to move a card.</p>
 
-      <h3>Expected Outcome</h3>
-      <p>The card will successfully move from its original list to the specified new list.</p>
-
       <h2>Step 3: Add a Label to a Card</h2>
-      <p>
-        To organize your cards, you can add labels. First, retrieve the available labels for your board by making a <strong>GET</strong> request to:
-      </p>
+      <p>To organize your cards, you can add labels. First, retrieve the available labels for your board by making a <strong>GET</strong> request to:</p>
       <pre><code>https://api.trello.com/1/boards/{boardID}/labels</code></pre>
       <p>Then, add a label to a card by making a <strong>POST</strong> request to:</p>
       <pre><code>https://api.trello.com/1/cards/{cardID}/idLabels</code></pre>
       <p>Include the Label ID in the request body.</p>
-      <div class="tip-box">
-        <p><strong>Tip:</strong> Use descriptive label names to make cards easier to organize and find.</p>
-      </div>
       <ol>
         <li>Retrieve the Label ID using the GET endpoint above.</li>
         <li>Set the <strong>HTTP method</strong> to <code>POST</code>.</li>
         <li>Include the Label ID in the body of your request.</li>
         <li>Click <strong>Send</strong> to apply the label.</li>
       </ol>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Label_ID.png" alt="Retrieve Label ID" class="screenshot" />
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Label_ID.png" alt="Retrieve Label ID" class="screenshot">
       <p class="caption">Figure 3: Retrieving the Label ID using the GET endpoint.</p>
 
-      <h3>Expected Outcome</h3>
-      <p>The selected label will successfully be added to the card for better organization.</p>
-
       <h2>Step 4: Archive a List</h2>
-      <p>
-        To clean up your board, you may want to archive an entire list. Use the following endpoint and set the <code>closed</code> parameter to <code>true</code>:
-      </p>
+      <p>To clean up your board, you may want to archive an entire list. Use the following endpoint and set the <code>closed</code> parameter to <code>true</code>:</p>
       <pre><code>https://api.trello.com/1/lists/{listID}</code></pre>
       <ol>
         <li>Set the <strong>HTTP method</strong> to <code>PUT</code>.</li>
         <li>Enter the endpoint, replacing <code>{listID}</code> with the ID of the list you want to archive.</li>
         <li>Click <strong>Send</strong> to archive the list.</li>
       </ol>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Archived.png" alt="Archiving a list in Trello" class="screenshot" />
-      <p class="caption">Figure 4: The list successfully archived in the Trello board.</p>
-
-      <h3>Expected Outcome</h3>
-      <p>The selected list will no longer appear on your Trello board and will be marked as archived.</p>
-
-      <h2>Troubleshooting Tips</h2>
-      <ul>
-        <li><strong>Error 404:</strong> Ensure the Card ID, List ID, or Label ID is correct and exists on the board.</li>
-        <li><strong>Error 401:</strong> Verify your API Key and Token are accurate and have the correct permissions.</li>
-        <li>Ensure the JSON body is properly formatted before sending any POST or PUT requests.</li>
-      </ul>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Archiving_with_PUT.png" alt="Archive List Step 1" class="screenshot">
+      <p class="caption">Figure 4: Setting the PUT request to archive a list.</p>
 
       <div class="navigation-links">
         <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">← Previous: Deleting a Card or List</a>
