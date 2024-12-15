@@ -7,12 +7,9 @@
     <title>Deleting a Card</title>
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
     <style>
-      /* Highlight active navbar link */
       .navbar a.active {
-        color: #ccc; /* Gray color for active link */
+        color: #ccc;
       }
-
-      /* Clean code block styling */
       pre code {
         background-color: #f4f4f4;
         border: 1px solid #ddd;
@@ -23,22 +20,46 @@
         color: #333;
         overflow-x: auto;
       }
-
-      /* Screenshot styling for consistency */
       .screenshot {
-        max-width: 60%; /* Scale images to 60% of the container's width */
-        height: auto; /* Maintain aspect ratio */
-        margin: 30px auto; /* Center align images */
-        display: block; /* Ensure the image is treated as a block element */
-        border: 1px solid #ddd; /* Optional border */
-        border-radius: 4px; /* Rounded corners */
+        max-width: 60%;
+        height: auto;
+        margin: 30px auto;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 4px;
       }
-
       .caption {
         text-align: center;
         font-size: 0.9em;
         color: #555;
-        margin: 10px 0 30px; /* Consistent spacing above and below captions */
+        margin: 10px 0 30px;
+      }
+      .navigation-links {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+      }
+      .navigation-links a {
+        font-weight: bold;
+        color: #0056b3;
+        text-decoration: none;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+      }
+      .navigation-links a:hover {
+        background-color: #0056b3;
+        color: #fff;
+      }
+      .tip-box {
+        background-color: #f9f9f9;
+        border-left: 4px solid #0056b3;
+        padding: 10px 15px;
+        margin: 20px 0;
+        font-style: italic;
+        color: #333;
+        border-radius: 4px;
       }
     </style>
   </head>
@@ -77,6 +98,9 @@
       </p>
       <pre><code>https://api.trello.com/1/cards/{cardID}</code></pre>
       <p>The response will include the card's details, including its unique <strong>Card ID</strong>.</p>
+      <div class="tip-box">
+        <p><strong>Tip:</strong> Use Postman to verify your API credentials and test your GET request before proceeding.</p>
+      </div>
       <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Card_ID_Retrieval.png" alt="Retrieving the Card ID with GET request in Trello API" class="screenshot" />
       <p class="caption">Figure 1: Retrieving the card ID using a GET request.</p>
 
@@ -111,15 +135,12 @@
         <li><strong>Error 404:</strong> Ensure the Card ID is correct and the card exists on the specified board.</li>
         <li><strong>Error 401:</strong> Verify your API Key and Token are accurate and have the correct permissions.</li>
         <li><strong>Error 400:</strong> Check the request format and ensure that all required parameters are included in the URL.</li>
-        <li>
-          Use Postman to inspect the API request and confirm:
-          <ul>
-            <li>The Card ID is correct.</li>
-            <li>The API Key and Token are included and accurate.</li>
-            <li>The HTTP method is set to <code>DELETE</code>.</li>
-          </ul>
-        </li>
       </ul>
+
+      <div class="navigation-links">
+        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">← Previous: Automating Task Creation</a>
+        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Next: Managing Cards and Lists →</a>
+      </div>
     </main>
   </body>
 </html>
