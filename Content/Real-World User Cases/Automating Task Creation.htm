@@ -34,33 +34,6 @@
         color: #555;
         margin: 10px 0 30px;
       }
-      .navigation-links {
-        display: flex;
-        justify-content: space-between;
-        margin: 30px 0;
-      }
-      .navigation-links a {
-        font-weight: bold;
-        color: #0056b3;
-        text-decoration: none;
-        padding: 8px 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        transition: background-color 0.2s, color 0.2s;
-      }
-      .navigation-links a:hover {
-        background-color: #0056b3;
-        color: #fff;
-      }
-      .tip-box {
-        background-color: #f9f9f9;
-        border-left: 4px solid #0056b3;
-        padding: 10px 15px;
-        margin: 20px 0;
-        font-style: italic;
-        color: #333;
-        border-radius: 4px;
-      }
     </style>
   </head>
   <body>
@@ -88,18 +61,13 @@
     </nav>
     <main>
       <h1>Automating Task Creation</h1>
-      <p>
-        This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots and practical tips.
-      </p>
+      <p>This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
 
       <h2>Step 1: Obtain Your API Key</h2>
       <p>
         Navigate to your Trello account and retrieve your <strong>API Key</strong> from the API settings page. 
-        Make sure to add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.
+        Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.
       </p>
-      <div class="tip-box">
-        <p><strong>Tip:</strong> Bookmark the Trello API settings page for quick access during development.</p>
-      </div>
       <img src="/Trello_Automating_Guide/Content/Resources/Images/APIkey.png" alt="Retrieving the API Key from Trello's API settings page" class="screenshot">
       <p class="caption">Figure 1: Retrieving the API Key from Trello's API settings page.</p>
 
@@ -119,36 +87,37 @@
       <img src="/Trello_Automating_Guide/Content/Resources/Images/Short_id.png" alt="Locating the Short ID in the Trello board URL" class="screenshot">
       <p class="caption">Figure 3: Locating the Short ID in the Trello board URL.</p>
 
-      <h2>Step 4: Create a Task Using the API</h2>
+      <h2>Step 4: Retrieve the Full List ID Using Postman</h2>
       <p>
-        Once you have your API Key, Token, and Short ID, make a <strong>POST</strong> request to create a task. Use the following example:
+        In Postman, make a <strong>GET</strong> request to the endpoint:
+        <code>https://api.trello.com/1/boards/{shortID}/lists</code>. Replace <code>{shortID}</code> with your board's Short ID.
       </p>
-      <pre><code>POST https://api.trello.com/1/cards
-Content-Type: application/json
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Postman_Idlist.png" alt="Retrieving the List ID using Postman" class="screenshot">
+      <p class="caption">Figure 4: Retrieving the List ID using Postman.</p>
 
-{
-  "name": "Task Name",
-  "desc": "Task Description",
-  "idList": "your_list_id",
-  "key": "your_api_key",
-  "token": "your_access_token"
-}</code></pre>
-
-      <h3>Expected Response</h3>
+      <h2>Step 5: Create a Task Using POST</h2>
+      <p>
+        Use the List ID to create a new task. Make a <strong>POST</strong> request with the following JSON body:
+      </p>
       <pre><code>{
-  "id": "60d21b4967d0d810b8f8b456",
-  "name": "Task Name",
-  "desc": "Task Description",
-  "idList": "your_list_id"
+  "name": "Automated Task Example",
+  "desc": "This task was created as part of the API automation demonstration.",
+  "idList": "{ListID}",
+  "pos": "top",
+  "due": "2024-12-10T09:00:00.000Z"
 }</code></pre>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Add_BODY.png" alt="Configuring the POST request in Postman" class="screenshot">
+      <p class="caption">Figure 5: Configuring the POST request in Postman to create a new task.</p>
 
-      <h2>Conclusion</h2>
-      <p>Congratulations! You’ve successfully automated task creation in Trello. Explore other APIs to expand your automation capabilities.</p>
+      <h2>Step 6: Verify the Task in Trello</h2>
+      <p>Check your Trello board to confirm the task was created successfully.</p>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/New_Card.png" alt="Newly created Trello task" class="screenshot">
+      <p class="caption">Figure 6: Verifying the newly created task in Trello.</p>
 
-      <div class="navigation-links">
-        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">← Previous: Deleting a Card</a>
-        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Next: Managing Cards and Lists →</a>
-      </div>
+      <h2>Expected Outcome</h2>
+      <p>
+        A new task titled "Automated Task Example" will appear in the specified list on your Trello board, complete with a description, due date, and position settings.
+      </p>
     </main>
   </body>
 </html>
