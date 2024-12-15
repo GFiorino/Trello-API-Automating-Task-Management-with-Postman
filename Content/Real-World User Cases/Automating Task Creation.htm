@@ -92,20 +92,36 @@
 
       <h2>Step 1: Obtain Your API Key</h2>
       <p>Retrieve your <strong>API Key</strong> from Trello's API settings page.</p>
-      <div class="tip-box">
-        <p><strong>Tip:</strong> Always verify your API key and token before making requests to ensure a smooth API integration.</p>
-      </div>
       <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/APIkey.png" class="screenshot" />
       <p class="caption">Figure 1: Retrieving the API Key.</p>
 
+      <div class="tip-box">
+        <p><strong>Tip:</strong> Add <code>https://www.postman.com</code> to the Allowed Origins field in your API settings to ensure Postman requests are accepted.</p>
+      </div>
+
       <h2>Step 2: Generate a Token</h2>
-      <p>Click <strong>Generate Token</strong> and copy it for Postman.</p>
-      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Token.png" class="screenshot" />
-      <p class="caption">Figure 2: Generating and copying the Token.</p>
+      <p>Click <strong>Generate Token</strong> on the API page and copy it for use in Postman. This token allows you to authenticate your requests securely.</p>
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Token.png" alt="Generating the API token in Trello" class="screenshot" />
+      <p class="caption">Figure 2: Generating the API Token.</p>
+
+      <h2>Step 3: Using Postman for API Requests</h2>
+      <p>
+        Open Postman and configure the request:
+      </p>
+      <ol>
+        <li>Set the HTTP method to <strong>POST</strong>.</li>
+        <li>Enter the API endpoint <code>https://api.trello.com/1/cards</code>.</li>
+        <li>Add query parameters <code>key</code> and <code>token</code>.</li>
+        <li>Use a JSON body to define the card's properties (e.g., <code>name</code>, <code>desc</code>, <code>idList</code>).</li>
+        <li>Click <strong>Send</strong> to create the card.</li>
+      </ol>
+      <img src="https://gfiorino.github.io/Trello_Automating_Guide/Content/Resources/Images/Postman_Request.png" alt="Configuring a POST request in Postman" class="screenshot" />
+      <p class="caption">Figure 3: Configuring the POST request in Postman.</p>
 
       <h2>Key Takeaways</h2>
       <ul>
         <li>How to obtain API credentials (Key and Token).</li>
+        <li>Using Postman to send authenticated requests.</li>
         <li>Understanding the Short ID for Trello boards.</li>
       </ul>
 
