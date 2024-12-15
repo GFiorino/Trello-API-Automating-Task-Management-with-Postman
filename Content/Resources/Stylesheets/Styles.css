@@ -80,6 +80,94 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--Primary);
+  padding: 10px 20px;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  border-bottom: 2px solid #cccccc; /* Divider below navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar li {
+  position: relative;
+  margin-right: 20px;
+}
+
+.navbar li:last-child {
+  margin-right: 0;
+}
+
+.navbar a {
+  color: var(--Light);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a.active {
+  color: #ccc;
+  background-color: #003d80;
+  border-radius: 3px;
+}
+
+.navbar a:hover {
+  color: #fff;
+  background-color: #003d80;
+}
+
+/* Dropdown Menu */
+.navbar .dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--Primary);
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-10px);
+}
+
+.navbar li:hover .dropdown {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.navbar .dropdown a {
+  display: block;
+  padding: 8px 15px;
+  color: var(--Light);
+  text-align: left;
+  font-size: 14px;
+}
+
+.navbar .dropdown a:hover {
+  background-color: var(--Dark);
+  border-radius: 3px;
+}
+
+/* Fix for User-Cases Dropdown Alignment */
+.navbar li:last-child .dropdown {
+  left: auto;
+  right: 0;
+  text-align: left;
+}
+
 /* Call-to-Action Buttons */
 .cta-button {
   background-color: var(--Secondary);
