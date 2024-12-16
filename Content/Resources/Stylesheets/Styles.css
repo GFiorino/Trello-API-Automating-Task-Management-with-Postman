@@ -36,7 +36,7 @@ h1 {
   font-size: 36px;
   color: var(--Primary);
   text-align: center;
-  margin: 50px 0 30px;
+  margin: 40px 0 30px; /* More spacing */
   letter-spacing: 1px;
 }
 
@@ -44,8 +44,8 @@ h2 {
   font-weight: bold;
   font-size: 28px;
   color: var(--Dark);
-  margin: 60px 0 40px; /* Increased spacing */
-  border-bottom: 2px solid #e0e0e0;
+  margin: 50px 0 20px; /* Added spacing before and after */
+  border-bottom: 2px solid #e0e0e0; /* Subtle underline */
   padding-bottom: 8px;
   letter-spacing: 0.5px;
 }
@@ -54,146 +54,63 @@ h3 {
   font-weight: bold;
   font-size: 22px;
   color: var(--Darkest);
-  margin: 35px 0 20px;
+  margin: 30px 0 15px;
   font-style: italic;
-}
-
-/* Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  background-color: var(--Primary);
-  padding: 10px 20px;
-  margin: 0;
-  list-style: none;
-  box-sizing: border-box;
-  border-bottom: 2px solid #cccccc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* Important for dropdown positioning */
-}
-
-.navbar li {
-  position: relative; /* Key for dropdown positioning */
-  margin-right: 20px;
-}
-
-.navbar li:last-child {
-  margin-right: 0;
-}
-
-.navbar a {
-  color: var(--Light);
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px 15px;
-  white-space: nowrap;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar a.active {
-  color: #ccc;
-  background-color: #003d80;
-  border-radius: 3px;
-}
-
-.navbar a:hover {
-  color: #fff;
-  background-color: #003d80;
-}
-/* Dropdown Menu */
-.navbar .dropdown {
-  display: none;
-  position: absolute;
-  background-color: var(--Primary);
-  padding: 10px 0; /* Added padding to prevent premature closing */
-  list-style: none;
-  z-index: 1000;
-  top: 100%;
-  left: 0;
-  min-width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-}
-
-.navbar li:hover > .dropdown,
-.navbar li:focus-within > .dropdown {
-  display: block; /* Dropdown remains visible on hover */
-}
-
-.navbar .dropdown a {
-  display: block;
-  padding: 8px 15px;
-  color: var(--Light);
-  text-align: left;
-  font-size: 14px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar .dropdown a:hover {
-  background-color: var(--Dark);
-  color: #fff;
-  border-radius: 3px;
-}
-
-/* Fix for User-Cases Dropdown Alignment */
-.navbar li:last-child .dropdown {
-  left: auto;
-  right: 0;
-  text-align: left;
 }
 
 /* Lists */
 ul,
 ol {
   padding-left: 40px;
-  margin: 25px 0; /* Slightly larger spacing for better readability */
-  line-height: 1.8; /* Improved spacing between lines */
+  margin: 20px 0; /* Added spacing */
 }
 
 li {
-  margin: 8px 0; /* Adjusted spacing between list items */
-  padding-left: 5px; /* Adds a slight indentation for better alignment */
+  margin: 10px 0;
 }
 
-/* Custom List Style for Better Visibility */
-ul li {
-  list-style-type: disc; /* Standard bullet points */
+/* Links */
+a {
+  color: var(--Primary);
+  text-decoration: none;
 }
 
-ol li {
-  list-style-type: decimal; /* Numbered list styling */
+a:hover {
+  color: var(--Secondary);
+  text-decoration: underline;
 }
 
-/* Screenshot Styling */
-.screenshot {
-  max-width: 60%;
-  height: auto;
-  margin: 50px auto; /* Increased spacing */
-  display: block;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Call-to-Action Buttons */
+.cta-button {
+  background-color: var(--Secondary);
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.caption {
-  text-align: center;
-  font-size: 0.9em;
-  color: #555;
-  margin: 10px 0 60px; /* Increased spacing below caption */
+.cta-button:hover {
+  background-color: #61A700;
+  transform: translateY(-3px);
 }
 
-/* Navigation Links */
+/* Navigation Links for Endpoints and User-Cases */
 .navigation-links {
   display: flex;
-  justify-content: space-between;
-  margin: 80px 0; /* Increased spacing */
+  justify-content: space-between; /* Align Previous and Next links */
+  margin: 60px 0; /* Increased spacing */
 }
 
 .navigation-links a {
   font-weight: bold;
   color: var(--Primary);
   text-decoration: none;
-  padding: 12px 18px;
+  padding: 12px 18px; /* Slightly larger clickable area */
   border: 1px solid #ddd;
   border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -204,3 +121,72 @@ ol li {
   color: #fff;
 }
 
+/* Tip Box Styling */
+.tip-box {
+  background-color: #e6f7ff;
+  border-left: 5px solid #007bff;
+  padding: 15px 20px;
+  margin: 25px 0;
+  color: #004085;
+  font-size: 14px;
+  border-radius: 4px;
+  line-height: 1.6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Code Block Styling */
+pre code {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 15px;
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  color: #333;
+  overflow-x: auto;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Screenshot Styling */
+.screenshot {
+  max-width: 60%;
+  height: auto;
+  margin: 40px auto; /* Added spacing */
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  margin: 10px 0 50px; /* More spacing below the caption */
+}
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--Primary);
+  border-radius: 4px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+#back-to-top a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#back-to-top a:hover {
+  background-color: #003d80;
+  transition: background-color 0.3s ease;
+}
