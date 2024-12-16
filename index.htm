@@ -1,112 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An introductory guide to the Trello API, highlighting its purpose, benefits, and practical applications.">
-    <title>Introduction to Trello API</title>
+    <meta name="description" content="Comprehensive guide to managing cards and lists using Trello API, including screenshots and detailed instructions.">
+    <title>Managing Cards and Lists</title>
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
     <style>
-        /* Style for the Trello logo */
-        .trello-logo {
-            display: block;
-            margin: 20px auto;
-            max-width: 200px;
-            height: auto;
-        }
-
-        /* CTA Button Styles */
-        .cta-button {
-            display: inline-block;
-            margin: 20px 10px;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-            background-color: #0056b3;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #003d80;
-            transform: scale(1.05);
-        }
+      /* Enhanced Styling */
+      h1 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 36px;
+        text-align: center;
+        color: var(--Primary);
+      }
+      main p:first-of-type {
+        margin-top: 0;
+      }
+      .screenshot {
+        max-width: 60%;
+        height: auto;
+        margin: 30px auto;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .caption {
+        text-align: center;
+        font-size: 0.9em;
+        color: #555;
+        margin: -10px 0 30px;
+      }
+      .navigation-links {
+        display: flex;
+        justify-content: space-between;
+        margin: 60px 0; /* Increased bottom spacing */
+      }
+      .navigation-links a {
+        font-weight: bold;
+        color: #004085; /* Deep blue for better visual harmony */
+        text-decoration: none;
+        padding: 10px 15px;
+        border: 1px solid #004085;
+        border-radius: 5px;
+        background-color: #f8f9fa; /* Light background for buttons */
+        transition: all 0.3s ease;
+      }
+      .navigation-links a:hover {
+        background-color: #004085;
+        color: #fff;
+      }
+      /* Consistent Footer Space */
+      footer {
+        margin-top: 60px; /* Add space before footer */
+        text-align: center;
+        font-size: 0.9em;
+        color: #666;
+        padding: 10px 0;
+        background-color: #f9f9f9;
+      }
+      pre code {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 10px;
+        display: block;
+        font-family: "Courier New", monospace;
+        color: #333;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Navigation -->
     <nav>
-        <ul class="navbar">
-            <li><a href="/Trello_Automating_Guide/index.htm" class="active">Home</a></li>
-            <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
-            <li>
-                <a href="#">End-Points</a>
-                <ul class="dropdown">
-                    <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-                    <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
-                    <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">User-Cases</a>
-                <ul class="dropdown">
-                    <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-                    <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-                    <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-                </ul>
-            </li>
-        </ul>
+      <ul class="navbar">
+        <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
+        <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
+        <li>
+          <a href="#">End-Points</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="active">User-Cases</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm" class="active">Managing Cards and Lists</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
-    <div style="height: 30px;"></div>
 
-    <div class="container">
-        <header class="index-header">
-            <img src="/Trello_Automating_Guide/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
-            <h1 style="text-align: center;">Introduction to Trello API</h1>
-        </header>
-        <main>
-            <section>
-                <p>
-                    The Trello API allows developers and project managers to seamlessly integrate Trello into their workflows. 
-                    This documentation aims to provide a step-by-step guide for using the API effectively, including 
-                    authentication, using key endpoints, and applying real-world use cases.
-                </p>
-            </section>
-            <section>
-                <h2>Purpose of This Documentation</h2>
-                <p>
-                    This guide is designed for developers and tech-savvy project managers who wish to leverage the Trello API 
-                    for building custom integrations, automating tasks, or streamlining project management processes.
-                </p>
-                <p>By the end of this guide, you will know how to:</p>
-                <ul>
-                    <li>Authenticate with the Trello API.</li>
-                    <li>Use key endpoints to create boards, lists, and cards.</li>
-                    <li>Apply real-world use cases to improve your workflows.</li>
-                </ul>
-            </section>
+    <!-- Main Content -->
+    <main>
+      <h1>Managing Cards and Lists</h1>
+      <p>This section demonstrates how to manage cards and lists using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
 
-            <!-- Call-to-Action Section -->
-            <section style="text-align: center; margin-top: 40px;">
-                <h2>Explore the Trello API Documentation</h2>
-                <p>Get started with detailed guides to enhance your productivity and automate your workflows.</p>
+      <h2>Step 1: Retrieve the Card ID</h2>
+      <p>To move or update a specific card, you first need to retrieve its ID. In Postman, make a <strong>GET</strong> request to the following endpoint using your API Key and Token:</p>
+      <pre><code>https://api.trello.com/1/boards/{boardID}/cards</code></pre>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/ID-Card.png" alt="Retrieve Card ID" class="screenshot">
+      <p class="caption">Figure 1: Retrieving the card ID using a GET request in Postman.</p>
 
-                <!-- CTA Buttons -->
-                <a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm" class="cta-button">Explore End-Points</a>
-                <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm" class="cta-button">Explore User-Cases</a>
-            </section>
+      <h2>Step 2: Move a Card to Another List</h2>
+      <p>Once you have the Card ID, move the card to a new list by making a <strong>PUT</strong> request:</p>
+      <pre><code>https://api.trello.com/1/cards/{cardID}?idList={newListID}</code></pre>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/PUT_to_move.png" alt="Move Card Step" class="screenshot">
+      <p class="caption">Figure 2: Moving a card to another list using PUT request.</p>
 
-            <section>
-                <h2>Why Use the Trello API?</h2>
-                <p>The Trello API offers a range of benefits that make it an essential tool for developers and project managers, such as:</p>
-                <ul>
-                    <li><strong>Automation:</strong> Save time by automating repetitive tasks, such as creating boards, lists, and cards.</li>
-                    <li><strong>Integration:</strong> Seamlessly connect Trello with other tools and systems.</li>
-                    <li><strong>Customization:</strong> Build tailored workflows to suit your team’s unique processes.</li>
-                </ul>
-            </section>
-        </main>
-    </div>
-</body>
+      <h2>Step 3: Add a Label to a Card</h2>
+      <p>Retrieve available labels and add a label to your card:</p>
+      <pre><code>https://api.trello.com/1/cards/{cardID}/idLabels</code></pre>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Label_ID.png" alt="Add Label to Card" class="screenshot">
+      <p class="caption">Figure 3: Adding a label to a card using POST request.</p>
+
+      <h2>Step 4: Archive a List</h2>
+      <p>Archive a list by setting the <code>closed</code> parameter to <code>true</code>:</p>
+      <pre><code>https://api.trello.com/1/lists/{listID}</code></pre>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/Archiving_with_PUT.png" alt="Archive List" class="screenshot">
+      <p class="caption">Figure 4: Archiving a list using PUT request.</p>
+
+      <!-- Navigation Links -->
+      <div class="navigation-links">
+        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">← Previous: Deleting a Card or List</a>
+        <a href="/Trello_Automating_Guide/index.htm">Back to Home →</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Trello API Documentation | All rights reserved.</p>
+    </footer>
+  </body>
 </html>
