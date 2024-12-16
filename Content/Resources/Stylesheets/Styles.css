@@ -350,3 +350,17 @@ h1 {
 main p:first-of-type {
   margin-top: 0; /* Remove excess space above first paragraph */
 }
+/* Footer Styling */
+.site-footer {
+    background-color: #f4f4f4;
+    color: #555;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.site-footer p {
+    margin: 0;
+}
