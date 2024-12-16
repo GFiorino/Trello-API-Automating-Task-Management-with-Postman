@@ -1,339 +1,135 @@
-/* General Styles */
-:root {
-  --Dark: #333333;
-  --Darkest: #111111;
-  --Light: #f5f5f5;
-  --Primary: #0056b3;
-  --Secondary: #70B500; /* Accent color for buttons */
-  --FontFamily: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step-by-step guide for automating task creation using the Trello API, including screenshots and detailed instructions.">
+    <title>Automating Task Creation</title>
+    <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
+    <style>
+      /* Enhanced Styling */
+      .screenshot {
+        max-width: 60%;
+        height: auto;
+        margin: 30px auto;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .caption {
+        text-align: center;
+        font-size: 0.9em;
+        color: #555;
+        margin: -10px 0 30px;
+      }
+      .tip-box {
+        background-color: #e6f7ff;
+        border-left: 5px solid #007bff;
+        padding: 15px 20px;
+        margin: 30px 0;
+        color: #004085;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+      .navigation-links {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+      }
+      .navigation-links a {
+        font-weight: bold;
+        color: #0056b3;
+        text-decoration: none;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+      }
+      .navigation-links a:hover {
+        background-color: #0056b3;
+        color: #fff;
+      }
+      pre code {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 10px;
+        display: block;
+        font-family: "Courier New", monospace;
+        color: #333;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <ul class="navbar">
+        <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
+        <li><a href="/Trello_Automating_Guide/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
+        <li>
+          <a href="#">End-Points</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Add%20List.htm">Add List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="active">User-Cases</a>
+          <ul class="dropdown">
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm" class="active">Automating Task Creation</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
+            <li><a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-body {
-  color: var(--Dark);
-  font-family: var(--FontFamily);
-  margin: 0;
-  padding: 0;
-}
+    <!-- Main Content -->
+    <main>
+      <h1 class="spaced-title">Automating Task Creation</h1>
+      <p>This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
 
-main {
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 1200px;
-  box-sizing: border-box;
-}
+      <h2>Step 1: Obtain Your API Key</h2>
+      <p>Navigate to your Trello account and retrieve your <strong>API Key</strong> from the API settings page. Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.</p>
+      <img src="/Trello_Automating_Guide/Content/Resources/Images/APIkey.png" alt="Example API Key Screenshot" class="screenshot">
+      <p class="caption">Figure 1: Retrieving the API Key from Trello's API settings page.</p>
 
-/* Paragraph Styles */
-p {
-  font-size: 14pt;
-  margin: 20px 0;
-  line-height: 1.8;
-  letter-spacing: 0.25px;
-}
-/* Improve spacing between paragraphs and block elements */
-p {
-  font-size: 14pt;
-  margin: 25px 0 35px; /* Added more bottom spacing */
-  line-height: 1.8;
-}
-/* General Section Spacing */
-.section-spacing {
-    margin: 60px 0; /* Consistent space above and below sections */
-}
+      <div class="tip-box">
+        <p><strong>Note:</strong> Only share the token with trusted applications. Do not expose it publicly for security reasons.</p>
+      </div>
 
-/* Add spacing after image captions */
-.caption {
-    margin-bottom: 40px; /* Increase space below captions */
-}
-h2, h3 {
-  margin-top: 60px; /* Add spacing above headings */
-  margin-bottom: 30px; /* Space below headings */
-}
+      <h2>Step 2: Generate a Token</h2>
+      <p>Generate a token by clicking the "Generate Token" link on the API Key page and copy it for later use.</p>
 
-pre {
-  margin: 20px 0 40px; /* Spacing above and below code blocks */
-}
+      <h2>Step 3: Retrieve the Short ID</h2>
+      <p>Find the <strong>Short ID</strong> in the Trello board URL for referencing specific lists and tasks.</p>
 
-.table-container {
-  margin: 40px 0; /* Add spacing around tables */
-}
-/* Headings */
-h1 {
-  font-weight: bold;
-  font-size: 36px;
-  color: var(--Primary);
-  text-align: center;
-  margin: 20px 0;
-  letter-spacing: 1px;
-}
+      <h2>Step 4: Create a Task Using POST Request</h2>
+      <p>Use your API Key, Token, and List ID to create a task with the following JSON body:</p>
+      <pre><code>{
+  "name": "Automated Task Example",
+  "desc": "Task created as part of the API automation.",
+  "idList": "{ListID}",
+  "pos": "top",
+  "due": "2024-12-10T09:00:00.000Z"
+}</code></pre>
 
-h2 {
-  font-weight: bold;
-  font-size: 28px;
-  color: var(--Dark);
-  margin: 30px 0 15px;
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 5px;
-}
+      <h2>Expected Outcome</h2>
+      <p>A new task titled "Automated Task Example" will appear in the specified list on your Trello board.</p>
 
-h3 {
-  font-weight: bold;
-  font-size: 22px;
-  color: var(--Darkest);
-  margin: 20px 0 10px;
-  font-style: italic;
-}
-/* Specific heading adjustment for non-Index pages */
-.spaced-title {
-  margin: 70px 0 30px; /* Adds space at the top of the title */
-}
-/* Lists */
-ul,
-ol {
-  padding-left: 40px;
-  margin: 0 0 20px;
-}
+      <!-- Navigation Links -->
+      <div class="navigation-links">
+        <a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">← Previous: Create Board</a>
+        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Next: Deleting a Card or List →</a>
+      </div>
+    </main>
 
-li {
-  margin: 8px 0;
-}
-/* Table Styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 30px 0; /* Add margin for spacing */
-  font-size: 14px;
-  text-align: left;
-}
-
-table th,
-table td {
-  border: 1px solid #e0e0e0; /* Light gray borders */
-  padding: 12px; /* Add padding inside cells */
-}
-
-table th {
-  background-color: #f5f5f5; /* Light background for headers */
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-table tr:nth-child(even) {
-  background-color: #fafafa; /* Zebra striping for rows */
-}
-
-table tr:hover {
-  background-color: #f1f1f1; /* Hover effect */
-}
-/* Links */
-a {
-  color: var(--Primary);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--Secondary);
-  text-decoration: underline;
-}
-
-/* Call-to-Action Buttons */
-.cta-button {
-  background-color: var(--Secondary);
-  color: white;
-  padding: 10px 20px;
-  margin: 5px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cta-button:hover {
-  background-color: #61A700;
-  transform: translateY(-3px);
-}
-
-/* Navigation Bar */
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  background-color: var(--Primary);
-  padding: 10px 20px;
-  margin: 0;
-  list-style: none;
-  box-sizing: border-box;
-  border-bottom: 2px solid #cccccc; /* Divider below navbar */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.navbar li {
-  position: relative;
-  margin-right: 20px;
-}
-
-.navbar li:last-child {
-  margin-right: 0;
-}
-
-.navbar a {
-  color: var(--Light);
-  font-weight: bold;
-  text-decoration: none;
-  padding: 10px 15px;
-  white-space: nowrap;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar a.active {
-  color: #ccc;
-  background-color: #003d80;
-  border-radius: 3px;
-}
-
-.navbar a:hover {
-  color: #fff;
-  background-color: #003d80;
-}
-
-/* Dropdown Menu */
-.navbar .dropdown {
-  display: none;
-  position: absolute;
-  background-color: var(--Primary);
-  padding: 10px 0;
-  list-style: none;
-  z-index: 1000;
-  top: 100%;
-  left: 0;
-  min-width: 200px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform: translateY(-10px);
-}
-
-.navbar li:hover .dropdown {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-.navbar .dropdown a {
-  display: block;
-  padding: 8px 15px;
-  color: var(--Light);
-  text-align: left;
-  font-size: 14px;
-}
-
-.navbar .dropdown a:hover {
-  background-color: var(--Dark);
-  border-radius: 3px;
-}
-/* Fix for User-Cases Dropdown Alignment */
-.navbar li:last-child .dropdown {
-  left: auto; /* Remove alignment to the far left */
-  right: 0;   /* Align to the right of its parent */
-  text-align: left; /* Ensure readability */
-}
-/* Footer */
-footer {
-  background-color: var(--Darkest);
-  color: var(--Light);
-  padding: 20px 0;
-  text-align: center;
-  font-size: 14px;
-  margin-top: 40px;
-}
-
-footer a {
-  color: var(--Light);
-  text-decoration: underline;
-}
-
-footer a:hover {
-  color: var(--Secondary);
-}
-/* Navigation Links for Endpoints and User-Cases */
-.navigation-links {
-  display: flex;
-  justify-content: space-between; /* Align Previous and Next links */
-  margin: 40px 0; /* Add vertical spacing */
-}
-
-.navigation-links a {
-  font-weight: bold;
-  color: var(--Primary); /* Use primary theme color */
-  text-decoration: none;
-  padding: 10px 15px; /* Add padding for clickable area */
-  border: 1px solid #ddd; /* Subtle border for buttons */
-  border-radius: 4px; /* Rounded corners */
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.navigation-links a:hover {
-  background-color: var(--Primary); /* Change background on hover */
-  color: #fff; /* White text on hover */
-}
-/* Tip Box Styling */
-.tip-box {
-  background-color: #e6f7ff; /* Light blue background */
-  border-left: 5px solid #007bff; /* Blue highlight */
-  padding: 10px 15px;
-  margin: 20px 0;
-  color: #004085; /* Dark blue text */
-  font-size: 14px;
-  border-radius: 4px; /* Smooth edges */
-}
-/* Code Block Styling */
-pre code {
-  background-color: #f4f4f4; /* Light gray background */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 4px;
-  padding: 10px 15px;
-  display: block;
-  font-family: "Courier New", monospace;
-  font-size: 14px; /* Slightly smaller font for better readability */
-  color: #333; /* Dark text */
-  overflow-x: auto; /* Horizontal scroll for long lines */
-  line-height: 1.5;
-}
-/* Screenshot Styling */
-.screenshot {
-  max-width: 60%; /* Scale image width */
-  height: auto;
-  margin: 30px auto; /* Center the image */
-  display: block;
-  border: 1px solid #ddd; /* Light border */
-  border-radius: 4px; /* Rounded corners */
-}
-/* Slightly increase screenshot size for User-Cases */
-.user-cases .screenshot {
-    max-width: 70%; /* Slightly larger images */
-    margin: 40px auto; /* Adjust spacing */
-}
-.caption {
-  text-align: center;
-  font-size: 0.9em;
-  color: #555;
-  margin: 10px 0 30px;
-}
-/* Reuse the tip-box class */
-.user-cases .tip-box {
-    margin: 30px 0; /* Add spacing for User-Cases */
-    font-size: 14px;
-    line-height: 1.6;
-}
-/* Add spacing around tables in User-Cases */
-.user-cases table {
-    margin: 50px 0; /* More space above and below tables */
-}
-/* Specific spacing for User-Cases headings */
-.user-cases h2, .user-cases h3 {
-    margin-top: 70px; /* Add consistent top spacing */
-    margin-bottom: 30px; /* Clean spacing below */
-}
+    <!-- Back to Top -->
+    <div id="back-to-top" style="text-align: right; margin-top: 30px;">
+      <a href="#top">↑ Back to Top</a>
+    </div>
+  </body>
+</html>
