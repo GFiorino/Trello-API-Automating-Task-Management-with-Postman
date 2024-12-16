@@ -7,6 +7,7 @@
     <title>Automating Task Creation</title>
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
     <style>
+      /* Inline Enhancements for Clarity */
       .navbar a.active {
         color: #ccc;
       }
@@ -27,6 +28,7 @@
         display: block;
         border: 1px solid #ddd;
         border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
       .caption {
         text-align: center;
@@ -59,9 +61,19 @@
       p, ol, ul {
         margin-bottom: 30px;
       }
+      .tip-box {
+        background-color: #e6f7ff;
+        border-left: 5px solid #007bff;
+        padding: 10px 15px;
+        margin: 30px 0;
+        color: #004085;
+        font-size: 14px;
+        border-radius: 4px;
+      }
     </style>
   </head>
   <body>
+    <!-- Navigation Bar -->
     <nav>
       <ul class="navbar">
         <li><a href="/Trello_Automating_Guide/index.htm">Home</a></li>
@@ -85,27 +97,46 @@
       </ul>
     </nav>
 
-    <!-- Original Content -->
+    <!-- Main Content -->
     <main>
       <h1 class="spaced-title">Automating Task Creation</h1>
       <p>This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
-      ...
-      <!-- Existing Steps 1-6 Content -->
-      ...
-    </main>
 
-    <!-- New User-Cases Section -->
-    <main class="user-cases">
-      <h1>Automating Task Creation</h1>
-      <p>This section demonstrates...</p>
-      <img src="screenshot.png" class="screenshot" alt="Trello Example">
-      <p class="caption">Figure 1: Example screenshot</p>
+      <!-- Step 1 -->
+      <h2>Step 1: Obtain Your API Key</h2>
+      <p>Navigate to your Trello account and retrieve your <strong>API Key</strong> from the API settings page. Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.</p>
+      <img src="screenshot.png" class="screenshot" alt="Example API Key Screenshot">
+      <p class="caption">Figure 1: Retrieving the API Key from Trello's API settings page.</p>
+
+      <!-- Tip Box -->
       <div class="tip-box">
-        <p>Note: Only give the token...</p>
+        <p><strong>Note:</strong> Only share the token with trusted applications. Do not expose it publicly for security reasons.</p>
+      </div>
+
+      <!-- Placeholder Steps -->
+      <h2>Step 2: Generate a Token</h2>
+      <p>Generate a token by clicking the link on the API key page and copy it for later use.</p>
+
+      <h2>Step 3: Create a Task</h2>
+      <p>Using your API key and token, you can now send a POST request to the following endpoint to create a task:</p>
+      <pre><code>{
+  "name": "New Task Example",
+  "desc": "This task was created as part of the automation demo.",
+  "idList": "{ListID}",
+  "pos": "top"
+}</code></pre>
+
+      <h2>Step 4: Verify the Task</h2>
+      <p>Check your Trello board to ensure the new task has been created successfully.</p>
+
+      <!-- Navigation Links -->
+      <div class="navigation-links">
+        <a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">← Previous: Create Board</a>
+        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Next: Deleting a Card or List →</a>
       </div>
     </main>
 
-    <!-- Back to Top -->
+    <!-- Back to Top Link -->
     <div id="back-to-top">
       <a href="#top">↑ Back to Top</a>
     </div>
