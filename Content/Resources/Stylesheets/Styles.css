@@ -22,142 +22,225 @@ main {
   box-sizing: border-box;
 }
 
-/* Standard Headings and Spacing */
+/* Paragraph Styles */
+p {
+  font-size: 14pt;
+  margin: 20px 0;
+  line-height: 1.8;
+  letter-spacing: 0.25px;
+}
+/* Improve spacing between paragraphs and block elements */
+p {
+  font-size: 14pt;
+  margin: 25px 0 35px; /* Added more bottom spacing */
+  line-height: 1.8;
+}
+/* General Section Spacing */
+.section-spacing {
+    margin: 60px 0; /* Consistent space above and below sections */
+}
+
+/* Add spacing after image captions */
+.caption {
+    margin-bottom: 40px; /* Increase space below captions */
+}
+h2, h3 {
+  margin-top: 60px; /* Add spacing above headings */
+  margin-bottom: 30px; /* Space below headings */
+}
+
+pre {
+  margin: 20px 0 40px; /* Spacing above and below code blocks */
+}
+
+.table-container {
+  margin: 40px 0; /* Add spacing around tables */
+}
+/* Headings */
 h1 {
-  margin-top: 25px; /* Reduced top margin */
-  margin-bottom: 20px; /* Space before the first paragraph */
+  font-weight: bold;
   font-size: 36px;
-  text-align: center;
   color: var(--Primary);
+  text-align: center;
+  margin: 20px 0;
   letter-spacing: 1px;
 }
 
 h2 {
-  margin-top: 50px; /* Consistent spacing above */
-  margin-bottom: 25px; /* Space below */
+  font-weight: bold;
   font-size: 28px;
   color: var(--Dark);
+  margin: 30px 0 15px;
   border-bottom: 1px solid #cccccc;
   padding-bottom: 5px;
 }
 
 h3 {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  font-weight: bold;
   font-size: 22px;
   color: var(--Darkest);
+  margin: 20px 0 10px;
   font-style: italic;
 }
-
-/* Standard Paragraph Styling */
-p {
-  font-size: 14pt;
-  margin: 20px 0 30px; /* Uniform spacing */
-  line-height: 1.8;
-  letter-spacing: 0.25px;
+/* Specific heading adjustment for non-Index pages */
+.spaced-title {
+  margin: 70px 0 30px; /* Adds space at the top of the title */
+}
+/* Lists */
+ul,
+ol {
+  padding-left: 40px;
+  margin: 0 0 20px;
 }
 
-main p:first-of-type {
-  margin-top: 10px; /* Adjusted spacing below H1 */
+li {
+  margin: 8px 0;
 }
-
-/* Spacing Adjustments for Sections */
-.section-spacing {
-  margin: 60px 0; /* Standardized spacing above and below sections */
-}
-
 /* Table Styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 40px 0; /* Uniform margin around tables */
+  margin: 30px 0; /* Add margin for spacing */
   font-size: 14px;
   text-align: left;
 }
 
-table th, table td {
-  border: 1px solid #e0e0e0;
-  padding: 12px;
+table th,
+table td {
+  border: 1px solid #e0e0e0; /* Light gray borders */
+  padding: 12px; /* Add padding inside cells */
 }
 
 table th {
-  background-color: #f5f5f5;
+  background-color: #f5f5f5; /* Light background for headers */
   font-weight: bold;
   text-transform: uppercase;
 }
 
 table tr:nth-child(even) {
-  background-color: #fafafa;
+  background-color: #fafafa; /* Zebra striping for rows */
 }
 
 table tr:hover {
-  background-color: #f1f1f1;
+  background-color: #f1f1f1; /* Hover effect */
 }
-
-/* Code Block Styling */
-pre code {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
-  padding: 10px;
-  display: block;
-  font-family: "Courier New", monospace;
-  font-size: 14px;
-  color: #333;
-  border-radius: 4px;
-  overflow-x: auto;
-  line-height: 1.5;
-}
-
-/* Screenshot Styling */
-.screenshot {
-  max-width: 60%;
-  margin: 30px auto;
-  display: block;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.caption {
-  text-align: center;
-  font-size: 0.9em;
-  color: #555;
-  margin-bottom: 40px; /* Spacing after caption */
-}
-
-/* Specific Spacing for User-Cases Pages */
-.user-cases h1 {
-  margin-top: 20px; /* Fine-tuned top spacing for consistency */
-}
-
-.user-cases .screenshot {
-  max-width: 70%; /* Slightly larger for user-cases */
-  margin: 40px auto;
-}
-
-/* Navigation Links for Endpoints and User-Cases */
-.navigation-links {
-  display: flex;
-  justify-content: space-between;
-  margin: 50px 0; /* Added consistent vertical spacing */
-}
-
-.navigation-links a {
-  font-weight: bold;
+/* Links */
+a {
   color: var(--Primary);
   text-decoration: none;
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.navigation-links a:hover {
+a:hover {
+  color: var(--Secondary);
+  text-decoration: underline;
+}
+
+/* Call-to-Action Buttons */
+.cta-button {
+  background-color: var(--Secondary);
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #61A700;
+  transform: translateY(-3px);
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
   background-color: var(--Primary);
-  color: #fff;
+  padding: 10px 20px;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  border-bottom: 2px solid #cccccc; /* Divider below navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Footer Styling */
+.navbar li {
+  position: relative;
+  margin-right: 20px;
+}
+
+.navbar li:last-child {
+  margin-right: 0;
+}
+
+.navbar a {
+  color: var(--Light);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  white-space: nowrap;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a.active {
+  color: #ccc;
+  background-color: #003d80;
+  border-radius: 3px;
+}
+
+.navbar a:hover {
+  color: #fff;
+  background-color: #003d80;
+}
+
+/* Dropdown Menu */
+.navbar .dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--Primary);
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(-10px);
+}
+
+.navbar li:hover .dropdown {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.navbar .dropdown a {
+  display: block;
+  padding: 8px 15px;
+  color: var(--Light);
+  text-align: left;
+  font-size: 14px;
+}
+
+.navbar .dropdown a:hover {
+  background-color: var(--Dark);
+  border-radius: 3px;
+}
+/* Fix for User-Cases Dropdown Alignment */
+.navbar li:last-child .dropdown {
+  left: auto; /* Remove alignment to the far left */
+  right: 0;   /* Align to the right of its parent */
+  text-align: left; /* Ensure readability */
+}
+/* Footer */
 footer {
   background-color: var(--Darkest);
   color: var(--Light);
@@ -175,12 +258,137 @@ footer a {
 footer a:hover {
   color: var(--Secondary);
 }
-
-/* Index Page Specific Adjustments */
-.index-header h1 {
-  margin-top: 30px; /* Add unique spacing for Index H1 */
+/* Navigation Links for Endpoints and User-Cases */
+.navigation-links {
+  display: flex;
+  justify-content: space-between; /* Align Previous and Next links */
+  margin: 40px 0; /* Add vertical spacing */
 }
 
-.index-header p {
-  margin-bottom: 40px; /* Space below introductory paragraph */
+.navigation-links a {
+  font-weight: bold;
+  color: var(--Primary); /* Use primary theme color */
+  text-decoration: none;
+  padding: 10px 15px; /* Add padding for clickable area */
+  border: 1px solid #ddd; /* Subtle border for buttons */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation-links a:hover {
+  background-color: var(--Primary); /* Change background on hover */
+  color: #fff; /* White text on hover */
+}
+/* Tip Box Styling */
+.tip-box {
+  background-color: #e6f7ff; /* Light blue background */
+  border-left: 5px solid #007bff; /* Blue highlight */
+  padding: 10px 15px;
+  margin: 20px 0;
+  color: #004085; /* Dark blue text */
+  font-size: 14px;
+  border-radius: 4px; /* Smooth edges */
+}
+/* Code Block Styling */
+pre code {
+  background-color: #f4f4f4; /* Light gray background */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 14px; /* Slightly smaller font for better readability */
+  color: #333; /* Dark text */
+  overflow-x: auto; /* Horizontal scroll for long lines */
+  line-height: 1.5;
+}
+/* Screenshot Styling */
+.screenshot {
+  max-width: 60%; /* Scale image width */
+  height: auto;
+  margin: 30px auto; /* Center the image */
+  display: block;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  margin: 10px 0 30px;
+}
+/* Slightly increase screenshot size for User-Cases */
+.user-cases .screenshot {
+    max-width: 70%; /* Slightly larger images */
+    margin: 40px auto; /* Adjust spacing */
+}
+/* Reuse the tip-box class */
+.user-cases .tip-box {
+    margin: 30px 0; /* Add spacing for User-Cases */
+    font-size: 14px;
+    line-height: 1.6;
+}
+/* Add spacing around tables in User-Cases */
+.user-cases table {
+    margin: 50px 0; /* More space above and below tables */
+}
+/* Specific spacing for User-Cases headings */
+.user-cases h2, .user-cases h3 {
+    margin-top: 70px; /* Add consistent top spacing */
+    margin-bottom: 30px; /* Clean spacing below */
+}
+/* Standardize Spacing for h1 and First Paragraph */
+h1 {
+  margin-top: 30px; /* Add consistent top margin */
+  margin-bottom: 20px; /* Ensure uniform bottom margin */
+  font-size: 36px; /* Ensure consistent title size */
+  text-align: center;
+  color: var(--Primary); /* Maintain theme color */
+}
+
+main p:first-of-type {
+  margin-top: 0; /* Remove excess space above first paragraph */
+}
+/* Footer Styling */
+.site-footer {
+    background-color: #f4f4f4;
+    color: #555;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+/* Adjust spacing for H1 headings */
+h1 {
+    margin-top: 20px; /* Reduce the top margin for H1 */
+    margin-bottom: 15px; /* Add spacing between H1 and the first paragraph */
+    font-size: 36px;
+    text-align: center;
+    color: var(--Primary);
+}
+
+/* General paragraph spacing */
+main p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Ensure consistency for all project pages */
+.container {
+    padding: 20px; /* Uniform padding for all pages */
+}
+
+nav + main h1 {
+    margin-top: 10px; /* Fine-tune space between navbar and H1 */
+}
+
+/* Adjust first section spacing */
+main section:first-of-type {
+    margin-top: 10px; /* Adjust spacing between navbar and first content section */
 }
