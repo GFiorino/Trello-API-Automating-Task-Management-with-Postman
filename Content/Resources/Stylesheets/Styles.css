@@ -56,7 +56,10 @@ h3 {
   margin: 20px 0 10px;
   font-style: italic;
 }
-
+/* Specific heading adjustment for non-Index pages */
+.spaced-title {
+  margin: 70px 0 30px; /* Adds space at the top of the title */
+}
 /* Lists */
 ul,
 ol {
