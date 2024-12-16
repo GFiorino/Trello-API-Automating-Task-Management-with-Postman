@@ -100,13 +100,12 @@ h3 {
   color: #fff;
   background-color: #003d80;
 }
-
 /* Dropdown Menu */
 .navbar .dropdown {
   display: none;
   position: absolute;
   background-color: var(--Primary);
-  padding: 10px 0;
+  padding: 10px 0; /* Added padding to prevent premature closing */
   list-style: none;
   z-index: 1000;
   top: 100%;
@@ -116,8 +115,9 @@ h3 {
   border-radius: 4px;
 }
 
-.navbar li:hover .dropdown {
-  display: block; /* Display dropdown on hover */
+.navbar li:hover > .dropdown,
+.navbar li:focus-within > .dropdown {
+  display: block; /* Dropdown remains visible on hover */
 }
 
 .navbar .dropdown a {
@@ -126,6 +126,7 @@ h3 {
   color: var(--Light);
   text-align: left;
   font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar .dropdown a:hover {
@@ -145,11 +146,22 @@ h3 {
 ul,
 ol {
   padding-left: 40px;
-  margin: 20px 0;
+  margin: 25px 0; /* Slightly larger spacing for better readability */
+  line-height: 1.8; /* Improved spacing between lines */
 }
 
 li {
-  margin: 10px 0;
+  margin: 8px 0; /* Adjusted spacing between list items */
+  padding-left: 5px; /* Adds a slight indentation for better alignment */
+}
+
+/* Custom List Style for Better Visibility */
+ul li {
+  list-style-type: disc; /* Standard bullet points */
+}
+
+ol li {
+  list-style-type: decimal; /* Numbered list styling */
 }
 
 /* Screenshot Styling */
