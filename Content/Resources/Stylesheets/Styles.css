@@ -361,44 +361,22 @@ main p:first-of-type {
     font-size: 14px;
 }
 
-.site-footer p {
-    margin: 0;
-}
-/* Adjust spacing for H1 headings */
+/* Adjust H1 spacing globally */
 h1 {
-    margin-top: 20px; /* Reduce the top margin for H1 */
-    margin-bottom: 15px; /* Add spacing between H1 and the first paragraph */
+    margin-top: 30px; /* Space between navbar and H1 */
+    margin-bottom: 15px; /* Space between H1 and first paragraph */
     font-size: 36px;
     text-align: center;
     color: var(--Primary);
 }
 
-/* General paragraph spacing */
-main p {
-    margin-top: 0;
-    margin-bottom: 20px;
+/* Fine-tune the first paragraph below H1 */
+main p:first-of-type {
+    margin-top: 10px; /* Ensure space below H1 is balanced */
+    margin-bottom: 20px; /* Standard paragraph spacing */
 }
 
-/* Ensure consistency for all project pages */
-.container {
-    padding: 20px; /* Uniform padding for all pages */
-}
-
-nav + main h1 {
-    margin-top: 10px; /* Fine-tune space between navbar and H1 */
-}
-
-/* Adjust first section spacing */
-main section:first-of-type {
-    margin-top: 10px; /* Adjust spacing between navbar and first content section */
-}
-/* Adjust title spacing for all documents */
-.page-title {
-    margin-top: 40px; /* Space between nav-bar and title */
-    margin-bottom: 20px; /* Space between title and first paragraph */
-}
-
-/* Adjust spacing for the first paragraph */
-.first-paragraph {
-    margin-top: 10px; /* Space below the title */
+/* Remove redundant rules for specific spacing */
+nav + main h1, main section:first-of-type {
+    margin-top: 0; /* Avoid conflicts and unnecessary adjustments */
 }
