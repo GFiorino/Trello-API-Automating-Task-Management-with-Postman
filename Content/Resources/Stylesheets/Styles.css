@@ -370,30 +370,14 @@ h1 {
     color: var(--Primary);
 }
 
-/* Fine-tune the first paragraph below H1 */
-main p:first-of-type {
-    margin-top: 10px; /* Ensure space below H1 is balanced */
-    margin-bottom: 20px; /* Standard paragraph spacing */
-}
-
-/* Remove redundant rules for specific spacing */
-nav + main h1, main section:first-of-type {
-    margin-top: 0; /* Avoid conflicts and unnecessary adjustments */
-}
-/* Force consistent spacing for titles and first paragraph */
-
-/* Add space between the nav-bar and the page title */
+/* Ensure consistent spacing for H1 and first paragraph */
 main h1.spaced-title {
-    margin-top: 30px !important; /* Ensures no conflicts */
+    margin-top: 30px !important; /* Space between nav-bar and title */
     margin-bottom: 20px; /* Space below the title */
 }
 
-/* Adjust the spacing for the first paragraph after the title */
+/* Adjust spacing for the first paragraph after the title */
 main h1.spaced-title + p {
-    margin-top: 10px !important; /* Fine-tuned spacing */
-    margin-bottom: 20px; /* Standard spacing below the first paragraph */
-}
-/* Add spacing between title and first paragraph */
-main h1.spaced-title + p {
-    margin-top: 20px !important; /* Increase top margin for first paragraph */
+    margin-top: 20px !important; /* Space between title and first paragraph */
+    margin-bottom: 30px; /* Add standard paragraph spacing */
 }
