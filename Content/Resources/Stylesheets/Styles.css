@@ -69,12 +69,11 @@ h3 {
   box-sizing: border-box;
   border-bottom: 2px solid #cccccc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* Fix for dropdown alignment */
-  z-index: 999;
+  position: relative; /* Important for dropdown positioning */
 }
 
 .navbar li {
-  position: relative;
+  position: relative; /* Key for dropdown positioning */
   margin-right: 20px;
 }
 
@@ -118,26 +117,28 @@ h3 {
 }
 
 .navbar li:hover .dropdown {
-  display: block;
+  display: block; /* Display dropdown on hover */
 }
 
 .navbar .dropdown a {
   display: block;
-  padding: 10px 15px;
+  padding: 8px 15px;
   color: var(--Light);
   text-align: left;
   font-size: 14px;
-  transition: background-color 0.2s ease;
 }
 
 .navbar .dropdown a:hover {
   background-color: var(--Dark);
+  color: #fff;
+  border-radius: 3px;
 }
 
-/* Adjust dropdown for last items */
+/* Fix for User-Cases Dropdown Alignment */
 .navbar li:last-child .dropdown {
-  right: 0;
   left: auto;
+  right: 0;
+  text-align: left;
 }
 
 /* Lists */
