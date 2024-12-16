@@ -392,3 +392,13 @@ nav + main h1 {
 main section:first-of-type {
     margin-top: 10px; /* Adjust spacing between navbar and first content section */
 }
+/* Adjust title spacing for all documents */
+.page-title {
+    margin-top: 40px; /* Space between nav-bar and title */
+    margin-bottom: 20px; /* Space between title and first paragraph */
+}
+
+/* Adjust spacing for the first paragraph */
+.first-paragraph {
+    margin-top: 10px; /* Space below the title */
+}
