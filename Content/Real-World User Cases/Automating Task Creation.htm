@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="/Trello_Automating_Guide/Content/Resources/Stylesheets/Styles.css">
     <style>
       /* Enhanced Styling */
+      .spacer {
+        margin-bottom: 30px;
+      }
       .screenshot {
         max-width: 60%;
         height: auto;
@@ -21,7 +24,7 @@
         text-align: center;
         font-size: 0.9em;
         color: #555;
-        margin: -10px 0 40px; /* Extra space below caption */
+        margin: 10px 0 40px; /* Increased bottom margin */
       }
       .tip-box {
         background-color: #e6f7ff;
@@ -60,18 +63,6 @@
         border-radius: 4px;
         overflow-x: auto;
       }
-      /* Add extra spacing between headings and paragraphs */
-      h1.spaced-title {
-        margin-bottom: 30px;
-      }
-      h2 {
-        margin-top: 50px;
-        margin-bottom: 20px;
-      }
-      p {
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
     </style>
   </head>
   <body>
@@ -102,7 +93,8 @@
     <!-- Main Content -->
     <main>
       <h1 class="spaced-title">Automating Task Creation</h1>
-      <p style="margin-top: 20px;">This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
+      <div class="spacer"></div>
+      <p>This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
 
       <h2>Step 1: Obtain Your API Key</h2>
       <p>Navigate to your Trello account and retrieve your <strong>API Key</strong> from the API settings page. Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.</p>
@@ -142,19 +134,19 @@
 
       <!-- Navigation Links -->
       <div class="navigation-links">
-        <a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">&larr; Previous: Create Board</a>
-        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Next: Deleting a Card or List &rarr;</a>
+        <a href="/Trello_Automating_Guide/Content/Endpoints/Create%20Board.htm">← Previous: Create Board</a>
+        <a href="/Trello_Automating_Guide/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Next: Deleting a Card or List →</a>
       </div>
     </main>
 
     <!-- Back to Top -->
     <div id="back-to-top" style="text-align: right; margin-top: 30px;">
-      <a href="#top">&uarr; Back to Top</a>
+      <a href="#top">↑ Back to Top</a>
     </div>
-<footer class="site-footer">
-    <div class="footer-content">
+    <footer class="site-footer">
+      <div class="footer-content">
         <p>&copy; 2024 Trello API Guide. All rights reserved.</p>
-    </div>
-</footer>
+      </div>
+    </footer>
   </body>
 </html>
