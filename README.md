@@ -66,10 +66,14 @@ Trello_Automating_Guide/
 
 ## How to Use
 
+## How to Use
+
 1. **Access the Guide**:
-   - Visit the hosted documentation: [Trello Automating Guide](https://gfiorino.github.io/Trello_Automating_Guide/).
+   - Visit the hosted documentation: [Trello API: Automating Task Management with Postman](https://gfiorino.github.io/Trello-API-Automating-Task-Management-with-Postman/).
+
 2. **Explore Sections**:
    - Use the navigation bar to browse different sections of the guide.
+
 3. **Learn and Implement**:
    - Follow the step-by-step instructions to integrate and automate workflows with the Trello API.
 ---
