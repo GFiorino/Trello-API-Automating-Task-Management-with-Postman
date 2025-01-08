@@ -1,5 +1,4 @@
-# Trello Automating Guide
-
+# Trello API: Automating Task Management with Postman
 ## Project Overview
 The **Trello Automating Guide** provides a comprehensive step-by-step guide for developers and tech-savvy project managers to leverage the Trello API. This documentation demonstrates how to authenticate with the API, utilize key endpoints, and apply real-world use cases to improve workflows.
 
