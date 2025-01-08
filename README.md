@@ -3,7 +3,7 @@
 The **Trello Automating Guide** provides a comprehensive step-by-step guide for developers and tech-savvy project managers to leverage the Trello API. This documentation demonstrates how to authenticate with the API, utilize key endpoints, and apply real-world use cases to improve workflows.
 
 This project is hosted on **GitHub Pages** for easy access:  
-👉 [View Documentation](https://gfiorino.github.io/Trello_Automating_Guide/)
+👉 [View Documentation](https://gfiorino.github.io/Trello-API-Automating-Task-Management-with-Porstman/)
 
 ---
 
