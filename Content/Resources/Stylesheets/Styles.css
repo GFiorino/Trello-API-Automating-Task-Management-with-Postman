@@ -215,7 +215,7 @@ footer a:hover {
     padding: 10px 0;
     list-style: none;
     z-index: 1000;
-    top: 100%;
+    top: 95%; /* Slightly move up */
     left: 0;
     min-width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
