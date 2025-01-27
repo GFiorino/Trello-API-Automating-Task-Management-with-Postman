@@ -222,7 +222,7 @@ footer a:hover {
     border-radius: 4px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translateY(-10px);
 }
 
@@ -235,14 +235,17 @@ footer a:hover {
 
 .navbar .dropdown a {
     display: block;
-    padding: 8px 15px;
+    padding: 10px 20px;
     color: var(--Light);
     text-align: left;
     font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .navbar .dropdown a:hover {
-    background-color: var(--Dark);
+    background-color: #003d80;
+    color: #fff;
     border-radius: 3px;
 }
 
