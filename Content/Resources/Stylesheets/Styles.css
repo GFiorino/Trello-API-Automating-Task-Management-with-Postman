@@ -226,8 +226,14 @@ footer a:hover {
     transform: translateY(-10px);
 }
 
-.navbar li:hover .dropdown {
+.navbar li:hover > .dropdown {
     display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.navbar .dropdown:hover {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
