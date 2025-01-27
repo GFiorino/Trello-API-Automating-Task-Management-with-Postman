@@ -6,39 +6,11 @@
     <meta name="description" content="A comprehensive guide to the Trello API, highlighting its purpose, benefits, and practical applications.">
     <title>Trello API: Automating Task Management with Postman</title>
     <link rel="stylesheet" type="text/css" href="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Stylesheets/Styles.css">
-    <style>
-        /* Style for the Trello logo */
-        .trello-logo {
-            display: block;
-            margin: 20px auto;
-            max-width: 200px;
-            height: auto;
-        }
-
-        /* CTA Button Styles */
-        .cta-button {
-            display: inline-block;
-            margin: 20px 10px;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-            background-color: #0056b3;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #003d80;
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 <body>
-    <nav>
-        <ul class="navbar">
-         <li><a href="/Trello-API-Automating-Task-Management-with-Postman/index.htm" class="active">Home</a></li>
+    <nav class="navbar sticky">
+        <ul>
+            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/index.htm" class="active">Home</a></li>
             <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
             <li>
                 <a href="#">End-Points</a>
@@ -58,59 +30,58 @@
             </li>
         </ul>
     </nav>
-    <div style="height: 30px;"></div>
 
-    <div class="container">
-        <header class="index-header">
+    <header class="index-header">
+        <div class="header-background">
             <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
-            <h1 style="text-align: center;">Trello API: Automating Task Management with Postman</h1>
-        </header>
-        <main>
-            <section>
-                <p>
-                    The Trello API allows developers and project managers to seamlessly integrate Trello into their workflows. 
-                    This documentation provides a step-by-step guide for using the API effectively, including 
-                    authentication, using key endpoints, and applying real-world use cases.
-                </p>
-            </section>
-            <section>
-                <h2>Purpose of This Documentation</h2>
-                <p>
-                    This guide is designed for developers and tech-savvy project managers who wish to leverage the Trello API 
-                    for building custom integrations, automating tasks, or streamlining project management processes.
-                </p>
-                <p>By the end of this guide, you will know how to:</p>
-                <ul>
-                    <li>Authenticate with the Trello API.</li>
-                    <li>Use key endpoints to create boards, lists, and cards.</li>
-                    <li>Apply real-world use cases to improve your workflows.</li>
-                </ul>
-            </section>
+            <h1>Trello API: Automating Task Management with Postman</h1>
+            <p>Your ultimate guide to mastering Trello API integrations.</p>
+        </div>
+    </header>
 
-            <!-- Call-to-Action Section -->
-            <section style="text-align: center; margin-top: 40px;">
-                <h2>Explore the Trello API Documentation</h2>
-                <p>Get started with detailed guides to enhance your productivity and automate your workflows.</p>
+    <main>
+        <section class="intro">
+            <p>
+                The Trello API allows developers and project managers to seamlessly integrate Trello into their workflows. 
+                This documentation provides a step-by-step guide for using the API effectively, including 
+                authentication, using key endpoints, and applying real-world use cases.
+            </p>
+        </section>
+        <section class="purpose">
+            <h2>Purpose of This Documentation</h2>
+            <p>
+                This guide is designed for developers and tech-savvy project managers who wish to leverage the Trello API 
+                for building custom integrations, automating tasks, or streamlining project management processes.
+            </p>
+            <ul>
+                <li>Authenticate with the Trello API.</li>
+                <li>Use key endpoints to create boards, lists, and cards.</li>
+                <li>Apply real-world use cases to improve your workflows.</li>
+            </ul>
+        </section>
 
-                <!-- CTA Buttons -->
-                <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20Card.htm" class="cta-button">Explore End-Points</a>
-                <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm" class="cta-button">Explore User-Cases</a>
-            </section>
+        <section class="cta">
+            <h2>Explore the Trello API Documentation</h2>
+            <p>Get started with detailed guides to enhance your productivity and automate your workflows.</p>
+            <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20Card.htm" class="cta-button">Explore End-Points</a>
+            <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm" class="cta-button">Explore User-Cases</a>
+        </section>
 
-            <section>
-                <h2>Why Use the Trello API?</h2>
-                <p>The Trello API offers a range of benefits that make it an essential tool for developers and project managers, such as:</p>
-                <ul>
-                    <li><strong>Automation:</strong> Save time by automating repetitive tasks, such as creating boards, lists, and cards.</li>
-                    <li><strong>Integration:</strong> Seamlessly connect Trello with other tools and systems.</li>
-                    <li><strong>Customization:</strong> Build tailored workflows to suit your team’s unique processes.</li>
-                </ul>
-            </section>
-        </main>
-    </div>
-  <footer class="site-footer" style="text-align: center; margin-top: 10px; padding: 10px 0; background-color: #f8f9fa;">
-    <div class="footer-content">
-        <p style="margin: 5px 0;">Explore more projects on my <a href="https://github.com/GFiorino" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub Portfolio</a>.</p>
-        <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
-    </div>
-</footer>
+        <section class="benefits">
+            <h2>Why Use the Trello API?</h2>
+            <ul class="columns">
+                <li><strong>Automation:</strong> Save time by automating repetitive tasks, such as creating boards, lists, and cards.</li>
+                <li><strong>Integration:</strong> Seamlessly connect Trello with other tools and systems.</li>
+                <li><strong>Customization:</strong> Build tailored workflows to suit your team’s unique processes.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Explore more projects on my <a href="https://github.com/GFiorino" target="_blank">GitHub Portfolio</a>.</p>
+            <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
