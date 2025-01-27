@@ -209,33 +209,31 @@ footer a:hover {
 }
 
 .navbar .dropdown {
-    display: none;
+    visibility: hidden;
     position: absolute;
     background-color: var(--Primary);
     padding: 10px 0;
     list-style: none;
     z-index: 1000;
-    top: 95%; /* Slightly move up */
+    top: calc(100% - 5px); /* Slightly closer to parent */
     left: 0;
     min-width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     transform: translateY(-10px);
 }
 
 .navbar li:hover > .dropdown {
-    display: block;
+    visibility: visible;
     opacity: 1;
-    pointer-events: auto;
     transform: translateY(0);
 }
 
 .navbar .dropdown:hover {
+    visibility: visible;
     opacity: 1;
-    pointer-events: auto;
     transform: translateY(0);
 }
 
