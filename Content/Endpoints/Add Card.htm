@@ -24,23 +24,36 @@
         overflow-x: auto;
       }
 
-      /* Footer navigation style */
+      /* Navigation Links Styling */
       .footer-nav {
+        display: flex;
+        justify-content: space-between;
         margin-top: 40px;
-        text-align: center;
-        font-size: 0.9em;
+        font-size: 0.95rem;
       }
 
       .footer-nav a {
-        color: var(--Primary);
-        text-decoration: none;
+        color: #0056b3;
         font-weight: bold;
-        margin: 0 10px;
+        text-decoration: none;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
       }
 
       .footer-nav a:hover {
-        text-decoration: underline;
-        color: var(--Dark);
+        background-color: #0056b3;
+        color: #fff;
+      }
+
+      /* Trello Logo Styling */
+      .trello-logo {
+        display: block;
+        margin: 20px auto 40px;
+        max-width: 150px;
+        height: auto;
       }
     </style>
   </head>
@@ -67,6 +80,10 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Trello Logo -->
+    <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+
     <main>
       <h1 class="spaced-title">Trello API: Add Card</h1>
       <p>This endpoint allows you to add a new card to a specified list within a Trello board. It is commonly used to create tasks or items in project management workflows.</p>
@@ -129,72 +146,24 @@
         </tbody>
       </table>
 
-      <h2>Retrieving the idList</h2>
-      <p>
-        The <code>idList</code> is required to specify the list where the card will be added.
-        To retrieve the <code>idList</code>:
-      </p>
-      <ol>
-        <li>Log into Trello and navigate to the desired board.</li>
-        <li>Use the <code>https://api.trello.com/1/boards/[board_id]/lists</code> endpoint to retrieve all list IDs for the board. Replace <code>[board_id]</code> with the ID of the board.</li>
-      </ol>
-      <p>See the <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">
-    Automating Task Creation
-</a>
-topic for a practical example of using the <code>idList</code>.</p>
-
-      <h2>Example Request</h2>
-      <pre><code>POST https://api.trello.com/1/cards
-Content-Type: application/json
-
-{
-  "name": "New Card Example",
-  "idList": "12345abcde",
-  "desc": "This is an example card.",
-  "key": "your_api_key",
-  "token": "your_access_token"
-}</code></pre>
-
-      <h2>Example Response</h2>
-      <pre><code>{
-  "id": "60d21b4967d0d810b8f8b456",
-  "name": "New Card Example",
-  "desc": "This is an example card.",
-  "idList": "12345abcde",
-  "pos": "top",
-  "due": null
-}</code></pre>
-
-      <h2>Common Errors</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Error</th>
-            <th>Possible Cause</th>
-            <th>Solution</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>401 Unauthorized</td>
-            <td>Invalid API key or token.</td>
-            <td>Verify your API key and token are correct.</td>
-          </tr>
-          <tr>
-            <td>400 Bad Request</td>
-            <td>Missing required parameters (e.g., <code>idList</code> or <code>name</code>).</td>
-            <td>Ensure all required parameters are provided.</td>
-          </tr>
-        </tbody>
-      </table>
-
       <div class="footer-nav">
+        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Create%20Board.htm">Previous: Create Board</a>
         <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20List.htm">Next: Add List</a>
       </div>
     </main>
-    <footer class="site-footer" style="text-align: center; margin-top: 10px; padding: 10px 0; background-color: #f8f9fa;">
-    <div class="footer-content">
-        <p style="margin: 5px 0;">Explore more projects on my <a href="https://github.com/GFiorino" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub Portfolio</a>.</p>
+
+    <!-- Updated Footer -->
+    <footer class="site-footer" style="background-color: #f4f4f4; padding: 30px 20px; border-top: 2px solid #ddd; text-align: center; font-size: 0.95rem; color: #333;">
+        <div style="margin-bottom: 20px;">
+            <p style="margin: 5px 0; font-weight: bold;">Explore My Projects:</p>
+            <a href="https://github.com/GFiorino" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #0056b3; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
+                GitHub Portfolio
+            </a>
+            <a href="https://gfiorino.github.io/Technical-Writing-Portfolio/" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
+                Live Portfolio
+            </a>
+        </div>
         <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
+  </body>
+</html>
