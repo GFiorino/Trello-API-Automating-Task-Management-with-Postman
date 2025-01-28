@@ -27,6 +27,7 @@
         display: block;
         border: 1px solid #ddd;
         border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       }
       .caption {
         text-align: center;
@@ -59,6 +60,20 @@
       p, ol, ul {
         margin-bottom: 30px;
       }
+      #back-to-top a {
+        color: #0056b3;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      #back-to-top a:hover {
+        text-decoration: underline;
+      }
+      .trello-logo {
+        display: block;
+        margin: 20px auto 40px;
+        max-width: 150px;
+        height: auto;
+      }
     </style>
   </head>
   <body>
@@ -84,6 +99,10 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Trello Logo -->
+    <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+
     <main>
       <h1 class="spaced-title">Trello API: Deleting a Card</h1>
       <p>This section demonstrates how to delete a card from your Trello board using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
@@ -110,14 +129,30 @@
       <h2>Expected Outcome</h2>
       <p>The specified card will be successfully deleted from your Trello board, and it will no longer appear in the list. A <strong>200 OK</strong> response will confirm the deletion.</p>
 
+      <!-- Navigation Links -->
       <div class="navigation-links">
         <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">← Previous: Automating Task Creation</a>
         <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Next: Managing Cards and Lists →</a>
       </div>
     </main>
-   <footer class="site-footer" style="text-align: center; margin-top: 10px; padding: 10px 0; background-color: #f8f9fa;">
-    <div class="footer-content">
-        <p style="margin: 5px 0;">Explore more projects on my <a href="https://github.com/GFiorino" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub Portfolio</a>.</p>
-        <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+
+    <!-- Back to Top -->
+    <div id="back-to-top" style="text-align: right; margin-top: 30px;">
+      <a href="#top">↑ Back to Top</a>
     </div>
-</footer>
+
+    <!-- Updated Footer -->
+    <footer class="site-footer" style="background-color: #f4f4f4; padding: 30px 20px; border-top: 2px solid #ddd; text-align: center; font-size: 0.95rem; color: #333;">
+        <div style="margin-bottom: 20px;">
+            <p style="margin: 5px 0; font-weight: bold;">Explore My Projects:</p>
+            <a href="https://github.com/GFiorino" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #0056b3; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
+                GitHub Portfolio
+            </a>
+            <a href="https://gfiorino.github.io/Technical-Writing-Portfolio/" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
+                Live Portfolio
+            </a>
+        </div>
+        <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
