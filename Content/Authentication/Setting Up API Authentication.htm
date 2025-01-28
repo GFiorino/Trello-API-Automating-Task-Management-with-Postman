@@ -23,6 +23,14 @@
         color: #333;
         overflow-x: auto;
       }
+
+      /* Style for Trello logo */
+      .trello-logo {
+        display: block;
+        margin: 20px auto;
+        max-width: 150px;
+        height: auto;
+      }
     </style>
   </head>
   <body>
@@ -48,6 +56,10 @@
         </li>
       </ul>
     </nav>
+
+    <!-- Trello Logo -->
+    <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+
     <main>
       <h1 class="spaced-title">Trello API: Setting Up API Authentication</h1>
       <p>To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication between your application and its servers.</p>
@@ -106,9 +118,19 @@
         </tbody>
       </table>
     </main>
-   <footer class="site-footer" style="text-align: center; margin-top: 10px; padding: 10px 0; background-color: #f8f9fa;">
-    <div class="footer-content">
-        <p style="margin: 5px 0;">Explore more projects on my <a href="https://github.com/GFiorino" target="_blank" style="color: #0056b3; text-decoration: none;">GitHub Portfolio</a>.</p>
+
+    <!-- Updated Footer -->
+    <footer class="site-footer" style="background-color: #f4f4f4; padding: 30px 20px; border-top: 2px solid #ddd; text-align: center; font-size: 0.95rem; color: #333;">
+        <div style="margin-bottom: 20px;">
+            <p style="margin: 5px 0; font-weight: bold;">Explore My Projects:</p>
+            <a href="https://github.com/GFiorino" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #0056b3; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
+                GitHub Portfolio
+            </a>
+            <a href="https://gfiorino.github.io/Technical-Writing-Portfolio/" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
+                Live Portfolio
+            </a>
+        </div>
         <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
+  </body>
+</html>
