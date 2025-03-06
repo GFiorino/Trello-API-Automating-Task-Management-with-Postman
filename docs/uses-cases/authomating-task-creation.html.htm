@@ -1,178 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Step-by-step guide for automating task creation using the Trello API, including screenshots and detailed instructions.">
     <title>Trello API: Automating Task Creation</title>
-    <link rel="stylesheet" type="text/css" href="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Stylesheets/Styles.css">
-    <style>
-      /* Enhanced Styling */
-      .spacer {
-        margin-bottom: 30px;
-      }
-      .screenshot {
-        max-width: 60%;
-        height: auto;
-        margin: 30px auto;
-        display: block;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
-      .caption {
-        text-align: center;
-        font-size: 0.9em;
-        color: #555;
-        margin: 10px 0 40px;
-      }
-      .tip-box {
-        background-color: #e6f7ff;
-        border-left: 5px solid #007bff;
-        padding: 15px 20px;
-        margin: 30px 0;
-        color: #004085;
-        font-size: 14px;
-        border-radius: 5px;
-      }
-      .navigation-links {
-        display: flex;
-        justify-content: space-between;
-        margin: 40px 0;
-      }
-      .navigation-links a {
-        font-weight: bold;
-        color: #0056b3;
-        text-decoration: none;
-        padding: 10px 15px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        transition: all 0.2s ease;
-      }
-      .navigation-links a:hover {
-        background-color: #0056b3;
-        color: #fff;
-      }
-      pre code {
-        background-color: #f4f4f4;
-        border: 1px solid #ddd;
-        padding: 10px;
-        display: block;
-        font-family: "Courier New", monospace;
-        color: #333;
-        border-radius: 4px;
-        overflow-x: auto;
-      }
-      #back-to-top a {
-        color: #0056b3;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      #back-to-top a:hover {
-        text-decoration: underline;
-      }
-      .trello-logo {
-        display: block;
-        margin: 20px auto 40px;
-        max-width: 150px;
-        height: auto;
-      }
-    </style>
-  </head>
-  <body>
+    <link rel="stylesheet" type="text/css" href="../../public/styles.css">
+</head>
+<body>
     <!-- Navigation -->
     <nav>
-      <ul class="navbar">
-        <li><a href="/Trello-API-Automating-Task-Management-with-Postman/index.htm">Home</a></li>
-        <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
-        <li>
-          <a href="#">End-Points</a>
-          <ul class="dropdown">
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20List.htm">Add List</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="active">User-Cases</a>
-          <ul class="dropdown">
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm" class="active">Automating Task Creation</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-          </ul>
-        </li>
-      </ul>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../authentication.html">Authentication</a></li>
+            <li>
+                <a href="#">API Endpoints</a>
+                <ul class="dropdown">
+                    <li><a href="../endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../endpoints/add-list.html">Add List</a></li>
+                    <li><a href="../endpoints/create-board.html">Create Board</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="active">Use Cases</a>
+                <ul class="dropdown">
+                    <li><a href="../real-world-use-cases/automating-task-creation.html" class="active">Automating Task Creation</a></li>
+                    <li><a href="../real-world-use-cases/deleting-card-list.html">Deleting a Card or List</a></li>
+                    <li><a href="../real-world-use-cases/managing-cards-lists.html">Managing Cards and Lists</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
 
     <!-- Trello Logo -->
-    <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+    <img src="../../public/images/trello_logo.png" alt="Trello Logo" class="trello-logo">
 
     <!-- Main Content -->
     <main>
-      <h1 class="spaced-title">Trello API: Automating Task Creation</h1>
-      <div class="spacer"></div>
-      <p>This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
+        <h1 class="spaced-title">Trello API: Automating Task Creation</h1>
+        <p>This guide explains how to automate task creation using the Trello API, with a structured step-by-step approach.</p>
 
-      <h2>Step 1: Obtain Your API Key</h2>
-      <p>Navigate to your Trello account and retrieve your <strong>API Key</strong> from the API settings page. Ensure you add <strong>"https://www.postman.com"</strong> to the <strong>Allowed Origins</strong> field.</p>
-      <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/APIkey.png" alt="Example API Key Screenshot" class="screenshot">
-      <p class="caption">Figure 1: Retrieving the API Key from Trello's API settings page.</p>
+        <h2>Step 1: Retrieve API Key</h2>
+        <p>Go to <a href="https://trello.com/app-key" target="_blank">Trello API Key Page</a> and copy your API key. Add "https://www.postman.com" to the Allowed Origins field.</p>
+        <img src="../../public/images/api_key.png" alt="Retrieve API Key" class="screenshot">
 
-      <div class="tip-box">
-        <p><strong>Note:</strong> Only share the token with trusted applications. Do not expose it publicly for security reasons.</p>
-      </div>
+        <h2>Step 2: Generate API Token</h2>
+        <p>Click "Generate Token" on the API Key page to obtain your authentication token.</p>
+        <img src="../../public/images/token.png" alt="Generate API Token" class="screenshot">
 
-      <h2>Step 2: Generate a Token</h2>
-      <p>Generate a token by clicking the "Generate Token" link on the API Key page and copy it for later use.</p>
-      <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/Token.png" alt="Generate Token Screenshot" class="screenshot">
-      <p class="caption">Figure 2: Generating a token for API authentication.</p>
+        <h2>Step 3: Locate List ID</h2>
+        <p>Find the List ID where tasks will be created using the board URL or API call.</p>
+        <img src="../../public/images/list_id.png" alt="Retrieve List ID" class="screenshot">
 
-      <h2>Step 3: Retrieve the Short ID</h2>
-      <p>Find the <strong>Short ID</strong> in the Trello board URL for referencing specific lists and tasks.</p>
-      <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/Short_id.png" alt="Retrieve Short ID Screenshot" class="screenshot">
-      <p class="caption">Figure 3: Retrieving the Short ID from the Trello board URL.</p>
-
-      <h2>Step 4: Create a Task Using POST Request</h2>
-      <p>Use your API Key, Token, and List ID to create a task with the following JSON body:</p>
-      <pre><code>{
-  "name": "Automated Task Example",
-  "desc": "Task created as part of the API automation.",
-  "idList": "{ListID}",
+        <h2>Step 4: Create a Task via API</h2>
+        <p>Send a <code>POST</code> request to add a task using the following JSON body:</p>
+        <pre><code class="language-json">{
+  "name": "Automated Task",
+  "desc": "Task created via API automation",
+  "idList": "{LIST_ID}",
   "pos": "top",
   "due": "2024-12-10T09:00:00.000Z"
 }</code></pre>
-      <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/Add_BODY.png" alt="Create Task with POST Request" class="screenshot">
-      <p class="caption">Figure 4: Creating a task using a POST request in Postman.</p>
+        <img src="../../public/images/create_task.png" alt="Create Task Request" class="screenshot">
 
-      <h2>Expected Outcome</h2>
-      <p>A new task titled "Automated Task Example" will appear in the specified list on your Trello board.</p>
-      <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/New_Card.png" alt="Task Created Screenshot" class="screenshot">
-      <p class="caption">Figure 5: Verifying the created task in Trello.</p>
-
-      <!-- Navigation Links -->
-      <div class="navigation-links">
-        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Create%20Board.htm">← Previous: Create Board</a>
-        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Next: Deleting a Card or List →</a>
-      </div>
+        <h2>Expected Output</h2>
+        <p>The task should now be visible in the specified Trello list.</p>
+        <img src="../../public/images/task_created.png" alt="Task Created in Trello" class="screenshot">
     </main>
 
-    <!-- Back to Top -->
-    <div id="back-to-top" style="text-align: right; margin-top: 30px;">
-      <a href="#top">↑ Back to Top</a>
+    <!-- Navigation Links -->
+    <div class="footer-nav">
+        <a href="../endpoints/create-board.html">← Previous: Create Board</a>
+        <a href="../real-world-use-cases/deleting-card-list.html">Next: Deleting a Card or List →</a>
     </div>
-
-    <!-- Updated Footer -->
-    <footer class="site-footer" style="background-color: #f4f4f4; padding: 30px 20px; border-top: 2px solid #ddd; text-align: center; font-size: 0.95rem; color: #333;">
-        <div style="margin-bottom: 20px;">
-            <p style="margin: 5px 0; font-weight: bold;">Explore My Projects:</p>
-            <a href="https://github.com/GFiorino" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #0056b3; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
-                GitHub Portfolio
-            </a>
-            <a href="https://gfiorino.github.io/Technical-Writing-Portfolio/" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
-                Live Portfolio
-            </a>
-        </div>
-        <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
-    </footer>
-  </body>
+</body>
 </html>
