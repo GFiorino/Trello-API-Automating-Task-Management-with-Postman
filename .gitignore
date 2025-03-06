@@ -1,1 +1,28 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
 
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore node modules (if you add a build system later)
+node_modules/
+
+# Ignore temporary or log files
+*.log
+*.tmp
+
+# Ignore build artifacts
+dist/
+build/
+
+# Ignore compiled files (if any)
+*.out
+*.class
+*.pyc
+
+# Ignore GitHub Pages deployment (if you use a separate branch)
+gh-pages/
