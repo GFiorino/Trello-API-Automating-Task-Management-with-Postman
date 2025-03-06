@@ -64,6 +64,7 @@ nav ul {
 }
 
 nav ul li {
+    position: relative;
     margin-right: 20px;
 }
 
@@ -81,25 +82,6 @@ nav a.active, nav a:hover {
     border-radius: 4px;
 }
 
-/* Buttons */
-.cta-button {
-    background-color: var(--Secondary);
-    color: #ffffff;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 6px;
-    display: inline-block;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button:hover {
-    background-color: #61A700;
-    transform: scale(1.05);
-}
-
 /* Dropdown Navigation */
 nav ul .dropdown {
     display: none;
@@ -109,6 +91,10 @@ nav ul .dropdown {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 6px;
+    top: 40px;
+    left: 0;
+    min-width: 180px;
+    z-index: 100;
 }
 
 nav ul li:hover .dropdown {
@@ -128,6 +114,32 @@ nav ul li:hover .dropdown {
 .dropdown a:hover {
     background-color: #f4f4f4;
     border-radius: 4px;
+}
+
+/* Call-to-Action Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cta-button {
+    background-color: var(--Secondary);
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #61A700;
+    transform: scale(1.05);
 }
 
 /* Code Blocks */
@@ -156,15 +168,4 @@ footer {
     text-align: center;
     font-size: 0.9rem;
     border-top: 2px solid #ddd;
-}
-
-footer a {
-    color: var(--Primary);
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-footer a:hover {
-    color: #003d80;
-    text-decoration: none;
 }
