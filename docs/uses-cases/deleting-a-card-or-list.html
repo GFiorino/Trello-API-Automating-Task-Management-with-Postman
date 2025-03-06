@@ -1,158 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn how to delete a card from your Trello board using the Trello API, with detailed steps and screenshots.">
     <title>Trello API: Deleting a Card</title>
-    <link rel="stylesheet" type="text/css" href="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Stylesheets/Styles.css">
-    <style>
-      .navbar a.active {
-        color: #ccc;
-      }
-      pre code {
-        background-color: #f4f4f4;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 10px;
-        display: block;
-        font-family: monospace;
-        color: #333;
-        overflow-x: auto;
-      }
-      .screenshot {
-        max-width: 60%;
-        height: auto;
-        margin: 40px auto;
-        display: block;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
-      .caption {
-        text-align: center;
-        font-size: 0.9em;
-        color: #555;
-        margin: 10px 0 40px;
-      }
-      .navigation-links {
-        display: flex;
-        justify-content: space-between;
-        margin: 50px 0;
-      }
-      .navigation-links a {
-        font-weight: bold;
-        color: #0056b3;
-        text-decoration: none;
-        padding: 10px 15px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        transition: background-color 0.2s, color 0.2s;
-      }
-      .navigation-links a:hover {
-        background-color: #0056b3;
-        color: #fff;
-      }
-      h2, h3 {
-        margin-top: 40px;
-        margin-bottom: 20px;
-      }
-      p, ol, ul {
-        margin-bottom: 30px;
-      }
-      #back-to-top a {
-        color: #0056b3;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      #back-to-top a:hover {
-        text-decoration: underline;
-      }
-      .trello-logo {
-        display: block;
-        margin: 20px auto 40px;
-        max-width: 150px;
-        height: auto;
-      }
-    </style>
-  </head>
-  <body>
+    <link rel="stylesheet" type="text/css" href="../../public/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
     <nav>
-      <ul class="navbar">
-        <li><a href="/Trello-API-Automating-Task-Management-with-Postman/index.htm">Home</a></li>
-        <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
-        <li>
-          <a href="#">End-Points</a>
-          <ul class="dropdown">
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20List.htm">Add List</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="active">User-Cases</a>
-          <ul class="dropdown">
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm" class="active">Deleting a Card or List</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
-          </ul>
-        </li>
-      </ul>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../authentication.html">Authentication</a></li>
+            <li>
+                <a href="#">API Endpoints</a>
+                <ul class="dropdown">
+                    <li><a href="../endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../endpoints/add-list.html">Add List</a></li>
+                    <li><a href="../endpoints/create-board.html">Create Board</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="active">Use Cases</a>
+                <ul class="dropdown">
+                    <li><a href="../real-world-use-cases/automating-task-creation.html">Automating Task Creation</a></li>
+                    <li><a href="../real-world-use-cases/deleting-card-list.html" class="active">Deleting a Card or List</a></li>
+                    <li><a href="../real-world-use-cases/managing-cards-lists.html">Managing Cards and Lists</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
 
     <!-- Trello Logo -->
-    <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+    <img src="../../public/images/trello_logo.png" alt="Trello Logo" class="trello-logo">
 
+    <!-- Main Content -->
     <main>
-      <h1 class="spaced-title">Trello API: Deleting a Card</h1>
-      <p>This section demonstrates how to delete a card from your Trello board using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.</p>
+        <h1 class="spaced-title">Trello API: Deleting a Card</h1>
+        <p>This guide explains how to delete a card from your Trello board using the API.</p>
 
-      <h2>Step 1: Retrieve the Card ID</h2>
-      <p>To delete a card, you first need to retrieve its ID. Make a <strong>GET</strong> request to the following endpoint:</p>
-      <pre><code>https://api.trello.com/1/cards/{cardID}</code></pre>
-      <p>The response will include the card's details, including its unique <strong>Card ID</strong>.</p>
-      <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/Card_ID_Retrieval.png" alt="Retrieving the Card ID with GET request in Trello API" class="screenshot">
-      <p class="caption">Figure 1: Retrieving the card ID using a GET request.</p>
+        <h2>Step 1: Retrieve the Card ID</h2>
+        <p>Make a <code>GET</code> request to obtain the card ID:</p>
+        <pre><code class="language-json">GET https://api.trello.com/1/cards/{cardID}</code></pre>
+        <p>The response will include the card's unique <strong>ID</strong>.</p>
+        <img src="../../public/images/card_id.png" alt="Retrieve Card ID" class="screenshot">
 
-      <h2>Step 2: Delete the Card</h2>
-      <p>Once you have the Card ID, make a <strong>DELETE</strong> request to the following endpoint:</p>
-      <pre><code>https://api.trello.com/1/cards/{cardID}</code></pre>
-      <p>Replace <code>{cardID}</code> with the ID of the card you want to delete.</p>
-      <ol>
-        <li>Set the <strong>HTTP method</strong> to <code>DELETE</code>.</li>
-        <li>Enter the endpoint, replacing <code>{cardID}</code> with the card's unique ID.</li>
-        <li>Click <strong>Send</strong> to execute the request.</li>
-      </ol>
-      <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/Confirmation_Delete.png" alt="Confirmation of Card Deletion in Trello API" class="screenshot">
-      <p class="caption">Figure 2: Executing the DELETE request to remove the card.</p>
+        <h2>Step 2: Delete the Card</h2>
+        <p>Use the card ID in a <code>DELETE</code> request:</p>
+        <pre><code class="language-json">DELETE https://api.trello.com/1/cards/{cardID}</code></pre>
+        <p>Replace <code>{cardID}</code> with the actual card ID.</p>
+        <img src="../../public/images/delete_card.png" alt="Delete Card API Request" class="screenshot">
 
-      <h2>Expected Outcome</h2>
-      <p>The specified card will be successfully deleted from your Trello board, and it will no longer appear in the list. A <strong>200 OK</strong> response will confirm the deletion.</p>
-
-      <!-- Navigation Links -->
-      <div class="navigation-links">
-        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">← Previous: Automating Task Creation</a>
-        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Next: Managing Cards and Lists →</a>
-      </div>
+        <h2>Expected Output</h2>
+        <p>The card is removed from Trello, and you receive a <code>200 OK</code> response.</p>
     </main>
 
-    <!-- Back to Top -->
-    <div id="back-to-top" style="text-align: right; margin-top: 30px;">
-      <a href="#top">↑ Back to Top</a>
+    <!-- Navigation Links -->
+    <div class="footer-nav">
+        <a href="../real-world-use-cases/automating-task-creation.html">← Previous: Automating Task Creation</a>
+        <a href="../real-world-use-cases/managing-cards-lists.html">Next: Managing Cards and Lists →</a>
     </div>
-
-    <!-- Updated Footer -->
-    <footer class="site-footer" style="background-color: #f4f4f4; padding: 30px 20px; border-top: 2px solid #ddd; text-align: center; font-size: 0.95rem; color: #333;">
-        <div style="margin-bottom: 20px;">
-            <p style="margin: 5px 0; font-weight: bold;">Explore My Projects:</p>
-            <a href="https://github.com/GFiorino" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #0056b3; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
-                GitHub Portfolio
-            </a>
-            <a href="https://gfiorino.github.io/Technical-Writing-Portfolio/" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
-                Live Portfolio
-            </a>
-        </div>
-        <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
-    </footer>
-  </body>
+</body>
 </html>
