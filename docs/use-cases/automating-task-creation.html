@@ -1,77 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Step-by-step guide for automating task creation using the Trello API, including screenshots and detailed instructions.">
-   <title>Trello API: Add Card</title>
-    <link rel="stylesheet" type="text/css" href="../../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO-optimized description -->
+  <meta name="description" content="Step-by-step guide for automating task creation using the Trello API. Includes instructions, screenshots, and example API requests." />
+  <title>Trello API (v1): Automating Task Creation</title>
+  <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../authentication.html">Authentication</a></li>
-            <li>
-                <a href="#">API Endpoints</a>
-                <ul class="dropdown">
-                    <li><a href="../endpoints/add-card.html">Add Card</a></li>
-                    <li><a href="../endpoints/add-list.html">Add List</a></li>
-                    <li><a href="../endpoints/create-board.html">Create Board</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Use Cases</a>
-                <ul class="dropdown">
-                    <li><a href="../use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-                    <li><a href="../use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
-                    <li><a href="../use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
-                </ul>
-            </li>
-        </ul>
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../authentication.html">Authentication</a></li>
+        <li>
+          <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
+          <ul class="dropdown" aria-label="API Endpoints">
+            <li><a href="../endpoints/add-card.html">Add Card</a></li>
+            <li><a href="../endpoints/add-list.html">Add List</a></li>
+            <li><a href="../endpoints/create-board.html">Create Board</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
+          <ul class="dropdown" aria-label="Use Cases">
+            <li><a href="automating-task-creation.html" class="active">Automating Task Creation</a></li>
+            <li><a href="../use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
+            <li><a href="../use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
+  </header>
 
-     <!-- Trello Logo -->
-    <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
-    <!-- Main Content -->
-    <main>
-        <h1 class="spaced-title">Trello API: Automating Task Creation</h1>
-        <p>This guide explains how to automate task creation using the Trello API, with a structured step-by-step approach.</p>
+  <!-- ===== LOGO / BRANDING ===== -->
+  <div class="logo-container">
+    <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo for the API Documentation" class="trello-logo">
+  </div>
 
-        <h2>Step 1: Retrieve API Key</h2>
-        <p>Go to <a href="https://trello.com/app-key" target="_blank">Trello API Key Page</a> and copy your API key. Add "https://www.postman.com" to the Allowed Origins field.</p>
-        <img src="../../public/images/api_key.png" alt="Retrieve API Key" class="screenshot">
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <h1 class="spaced-title">Trello API (v1): Automating Task Creation</h1>
+    <p>
+      This guide provides a step-by-step approach to automate task creation using the Trello API. Follow the instructions and refer to the screenshots to successfully automate task creation in your Trello boards.
+    </p>
 
-        <h2>Step 2: Generate API Token</h2>
-        <p>Click "Generate Token" on the API Key page to obtain your authentication token.</p>
-        <img src="../../public/images/token.png" alt="Generate API Token" class="screenshot">
+    <!-- Step 1: Retrieve API Key -->
+    <section>
+      <h2>Step 1: Retrieve API Key</h2>
+      <p>
+        Navigate to the <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">Trello API Key Page</a> and copy your API key. Make sure to add "https://www.postman.com" to the Allowed Origins field.
+      </p>
+      <img src="../../public/images/api_key.png" alt="Screenshot of Trello API Key Page" class="screenshot">
+    </section>
 
-        <h2>Step 3: Locate List ID</h2>
-        <p>Find the List ID where tasks will be created using the board URL or API call.</p>
-        <img src="../../public/images/list_id.png" alt="Retrieve List ID" class="screenshot">
+    <!-- Step 2: Generate API Token -->
+    <section>
+      <h2>Step 2: Generate API Token</h2>
+      <p>
+        On the API Key page, click "Generate Token" to obtain your API token. This token will allow your application to authenticate and interact with the Trello API.
+      </p>
+      <img src="../../public/images/token.png" alt="Screenshot of generating an API token" class="screenshot">
+    </section>
 
-        <h2>Step 4: Create a Task via API</h2>
-        <p>Send a <code>POST</code> request to add a task using the following JSON body:</p>
-        <pre><code class="language-json">{
+    <!-- Step 3: Locate List ID -->
+    <section>
+      <h2>Step 3: Locate List ID</h2>
+      <p>
+        Identify the target list where tasks will be created. You can find the List ID in the board URL or by making an API call.
+      </p>
+      <img src="../../public/images/list_id.png" alt="Screenshot of locating a List ID" class="screenshot">
+    </section>
+
+    <!-- Step 4: Create a Task via API -->
+    <section>
+      <h2>Step 4: Create a Task via API</h2>
+      <p>
+        Send a <code>POST</code> request to add a new task to your chosen list. Use the following JSON structure, replacing <code>{LIST_ID}</code> with your actual List ID.
+      </p>
+      <pre><code class="language-json">{
   "name": "Automated Task",
   "desc": "Task created via API automation",
   "idList": "{LIST_ID}",
   "pos": "top",
   "due": "2024-12-10T09:00:00.000Z"
 }</code></pre>
-        <img src="../../public/images/create_task.png" alt="Create Task Request" class="screenshot">
+      <img src="../../public/images/create_task.png" alt="Screenshot of the API request for creating a task" class="screenshot">
+    </section>
 
-        <h2>Expected Output</h2>
-        <p>The task should now be visible in the specified Trello list.</p>
-        <img src="../../public/images/task_created.png" alt="Task Created in Trello" class="screenshot">
-    </main>
+    <!-- Expected Output -->
+    <section>
+      <h2>Expected Output</h2>
+      <p>
+        After the request is successfully executed, the new task should appear in the specified Trello list.
+      </p>
+      <img src="../../public/images/task_created.png" alt="Screenshot showing the task created in Trello" class="screenshot">
+    </section>
+  </main>
 
-    <!-- Navigation Links -->
-    <div class="footer-nav">
-        <a href="../endpoints/create-board.html">← Previous: Create Board</a>
-        <a href="../real-world-use-cases/deleting-card-list.html">Next: Deleting a Card or List →</a>
-    </div>
+  <!-- ===== FOOTER NAVIGATION ===== -->
+  <nav class="footer-nav" aria-label="Use Case Navigation">
+    <a href="../endpoints/create-board.html">← Previous: Create Board</a>
+    <a href="../use-cases/deleting-a-card-or-list.html">Next: Deleting a Card or List →</a>
+  </nav>
 </body>
 </html>
