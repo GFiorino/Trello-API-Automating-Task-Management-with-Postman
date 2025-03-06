@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Detailed guide for adding cards using Trello API. Learn the request structure, parameters, and common errors.">
@@ -17,7 +17,7 @@
             <li>
                 <a href="#">API Endpoints</a>
                 <ul class="dropdown">
-                    <li><a href="../endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../endpoints/add-card.html" class="active">Add Card</a></li>
                     <li><a href="../endpoints/add-list.html">Add List</a></li>
                     <li><a href="../endpoints/create-board.html">Create Board</a></li>
                 </ul>
@@ -33,18 +33,18 @@
         </ul>
     </nav>
 
-</body>
-
     <!-- Trello Logo -->
-    <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
-    
+    <div class="logo-container">
+        <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+    </div>
+
     <!-- Main Content -->
     <main>
-      <h1 class="spaced-title">Trello API: Add Card</h1>
-      <p>This endpoint allows you to add a new card to a specified list within a Trello board.</p>
+        <h1 class="spaced-title">Trello API: Add Card</h1>
+        <p>This endpoint allows you to add a new card to a specified list within a Trello board.</p>
 
-      <h2>Request Details</h2>
-      <pre><code class="language-json">
+        <h2>📌 Request Details</h2>
+        <pre><code class="language-json">
 POST https://api.trello.com/1/cards
 Content-Type: application/json
 
@@ -55,13 +55,25 @@ Content-Type: application/json
   "pos": "top",
   "due": "2024-12-31T23:59:59.000Z"
 }
-      </code></pre>
+        </code></pre>
 
-      <h2>Common Errors</h2>
-      <table>
-        <tr><th>Error</th><th>Possible Cause</th><th>Solution</th></tr>
-        <tr><td>401 Unauthorized</td><td>Invalid API Key</td><td>Verify <a href="https://trello.com/app-key">Trello API Key</a></td></tr>
-      </table>
+        <h2>⚠️ Common Errors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Error</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>401 Unauthorized</b></td>
+                    <td>Invalid API Key</td>
+                    <td>Verify <a href="https://trello.com/app-key">Trello API Key</a></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <!-- Footer Navigation -->
@@ -70,5 +82,10 @@ Content-Type: application/json
         <a href="../endpoints/add-list.html">Next: Add List →</a>
     </div>
 
-  </body>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
