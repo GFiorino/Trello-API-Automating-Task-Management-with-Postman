@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Step-by-step guide for setting up API authentication with Trello. Learn how to generate API keys and tokens.">
-<title>Trello API: Authentication</title>
-<link rel="stylesheet" type="text/css" href="../styles.css">
+    <title>Trello API: Authentication</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="authentication.html">Authentication</a></li>
+            <li><a href="authentication.html" class="active">Authentication</a></li>
             <li>
                 <a href="#">API Endpoints</a>
                 <ul class="dropdown">
@@ -34,33 +34,49 @@
     </nav>
 
     <!-- Trello Logo -->
-    <img src="../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
-    
+    <div class="logo-container">
+        <img src="../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+    </div>
+
     <!-- Main Content -->
     <main>
-      <h1 class="spaced-title">Trello API: Setting Up API Authentication</h1>
-      <p>To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication.</p>
+        <h1 class="spaced-title">Trello API: Setting Up API Authentication</h1>
+        <p>To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication.</p>
 
-      <h2>Steps to Authenticate</h2>
-      <ol>
-        <li><b>Generate an API Key:</b> <a href="https://trello.com/app-key" target="_blank">Visit Trello API Key Page</a></li>
-        <li><b>Generate an Access Token:</b> Follow instructions on the API Key page.</li>
-      </ol>
+        <h2>🔐 Steps to Authenticate</h2>
+        <ol>
+            <li><b>Generate an API Key:</b> <a href="https://trello.com/app-key" target="_blank">Visit Trello API Key Page</a></li>
+            <li><b>Generate an Access Token:</b> Follow the instructions on the API Key page.</li>
+        </ol>
 
-      <h2>Example Request</h2>
-      <pre><code class="language-json">GET https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
+        <h2>📌 Example Request</h2>
+        <pre><code class="language-json">
+GET https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN
+        </code></pre>
 
-      <h2>Common Errors</h2>
-      <table>
-        <tr><th>Error Code</th><th>Possible Cause</th><th>Solution</th></tr>
-        <tr><td>401 Unauthorized</td><td>Invalid API Key</td><td>Check <a href="https://trello.com/app-key">Trello API Page</a></td></tr>
-      </table>
+        <h2>⚠️ Common Errors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>401 Unauthorized</b></td>
+                    <td>Invalid API Key</td>
+                    <td>Check <a href="https://trello.com/app-key">Trello API Page</a></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Trello API: Automating Task Management with Postman.</p>
+        <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
 
-  </body>
+</body>
 </html>
