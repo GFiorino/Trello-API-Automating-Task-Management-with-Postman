@@ -11,7 +11,7 @@
   <title>Trello API (v1): Setting Up Authentication</title>
   <!-- Link to global styles -->
   <link rel="stylesheet" href="../styles.css" />
-  <!-- Example of additional styling for language tabs (optional) -->
+  <!-- Additional styling for language tabs -->
   <style>
     .language-tabs {
       display: flex;
@@ -100,7 +100,12 @@
     <section>
       <h2>Prerequisites</h2>
       <ul>
-        <li>A valid Trello account (sign up at <a href="https://trello.com" target="_blank" rel="noopener noreferrer">Trello.com</a>)</li>
+        <li>
+          A valid Trello account (sign up at 
+          <a href="https://trello.com" target="_blank" rel="noopener noreferrer">
+            Trello.com
+          </a>)
+        </li>
         <li>Familiarity with basic REST API concepts</li>
         <li>A tool to send HTTP requests (e.g., Postman or curl)</li>
       </ul>
@@ -112,17 +117,13 @@
       <ol>
         <li>
           <strong>Generate an API Key:</strong>
-          <a
-            href="https://trello.com/app-key"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Visit the Trello API Key Page</a
-          >
+          <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">
+            Visit the Trello API Key Page
+          </a>
         </li>
         <li>
           <strong>Generate an Access Token:</strong>
-          Follow the instructions on the API Key page to obtain a token that
-          grants your application the necessary permissions.
+          Follow the instructions on the API Key page to obtain a token that grants your application the necessary permissions.
         </li>
       </ol>
     </section>
@@ -131,9 +132,8 @@
     <section>
       <h2>Example Requests</h2>
       <p>
-        Below are sample requests in two common formats. Replace
-        <code>YOUR_API_KEY</code> and <code>YOUR_ACCESS_TOKEN</code> with your
-        own credentials.
+        Below are sample requests in two common formats. Replace 
+        <code>YOUR_API_KEY</code> and <code>YOUR_ACCESS_TOKEN</code> with your own credentials.
       </p>
       <div class="language-tabs">
         <div class="language-tab" onclick="showCode('curl')">cURL</div>
@@ -180,13 +180,10 @@ fetch("https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TO
             <td><strong>401 Unauthorized</strong></td>
             <td>Invalid or missing API Key / Token</td>
             <td>
-              Double-check your API key and token on the
-              <a
-                href="https://trello.com/app-key"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Trello API Page</a
-              >.
+              Double-check your API key and token on the 
+              <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">
+                Trello API Page
+              </a>.
             </td>
           </tr>
           <tr>
@@ -198,13 +195,10 @@ fetch("https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TO
             <td><strong>429 Too Many Requests</strong></td>
             <td>Rate limit exceeded</td>
             <td>
-              Wait before sending more requests. Consult Trello’s
-              <a
-                href="https://developer.atlassian.com/cloud/trello/guides/rest-api/rate-limits/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >rate limit guidelines</a
-              >.
+              Wait before sending more requests. Consult Trello’s 
+              <a href="https://developer.atlassian.com/cloud/trello/guides/rest-api/rate-limits/" target="_blank" rel="noopener noreferrer">
+                rate limit guidelines
+              </a>.
             </td>
           </tr>
         </tbody>
@@ -215,9 +209,7 @@ fetch("https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TO
     <section>
       <h2>Next Steps</h2>
       <p>
-        Once you’ve authenticated successfully, you can explore various API
-        endpoints to manage boards, lists, and cards. We recommend starting with
-        the following:
+        Once you’ve authenticated successfully, you can explore various API endpoints to manage boards, lists, and cards. We recommend starting with the following:
       </p>
       <ul>
         <li><a href="../endpoints/create-board.html">Create a Board</a></li>
@@ -225,9 +217,8 @@ fetch("https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TO
         <li><a href="../endpoints/add-card.html">Add a Card</a></li>
       </ul>
       <p>
-        For real-world usage, check out our
-        <a href="../use-cases/automating-task-creation.html">Use Cases</a>
-        section to see how to automate task creation and streamline workflows.
+        For real-world usage, check out our 
+        <a href="../use-cases/automating-task-creation.html">Use Cases</a> section to see how to automate task creation and streamline workflows.
       </p>
     </section>
   </main>
@@ -237,28 +228,24 @@ fetch("https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TO
     <p>
       &copy; 2024 Trello API Documentation (v1). All rights reserved.
       <br />
-      Need more help? Visit the
-      <a
-        href="https://developer.atlassian.com/cloud/trello/"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Official Trello Developer Site</a
-      >.
+      Need more help? Visit the 
+      <a href="https://developer.atlassian.com/cloud/trello/" target="_blank" rel="noopener noreferrer">
+        Official Trello Developer Site
+      </a>.
     </p>
   </footer>
 
-  <!-- ===== OPTIONAL JAVASCRIPT FOR TABS ===== -->
+  <!-- ===== OPTIONAL JAVASCRIPT FOR CODE TABS ===== -->
   <script>
     function showCode(language) {
-      // Hide all pre tags
+      // Hide all code snippet blocks
       document.querySelectorAll('.code-blocks > pre').forEach(pre => {
         pre.classList.remove('active');
       });
-      // Show selected snippet
+      // Display the selected code snippet
       document.getElementById(`code-${language}`).classList.add('active');
     }
-
-    // Default to showing cURL snippet on page load
+    // Default to showing the cURL snippet on page load
     showCode('curl');
   </script>
 </body>
