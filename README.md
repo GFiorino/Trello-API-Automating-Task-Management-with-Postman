@@ -13,7 +13,7 @@ This project provides a structured guide for automating task management using th
 ✔ **Troubleshooting Section** – Debugging and common error solutions.  
 
 ## 📂 Documentation Structure  
-- [Authentication](docs/authentication.html) – How to obtain and use API keys.  
+- [Authentication](public/authentication.html) – How to obtain and use API keys.  
 - [API Endpoints](docs/endpoints.html) – List of all API requests.  
 - [Use Cases](docs/use-cases.html) – Real-world Trello automation workflows.  
 - [Troubleshooting](docs/troubleshooting.html) – Common API issues and solutions.  
