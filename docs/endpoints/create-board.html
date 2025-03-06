@@ -1,74 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guide for creating boards using Trello API. Includes request details, required and optional parameters, and example responses.">
-    <title>Trello API: Add Card</title>
-    <link rel="stylesheet" type="text/css" href="../../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO-optimized description -->
+  <meta name="description" content="Comprehensive guide for creating boards using the Trello API. Learn the request details, required and optional parameters, and example responses." />
+  <title>Trello API (v1): Create Board</title>
+  <!-- Link to global styles -->
+  <link rel="stylesheet" type="text/css" href="../../styles.css" />
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../authentication.html">Authentication</a></li>
-            <li>
-                <a href="#">API Endpoints</a>
-                <ul class="dropdown">
-                    <li><a href="../endpoints/add-card.html">Add Card</a></li>
-                    <li><a href="../endpoints/add-list.html">Add List</a></li>
-                    <li><a href="../endpoints/create-board.html">Create Board</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Use Cases</a>
-                <ul class="dropdown">
-                    <li><a href="../use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-                    <li><a href="../use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
-                    <li><a href="../use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
-                </ul>
-            </li>
-        </ul>
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../authentication.html">Authentication</a></li>
+        <li>
+          <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
+          <ul class="dropdown" aria-label="API Endpoints">
+            <li><a href="../endpoints/add-card.html">Add Card</a></li>
+            <li><a href="../endpoints/add-list.html">Add List</a></li>
+            <li><a href="create-board.html" class="active">Create Board</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
+          <ul class="dropdown" aria-label="Use Cases">
+            <li><a href="../use-cases/automating-task-creation.html">Automating Task Creation</a></li>
+            <li><a href="../use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
+            <li><a href="../use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
+  </header>
 
-     <!-- Trello Logo -->
-    <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
-   
-    <main>
-        <h1 class="spaced-title">Trello API: Create Board</h1>
-        <p>The Create Board endpoint allows you to create a new board in Trello.</p>
+  <!-- ===== LOGO / BRANDING ===== -->
+  <div class="logo-container">
+    <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo for the API Documentation" class="trello-logo" />
+  </div>
 
-        <h2>Request Details</h2>
-        <ul>
-            <li><b>Method:</b> POST</li>
-            <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/boards</code></li>
-            <li><b>Authentication:</b> Requires API <code>key</code> and <code>token</code> as query parameters.</li>
-        </ul>
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <!-- Page Title & Overview -->
+    <h1 class="spaced-title">Trello API (v1): Create Board</h1>
+    <p>
+      The Create Board endpoint allows you to create a new board in Trello. Ensure you have authenticated using your API key and token before using this endpoint.
+    </p>
 
-        <h2>Required Parameters</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Required</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>name</code></td>
-                    <td>String</td>
-                    <td>✔</td>
-                    <td>The name of the new board.</td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- ===== REQUEST DETAILS SECTION ===== -->
+    <section>
+      <h2>Request Details</h2>
+      <ul>
+        <li><strong>Method:</strong> POST</li>
+        <li><strong>Endpoint URL:</strong> <code>https://api.trello.com/1/boards</code></li>
+        <li><strong>Authentication:</strong> Requires API <code>key</code> and <code>token</code> as query parameters.</li>
+      </ul>
+    </section>
 
-        <h2>Example Request</h2>
-        <pre><code class="language-json">POST https://api.trello.com/1/boards
+    <!-- ===== REQUIRED & OPTIONAL PARAMETERS SECTION ===== -->
+    <section>
+      <h2>Parameters</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>name</code></td>
+            <td>String</td>
+            <td>✔</td>
+            <td>The name of the new board.</td>
+          </tr>
+          <tr>
+            <td><code>defaultLists</code></td>
+            <td>Boolean</td>
+            <td>✖</td>
+            <td>If set to <code>true</code>, default lists (To Do, Doing, Done) are created.</td>
+          </tr>
+          <tr>
+            <td><code>idOrganization</code></td>
+            <td>String</td>
+            <td>✖</td>
+            <td>The ID of the organization under which to create the board.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== EXAMPLE REQUEST SECTION ===== -->
+    <section>
+      <h2>Example Request</h2>
+      <p>
+        The following is an example POST request to create a new board. Replace <code>YOUR_API_KEY</code>, <code>YOUR_ACCESS_TOKEN</code>, and other placeholders with your actual values.
+      </p>
+      <pre><code class="language-json">
+POST https://api.trello.com/1/boards
 Content-Type: application/json
 
 {
@@ -77,41 +110,68 @@ Content-Type: application/json
   "idOrganization": "60d21b4967d0d810b8f8b456",
   "key": "YOUR_API_KEY",
   "token": "YOUR_ACCESS_TOKEN"
-}</code></pre>
+}
+      </code></pre>
+    </section>
 
-        <h2>Common Errors</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Error</th>
-                    <th>Possible Cause</th>
-                    <th>Solution</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>401 Unauthorized</td>
-                    <td>Invalid API key or token.</td>
-                    <td>Verify credentials on <a href="https://trello.com/app-key">Trello API Key Page</a>.</td>
-                </tr>
-                <tr>
-                    <td>400 Bad Request</td>
-                    <td>Missing required parameters.</td>
-                    <td>Ensure <code>name</code> is provided.</td>
-                </tr>
-                <tr>
-                    <td>404 Not Found</td>
-                    <td>Invalid <code>idOrganization</code> value.</td>
-                    <td>Double-check the <code>idOrganization</code>.</td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+    <!-- ===== COMMON ERRORS SECTION ===== -->
+    <section>
+      <h2>Common Errors</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Error</th>
+            <th>Possible Cause</th>
+            <th>Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>401 Unauthorized</strong></td>
+            <td>Invalid API key or token.</td>
+            <td>Verify your credentials on the <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">Trello API Key Page</a>.</td>
+          </tr>
+          <tr>
+            <td><strong>400 Bad Request</strong></td>
+            <td>Missing required parameters.</td>
+            <td>Ensure the <code>name</code> parameter is provided.</td>
+          </tr>
+          <tr>
+            <td><strong>404 Not Found</strong></td>
+            <td>Invalid <code>idOrganization</code> value.</td>
+            <td>Double-check the provided organization ID.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-    <!-- Footer Navigation -->
-    <div class="footer-nav">
-        <a href="../endpoints/add-list.html">← Previous: Add List</a>
-        <a href="../real-world-use-cases/automating-task-creation.html">Next: Automating Task Creation →</a>
-    </div>
+    <!-- ===== NEXT STEPS SECTION ===== -->
+    <section>
+      <h2>Next Steps</h2>
+      <p>
+        After creating a board, you can continue to manage your Trello resources by exploring the following endpoints:
+      </p>
+      <ul>
+        <li><a href="../endpoints/add-card.html">Add a Card</a></li>
+        <li><a href="../endpoints/add-list.html">Add a List</a></li>
+        <li><a href="../use-cases/automating-task-creation.html">Explore Use Cases</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER NAVIGATION ===== -->
+  <nav class="footer-nav" aria-label="Endpoint Navigation">
+    <a href="../endpoints/add-list.html">← Previous: Add List</a>
+    <a href="../use-cases/automating-task-creation.html">Next: Automating Task Creation →</a>
+  </nav>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>
+      &copy; 2024 Trello API Documentation (v1). All rights reserved.
+      <br />
+      For further assistance, visit the <a href="https://developer.atlassian.com/cloud/trello/" target="_blank" rel="noopener noreferrer">Official Trello Developer Site</a>.
+    </p>
+  </footer>
 </body>
 </html>
