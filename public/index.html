@@ -5,90 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Technical Writing Portfolio for Trello API Automation. Explore professional guides and user-case scenarios.">
     <title>Trello API: Automating Task Management with Postman</title>
-    <link rel="stylesheet" type="text/css" href="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Stylesheets/Styles.css">
-    <style>
-      /* Clean code block styling */
-      pre code {
-        background-color: #f4f4f4;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        padding: 10px;
-        display: block;
-        font-family: monospace;
-        color: #333;
-        overflow-x: auto;
-      }
-
-      /* Trello Logo Styling */
-      .trello-logo {
-        display: block;
-        margin: 20px auto 40px;
-        max-width: 150px;
-        height: auto;
-      }
-
-      /* Content Container */
-      main {
-        max-width: 1200px;
-        margin: 40px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Navigation Buttons */
-      .cta-buttons {
-        text-align: center;
-        margin: 30px 0;
-      }
-      .cta-buttons a {
-        display: inline-block;
-        padding: 12px 24px;
-        margin: 10px;
-        font-size: 1rem;
-        font-weight: bold;
-        color: #0056b3;
-        background-color: #fff;
-        border: 2px solid #0056b3;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-      }
-      .cta-buttons a:hover {
-        background-color: #0056b3;
-        color: #fff;
-        transform: scale(1.05);
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../public/styles.css">
   </head>
   <body>
+
     <!-- Navigation -->
     <nav>
-      <ul class="navbar">
-        <li><a href="/Trello-API-Automating-Task-Management-with-Postman/index.htm" class="active">Home</a></li>
-        <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Authentication</a></li>
+      <ul>
+        <li><a href="../index.html" class="active">Home</a></li>
+        <li><a href="../docs/authentication.html">Authentication</a></li>
         <li>
-          <a href="#">End-Points</a>
+          <a href="#">API Endpoints</a>
           <ul class="dropdown">
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20Card.htm">Add Card</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20List.htm">Add List</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Create%20Board.htm">Create Board</a></li>
+            <li><a href="../docs/endpoints/add-card.html">Add Card</a></li>
+            <li><a href="../docs/endpoints/add-list.html">Add List</a></li>
+            <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
           </ul>
         </li>
         <li>
-          <a href="#">User-Cases</a>
+          <a href="#">Use Cases</a>
           <ul class="dropdown">
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Automating Task Creation</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Deleting%20a%20Card%20or%20List.htm">Deleting a Card or List</a></li>
-            <li><a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Managing%20Cards%20and%20Lists.htm">Managing Cards and Lists</a></li>
+            <li><a href="../docs/use-cases/automating-task-creation.html">Automating Task Creation</a></li>
+            <li><a href="../docs/use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
+            <li><a href="../docs/use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
           </ul>
         </li>
       </ul>
     </nav>
 
     <!-- Trello Logo -->
-    <img src="/Trello-API-Automating-Task-Management-with-Postman/Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+    <img src="../public/images/trello_logo.png" alt="Trello Logo" class="trello-logo">
 
     <!-- Main Content -->
     <main>
@@ -102,24 +48,16 @@
 
       <!-- Call-to-Action Buttons -->
       <div class="cta-buttons">
-        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Authentication/Setting%20Up%20API%20Authentication.htm">Explore Authentication</a>
-        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Endpoints/Add%20Card.htm">Explore Endpoints</a>
-        <a href="/Trello-API-Automating-Task-Management-with-Postman/Content/Real-World%20User%20Cases/Automating%20Task%20Creation.htm">Explore User Cases</a>
+        <a href="../docs/authentication.html">Explore Authentication</a>
+        <a href="../docs/endpoints/add-card.html">Explore Endpoints</a>
+        <a href="../docs/use-cases/automating-task-creation.html">Explore User Cases</a>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer" style="background-color: #f4f4f4; padding: 30px 20px; border-top: 2px solid #ddd; text-align: center; font-size: 0.95rem; color: #333;">
-        <div style="margin-bottom: 20px;">
-            <p style="margin: 5px 0; font-weight: bold;">Explore My Projects:</p>
-            <a href="https://github.com/GFiorino" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #0056b3; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
-                GitHub Portfolio
-            </a>
-            <a href="https://gfiorino.github.io/Technical-Writing-Portfolio/" target="_blank" style="display: inline-block; margin: 5px 10px; padding: 10px 15px; color: #fff; background-color: #28a745; text-decoration: none; border-radius: 5px; font-size: 0.9rem; font-weight: bold; transition: background-color 0.3s ease;">
-                Live Portfolio
-            </a>
-        </div>
-        <p style="margin: 5px 0;">&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+    <footer>
+        <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
+
   </body>
 </html>
