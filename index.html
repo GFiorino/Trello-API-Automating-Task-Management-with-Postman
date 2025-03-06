@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Updated meta description for clarity and SEO -->
-    <meta name="description" content="A professional, step-by-step guide to using Trello’s API for automated task management with Postman. Learn about authentication, key endpoints, and real-world use cases." />
-    <title>Trello API: Automating Task Management with Postman</title>
-    <!-- External Stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Optimized meta description for SEO -->
+  <meta name="description" content="A professional, step-by-step guide to using Trello’s API for automated task management with Postman. Learn about authentication, key endpoints, and real-world use cases." />
+  <title>Trello API: Automating Task Management with Postman</title>
+  <!-- Link to global stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- ===== NAVIGATION ===== -->
-    <!-- Using <header> to semantically wrap the nav for improved structure -->
-    <header>
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="docs/authentication.html">Authentication</a></li>
-                <li>
-                    <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
-                    <ul class="dropdown" aria-label="API Endpoints">
-                        <li><a href="docs/endpoints/add-card.html">Add Card</a></li>
-                        <li><a href="docs/endpoints/add-list.html">Add List</a></li>
-                        <li><a href="docs/endpoints/create-board.html">Create Board</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
-                    <ul class="dropdown" aria-label="Use Cases">
-                        <li><a href="docs/use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-                        <li><a href="docs/use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
-                        <li><a href="docs/use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="docs/authentication.html">Authentication</a></li>
+        <li>
+          <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
+          <ul class="dropdown" aria-label="API Endpoints">
+            <li><a href="docs/endpoints/add-card.html">Add Card</a></li>
+            <li><a href="docs/endpoints/add-list.html">Add List</a></li>
+            <li><a href="docs/endpoints/create-board.html">Create Board</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
+          <ul class="dropdown" aria-label="Use Cases">
+            <li><a href="docs/use-cases/automating-task-creation.html">Automating Task Creation</a></li>
+            <li><a href="docs/use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
+            <li><a href="docs/use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- ===== LOGO ===== -->
-    <div class="logo-container">
-        <!-- Enhanced alt text for better accessibility -->
-        <img 
-            src="Content/Resources/Images/trello_Logo.png" 
-            alt="Trello Logo for the API Documentation" 
-            class="trello-logo" 
-        />
+  <!-- ===== LOGO / BRANDING ===== -->
+  <div class="logo-container">
+    <img 
+      src="Content/Resources/Images/trello_Logo.png" 
+      alt="Trello Logo for the API Documentation" 
+      class="trello-logo" 
+    />
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <!-- Page Title & Overview -->
+    <h1 class="spaced-title">Trello API: Automating Task Management with Postman</h1>
+    <p>
+      Welcome to this comprehensive guide on leveraging the Trello API to streamline task creation, management, and automation using Postman. This documentation will help you understand the key steps, endpoints, and real-world use cases for integrating Trello into your workflow.
+    </p>
+    
+    <!-- Key Features List -->
+    <ul>
+      <li>Step-by-step instructions for configuring API authentication.</li>
+      <li>Detailed overviews of essential Trello API endpoints.</li>
+      <li>Real-world use cases with practical examples and troubleshooting tips.</li>
+    </ul>
+
+    <!-- Call-to-Action Buttons -->
+    <div class="cta-buttons">
+      <a href="docs/authentication.html" class="cta-button">Explore Authentication</a>
+      <a href="docs/endpoints/add-card.html" class="cta-button">Explore Endpoints</a>
+      <a href="docs/use-cases/automating-task-creation.html" class="cta-button">Explore Use Cases</a>
     </div>
+  </main>
 
-    <!-- ===== MAIN CONTENT ===== -->
-    <main>
-        <!-- Headline -->
-        <h1 class="spaced-title">Trello API: Automating Task Management with Postman</h1>
-        <!-- Introductory Paragraph -->
-        <p>
-           ORA ORA Welcome to your comprehensive guide on leveraging the Trello API to streamline
-            task creation, management, and automation using Postman. Whether you’re new to Trello
-            or looking to expand your automation skills, these pages will walk you through the
-            essential steps.
-        </p>
-        
-        <!-- Key Features List -->
-        <ul>
-            <li>Detailed instructions for configuring API authentication.</li>
-            <li>Comprehensive overviews of core Trello API endpoints.</li>
-            <li>Practical use cases drawn from real-world scenarios.</li>
-        </ul>
-
-        <!-- Call-to-Action Buttons -->
-        <div class="cta-buttons">
-            <a href="docs/authentication.html" class="cta-button">Explore Authentication</a>
-            <a href="docs/endpoints/add-card.html" class="cta-button">Explore Endpoints</a>
-            <a href="docs/use-cases/automating-task-creation.html" class="cta-button">Explore Use Cases</a>
-        </div>
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <p>
-            &copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.
-        </p>
-    </footer>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>
+      &copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.
+    </p>
+  </footer>
 </body>
 </html>
