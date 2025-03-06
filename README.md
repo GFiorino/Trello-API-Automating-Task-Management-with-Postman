@@ -13,10 +13,10 @@ This project provides a structured guide for automating task management using th
 ✔ **Troubleshooting Section** – Debugging and common error solutions.  
 
 ## 📂 Documentation Structure  
-- [Authentication](public/authentication.html) – How to obtain and use API keys.  
-- [API Endpoints](docs/endpoints.html) – List of all API requests.  
-- [Use Cases](docs/use-cases.html) – Real-world Trello automation workflows.  
-- [Troubleshooting](docs/troubleshooting.html) – Common API issues and solutions.  
+- [🔐 Authentication](docs/authentication.html) – How to obtain and use API keys.  
+- [🛠 API Endpoints](docs/endpoints/add-card.html) – List of all API requests.  
+- [💑 Use Cases](docs/use-cases/automating-task-creation.html) – Real-world Trello automation workflows.  
+- [🚿 Troubleshooting](docs/troubleshooting.html) – Common API issues and solutions.  
 
 ## 🛠️ Technologies Used  
 - **Postman** – API testing & request automation.  
@@ -34,7 +34,7 @@ Clone the repository and explore the documentation locally:
 ```bash  
 git clone https://github.com/GFiorino/Trello-API-Automating-Task-Management-with-Postman.git  
 ```  
-Navigate into the directory and open the documentation.  
+Navigate into the directory and open `index.html` in your browser.  
 
 ## 🤝 Contributing  
 We welcome contributions! To contribute:  
@@ -51,5 +51,5 @@ We welcome contributions! To contribute:
 
 All contributions should follow the project’s documentation standards.  
 
-## 📜 License  
+## 🐝 License  
 This project is licensed under the **MIT License**.  
