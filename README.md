@@ -1,43 +1,42 @@
 # Trello API: Automating Task Management with Postman  
 
-## Project Overview  
-This documentation provides detailed guidance on using the **Trello API** to automate task management workflows via **Postman**. It includes authentication setup, API request handling, and real-world automation use cases.  
+## 🚀 Project Overview  
+This project provides a structured guide for automating task management using the **Trello API** and **Postman**. It includes authentication setup, API request handling, and real-world automation use cases.
 
-This project is designed for **developers, IT professionals, and automation specialists** who want to integrate Trello into their workflows efficiently.  
+📌 **Live Documentation:**  
+👉 [View the Trello API Documentation](https://gfiorino.github.io/Trello-API-Automating-Task-Management-with-Postman/)  
 
-## Key Features  
-- **Comprehensive Authentication Guide** – Step-by-step instructions to generate and use API keys.  
-- **Detailed API Endpoint Documentation** – Explanation of request parameters, responses, and error handling.  
-- **Real-World Use Cases** – Practical examples of task automation using the Trello API.  
-- **Troubleshooting Section** – Solutions for common errors and debugging strategies.  
+## 🔑 Key Features  
+✔ **Authentication Guide** – Secure API key & token generation.  
+✔ **Detailed API Endpoint Documentation** – Request structures, responses, and troubleshooting.  
+✔ **Real-World Use Cases** – Automating workflows with Trello API.  
+✔ **Troubleshooting Section** – Debugging and common error solutions.  
 
-## Documentation Structure  
-The documentation is organized into the following sections:  
-- **[Authentication](docs/authentication.md)** – How to obtain and use API keys.  
-- **[API Endpoints](docs/endpoints.md)** – A detailed list of available API requests.  
-- **[Use Cases](docs/use-cases.md)** – Practical automation workflows using Trello.  
-- **[Troubleshooting](docs/troubleshooting.md)** – Common API issues and solutions.  
+## 📂 Documentation Structure  
+- [Authentication](docs/authentication.html) – How to obtain and use API keys.  
+- [API Endpoints](docs/endpoints.html) – List of all API requests.  
+- [Use Cases](docs/use-cases.html) – Real-world Trello automation workflows.  
+- [Troubleshooting](docs/troubleshooting.html) – Common API issues and solutions.  
 
-## Technologies Used  
-This project utilizes:  
-- **Postman** – API testing and request automation.  
-- **Markdown** – Lightweight documentation formatting.  
-- **HTML/CSS** – Web-based documentation interface (if applicable).  
+## 🛠️ Technologies Used  
+- **Postman** – API testing & request automation.  
+- **Markdown & HTML** – Documentation structure & web interface.  
+- **GitHub Pages** – Hosting static documentation.  
 
-## Getting Started  
+## 🚀 Getting Started  
 ### Prerequisites  
 Ensure you have:  
-- A **Trello account** with API access.  
-- **Postman installed** for testing API requests.  
+✅ A **Trello account** with API access.  
+✅ **Postman installed** for API testing.  
 
 ### Installation  
-To clone and explore the documentation locally:  
+Clone the repository and explore the documentation locally:  
 ```bash  
 git clone https://github.com/GFiorino/Trello-API-Automating-Task-Management-with-Postman.git  
 ```  
 Navigate into the directory and open the documentation.  
 
-## Contributing  
+## 🤝 Contributing  
 We welcome contributions! To contribute:  
 1. **Fork the repository.**  
 2. **Create a feature branch:**  
@@ -46,11 +45,11 @@ We welcome contributions! To contribute:
    ```  
 3. **Commit your changes with clear messages:**  
    ```bash  
-   git commit -m "Added additional API troubleshooting examples"  
+   git commit -m "Added new API troubleshooting examples"  
    ```  
 4. **Push to GitHub and create a Pull Request.**  
 
-Please ensure all contributions follow the project’s structure and documentation guidelines.  
+All contributions should follow the project’s documentation standards.  
 
-## License  
+## 📜 License  
 This project is licensed under the **MIT License**.  
