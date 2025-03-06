@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed guide for adding cards using Trello API. Learn the request structure, parameters, and common errors.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO-optimized description -->
+    <meta name="description" content="Detailed guide for adding a card using the Trello API. Review the request structure, required parameters, and troubleshooting common errors." />
     <title>Trello API: Add Card</title>
-    <link rel="stylesheet" type="text/css" href="../../styles.css">
+    <!-- Link to global styles -->
+    <link rel="stylesheet" type="text/css" href="../../styles.css" />
 </head>
 <body>
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../authentication.html">Authentication</a></li>
+                <li>
+                    <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
+                    <ul class="dropdown" aria-label="API Endpoints">
+                        <li><a href="add-card.html" class="active">Add Card</a></li>
+                        <li><a href="add-list.html">Add List</a></li>
+                        <li><a href="create-board.html">Create Board</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
+                    <ul class="dropdown" aria-label="Use Cases">
+                        <li><a href="../use-cases/automating-task-creation.html">Automating Task Creation</a></li>
+                        <li><a href="../use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
+                        <li><a href="../use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../authentication.html">Authentication</a></li>
-            <li>
-                <a href="#">API Endpoints</a>
-                <ul class="dropdown">
-                    <li><a href="../endpoints/add-card.html" class="active">Add Card</a></li>
-                    <li><a href="../endpoints/add-list.html">Add List</a></li>
-                    <li><a href="../endpoints/create-board.html">Create Board</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Use Cases</a>
-                <ul class="dropdown">
-                    <li><a href="../use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-                    <li><a href="../use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
-                    <li><a href="../use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Trello Logo -->
+    <!-- ===== LOGO ===== -->
     <div class="logo-container">
-        <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
+        <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo" />
     </div>
 
-    <!-- Main Content -->
+    <!-- ===== MAIN CONTENT ===== -->
     <main>
         <h1 class="spaced-title">Trello API: Add Card</h1>
-        <p>This endpoint allows you to add a new card to a specified list within a Trello board.</p>
+        <p>
+            This endpoint allows you to create a new card within a specified list on a Trello board.
+            Follow the details below to understand the request structure and resolve common issues.
+        </p>
 
-        <h2>📌 Request Details</h2>
-        <pre><code class="language-json">
+        <!-- Request Details Section -->
+        <section>
+            <h2>📌 Request Details</h2>
+            <pre><code class="language-json">
 POST https://api.trello.com/1/cards
 Content-Type: application/json
 
@@ -55,37 +63,45 @@ Content-Type: application/json
   "pos": "top",
   "due": "2024-12-31T23:59:59.000Z"
 }
-        </code></pre>
+            </code></pre>
+        </section>
 
-        <h2>⚠️ Common Errors</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Error</th>
-                    <th>Possible Cause</th>
-                    <th>Solution</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><b>401 Unauthorized</b></td>
-                    <td>Invalid API Key</td>
-                    <td>Verify <a href="https://trello.com/app-key">Trello API Key</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Common Errors Section -->
+        <section>
+            <h2>⚠️ Common Errors</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Error</th>
+                        <th>Possible Cause</th>
+                        <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>401 Unauthorized</strong></td>
+                        <td>Invalid API Key</td>
+                        <td>
+                            Verify your API key on the 
+                            <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">
+                                Trello API Key page
+                            </a>.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
-    <!-- Footer Navigation -->
-    <div class="footer-nav">
-        <a href="../endpoints/create-board.html">← Previous: Create Board</a>
-        <a href="../endpoints/add-list.html">Next: Add List →</a>
-    </div>
+    <!-- ===== FOOTER NAVIGATION ===== -->
+    <nav class="footer-nav" aria-label="Endpoint Navigation">
+        <a href="create-board.html">← Previous: Create Board</a>
+        <a href="add-list.html">Next: Add List →</a>
+    </nav>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
         <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
