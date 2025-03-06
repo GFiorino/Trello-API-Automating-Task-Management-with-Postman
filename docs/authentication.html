@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step-by-step guide for setting up API authentication with Trello. Learn how to generate API keys and tokens.">
+    <title>Trello API: Setting Up API Authentication</title>
+    <link rel="stylesheet" type="text/css" href="../public/styles.css">
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../docs/authentication.html" class="active">Authentication</a></li>
+        <li>
+          <a href="#">API Endpoints</a>
+          <ul class="dropdown">
+            <li><a href="../docs/endpoints/add-card.html">Add Card</a></li>
+            <li><a href="../docs/endpoints/add-list.html">Add List</a></li>
+            <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Trello Logo -->
+    <img src="../public/images/trello_logo.png" alt="Trello Logo" class="trello-logo">
+
+    <!-- Main Content -->
+    <main>
+      <h1 class="spaced-title">Trello API: Setting Up API Authentication</h1>
+      <p>To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication.</p>
+
+      <h2>Steps to Authenticate</h2>
+      <ol>
+        <li><b>Generate an API Key:</b> <a href="https://trello.com/app-key" target="_blank">Visit Trello API Key Page</a></li>
+        <li><b>Generate an Access Token:</b> Follow instructions on the API Key page.</li>
+      </ol>
+
+      <h2>Example Request</h2>
+      <pre><code class="language-json">GET https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
+
+      <h2>Common Errors</h2>
+      <table>
+        <tr><th>Error Code</th><th>Possible Cause</th><th>Solution</th></tr>
+        <tr><td>401 Unauthorized</td><td>Invalid API Key</td><td>Check <a href="https://trello.com/app-key">Trello API Page</a></td></tr>
+      </table>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Trello API: Automating Task Management with Postman.</p>
+    </footer>
+
+  </body>
+</html>
