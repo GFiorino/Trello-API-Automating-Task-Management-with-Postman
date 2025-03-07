@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Roboto', Arial, sans-serif;
-  color: var(--Dark);
+  color: #333;
   background-color: #f9f9f9;
   line-height: 1.6;
 }
@@ -21,7 +21,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: var(--Primary);
+  background-color: #0056b3;
   padding: 15px 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -38,7 +38,7 @@ nav ul li {
 }
 
 nav a {
-  color: var(--Light);
+  color: #ffffff;
   font-weight: bold;
   text-decoration: none;
   padding: 12px 16px;
@@ -80,7 +80,7 @@ nav ul li:hover .dropdown {
 }
 
 .dropdown a {
-  color: var(--Dark);
+  color: #333;
   padding: 10px 15px;
   display: block;
   font-weight: normal;
@@ -102,22 +102,32 @@ main {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 /* ==========================================================================
    Typography: Headings & Paragraphs
    ========================================================================== */
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   text-align: center;
-  color: var(--Primary);
+  color: #0056b3;
   margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+  color: #003366;
+  border-bottom: 2px solid #0056b3;
+  padding-bottom: 5px;
 }
 
 p {
   font-size: 1.1rem;
-  text-align: center;
-  color: var(--Dark);
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 /* ==========================================================================
@@ -130,35 +140,49 @@ p {
 }
 
 .trello-logo {
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
 }
 
 /* ==========================================================================
-   Call-to-Action Buttons
+   Tables: Styling
    ========================================================================== */
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
+  text-align: left;
 }
 
-.cta-buttons a {
-  background-color: var(--Secondary);
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #0056b3;
   color: #ffffff;
-  padding: 12px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.cta-buttons a:hover {
-  background-color: #61A700;
-  transform: scale(1.05);
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* ==========================================================================
+   Code Snippets & Formatting
+   ========================================================================== */
+pre {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #d63384;
 }
 
 /* ==========================================================================
@@ -166,7 +190,7 @@ p {
    ========================================================================== */
 footer {
   background-color: #f8f8f8;
-  color: var(--Dark);
+  color: #333;
   padding: 25px;
   text-align: center;
   font-size: 0.9rem;
