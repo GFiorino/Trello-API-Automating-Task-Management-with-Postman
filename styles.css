@@ -8,10 +8,10 @@
 }
 
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   color: #333;
-  background-color: #f9f9f9;
-  line-height: 1.6;
+  background-color: #f8f9fa;
+  line-height: 1.7;
 }
 
 /* ==========================================================================
@@ -23,14 +23,14 @@ nav {
   align-items: center;
   background-color: #0056b3;
   padding: 15px 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 nav ul li {
@@ -39,11 +39,10 @@ nav ul li {
 
 nav a {
   color: #ffffff;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
-  padding: 12px 16px;
-  transition: background-color 0.3s ease;
-  display: block;
+  padding: 10px 15px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav a.active,
@@ -53,18 +52,18 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   Dropdown Menus (API Endpoints & Use-Cases)
+   Dropdown Menus for Endpoints & Use-Cases
    ========================================================================== */
 nav ul li .dropdown {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
   min-width: 200px;
-  z-index: 10;
+  z-index: 100;
 }
 
 nav ul li:hover .dropdown {
@@ -72,7 +71,7 @@ nav ul li:hover .dropdown {
 }
 
 .dropdown li {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .dropdown li:last-child {
@@ -81,77 +80,64 @@ nav ul li:hover .dropdown {
 
 .dropdown a {
   color: #333;
-  padding: 12px 16px;
+  padding: 12px 18px;
   display: block;
-  font-weight: normal;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
 .dropdown a:hover {
-  background-color: #f4f4f4;
+  background: #f0f0f0;
 }
 
 /* ==========================================================================
    Main Content Area
    ========================================================================== */
 main {
-  width: 80%;
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #ffffff;
+  width: 85%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   text-align: left;
 }
 
 /* ==========================================================================
-   Typography: Headings & Paragraphs
+   Typography: Headings & Text
    ========================================================================== */
 h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   text-align: center;
   color: #0056b3;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-top: 30px;
   color: #003366;
   border-bottom: 2px solid #0056b3;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
+  font-weight: 600;
 }
 
 p {
   font-size: 1.1rem;
-  color: #333;
+  color: #444;
   margin-bottom: 20px;
-  text-align: left;
 }
 
 /* ==========================================================================
-   Logo & Branding
-   ========================================================================== */
-.logo-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.trello-logo {
-  max-width: 180px;
-  height: auto;
-}
-
-/* ==========================================================================
-   Tables: Styling
+   Tables: Professional Styling
    ========================================================================== */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  text-align: left;
+  margin-top: 15px;
+  font-size: 1rem;
 }
 
 th, td {
@@ -160,28 +146,32 @@ th, td {
 }
 
 th {
-  background-color: #0056b3;
+  background: #0056b3;
   color: #ffffff;
+  font-weight: 600;
+  text-align: left;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background: #f9f9f9;
 }
 
 /* ==========================================================================
-   Code Snippets & Formatting
+   Code Snippets & Syntax Highlighting
    ========================================================================== */
 pre {
-  background: #f4f4f4;
+  background: #1e1e1e;
+  color: #ffffff;
+  font-size: 0.95rem;
   padding: 15px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+  border-radius: 6px;
+  border-left: 4px solid #0056b3;
   overflow-x: auto;
 }
 
 code {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #d63384;
 }
 
@@ -189,9 +179,9 @@ code {
    Footer
    ========================================================================== */
 footer {
-  background-color: #f8f8f8;
+  background: #f1f1f1;
   color: #333;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
   font-size: 0.9rem;
   border-top: 2px solid #ddd;
