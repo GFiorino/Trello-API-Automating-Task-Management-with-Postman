@@ -199,3 +199,12 @@ footer {
   border-top: 2px solid #ddd;
   margin-top: 40px;
 }
+.small-image {
+    max-width: 100%;
+    width: 500px; /* Adjust this value as needed */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
