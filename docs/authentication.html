@@ -1,252 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- SEO-optimized description -->
-  <meta
-    name="description"
-    content="Comprehensive guide to Trello API authentication using API keys and tokens. Includes prerequisites, common errors, and next steps."
-  />
-  <title>Trello API (v1): Setting Up Authentication</title>
-  <!-- Link to global styles -->
-  <link rel="stylesheet" href="../styles.css" />
-  <!-- Additional styling for language tabs -->
-  <style>
-    .language-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 1rem 0;
-    }
-    .language-tab {
-      background: #e0e0e0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      user-select: none;
-      font-weight: bold;
-    }
-    .code-blocks > pre {
-      display: none;
-      margin-top: 0;
-    }
-    .code-blocks > pre.active {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step-by-step guide for setting up API authentication with Trello. Learn how to generate API keys and tokens.">
+    <title>Trello API: Setting Up API Authentication</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
-  <!-- ===== HEADER & NAVIGATION ===== -->
-  <header>
-    <div class="header-top">
-      <!-- Optional Search Bar (Static example) -->
-      <!-- 
-      <form action="#" method="GET">
-        <input
-          type="search"
-          name="q"
-          placeholder="Search Documentation..."
-          aria-label="Search Documentation"
-        />
-      </form>
-      -->
-    </div>
+    
+    <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="authentication.html" class="active">Authentication</a></li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
-          <ul class="dropdown" aria-label="API Endpoints">
-            <li><a href="endpoints/create-board.html">Create Board</a></li>
-            <li><a href="endpoints/add-list.html">Add List</a></li>
-            <li><a href="endpoints/add-card.html">Add Card</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
-          <ul class="dropdown" aria-label="Use Cases">
-            <li><a href="use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-            <li><a href="use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
-            <li><a href="use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
-          </ul>
-        </li>
-      </ul>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="authentication.html" class="active">Authentication</a></li>
+            <li>
+                <a href="#" aria-haspopup="true">API Endpoints</a>
+                <ul class="dropdown" aria-label="API Endpoints">
+                    <li><a href="../docs/endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../docs/endpoints/add-list.html">Add List</a></li>
+                    <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
-  </header>
 
-  <!-- ===== LOGO / BRANDING ===== -->
-  <div class="logo-container">
-    <img
-      src="../Content/Resources/Images/trello_Logo.png"
-      alt="Trello Logo for the API Documentation"
-      class="trello-logo"
-    />
-  </div>
+    <!-- ===== Trello Logo ===== -->
+    <div class="logo-container">
+        <img src="../Content/Resources/Images/trello_logo.png" alt="Trello Logo" class="trello-logo">
+    </div>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
-    <!-- Page Title & Version -->
-    <h1 class="spaced-title">Trello API (v1): Setting Up Authentication</h1>
-    <p>
-      Securely interact with Trello by using an API key and token. This document
-      covers the prerequisites, step-by-step instructions, and common errors
-      you might encounter.
-    </p>
+    <!-- ===== Main Content ===== -->
+    <main>
+        <h1 class="spaced-title">Trello API: Setting Up API Authentication</h1>
+        <p>
+            To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication.
+        </p>
 
-    <!-- ===== PREREQUISITES SECTION ===== -->
-    <section>
-      <h2>Prerequisites</h2>
-      <ul>
-        <li>
-          A valid Trello account (sign up at 
-          <a href="https://trello.com" target="_blank" rel="noopener noreferrer">
-            Trello.com
-          </a>)
-        </li>
-        <li>Familiarity with basic REST API concepts</li>
-        <li>A tool to send HTTP requests (e.g., Postman or curl)</li>
-      </ul>
-    </section>
+        <h2>🔑 Authentication Process</h2>
+        <p>Follow these steps to authenticate your API requests:</p>
+        <ol>
+            <li><b>Generate an API Key:</b> <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">Visit Trello API Key Page</a>.</li>
+            <li><b>Generate an Access Token:</b> Follow the instructions on the API Key page to obtain your token.</li>
+        </ol>
 
-    <!-- ===== AUTHENTICATION STEPS ===== -->
-    <section>
-      <h2>Authentication Steps</h2>
-      <ol>
-        <li>
-          <strong>Generate an API Key:</strong>
-          <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">
-            Visit the Trello API Key Page
-          </a>
-        </li>
-        <li>
-          <strong>Generate an Access Token:</strong>
-          Follow the instructions on the API Key page to obtain a token that grants your application the necessary permissions.
-        </li>
-      </ol>
-    </section>
+        <h2>📌 Example API Request</h2>
+        <p>Use the following request to verify authentication:</p>
+        <pre><code class="language-json">GET https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
 
-    <!-- ===== CODE EXAMPLES SECTION ===== -->
-    <section>
-      <h2>Example Requests</h2>
-      <p>
-        Below are sample requests in two common formats. Replace 
-        <code>YOUR_API_KEY</code> and <code>YOUR_ACCESS_TOKEN</code> with your own credentials.
-      </p>
-      <div class="language-tabs">
-        <div class="language-tab" onclick="showCode('curl')">cURL</div>
-        <div class="language-tab" onclick="showCode('node')">Node.js</div>
-      </div>
+        <h2>⚠️ Common Errors & Solutions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>401 Unauthorized</td>
+                    <td>Invalid API Key</td>
+                    <td>Verify your API Key at <a href="https://trello.com/app-key" target="_blank">Trello API Page</a>.</td>
+                </tr>
+                <tr>
+                    <td>403 Forbidden</td>
+                    <td>Invalid Access Token</td>
+                    <td>Ensure the token is correctly generated and has the required permissions.</td>
+                </tr>
+                <tr>
+                    <td>404 Not Found</td>
+                    <td>Incorrect API Endpoint</td>
+                    <td>Check the API documentation for the correct endpoint URL.</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
-      <div class="code-blocks">
-        <!-- cURL Snippet -->
-        <pre id="code-curl">
-curl --request GET \
-  --url "https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN" \
-  --header "Accept: application/json"
-        </pre>
-
-        <!-- Node.js Snippet -->
-        <pre id="code-node">
-// Using fetch (Node 18+ or via node-fetch)
-fetch("https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN", {
-  method: "GET",
-  headers: {
-    "Accept": "application/json"
-  }
-})
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
-        </pre>
-      </div>
-    </section>
-
-    <!-- ===== COMMON ERRORS SECTION ===== -->
-    <section>
-      <h2>Common Errors</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Error Code</th>
-            <th>Possible Cause</th>
-            <th>Solution</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>401 Unauthorized</strong></td>
-            <td>Invalid or missing API Key / Token</td>
-            <td>
-              Double-check your API key and token on the 
-              <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">
-                Trello API Page
-              </a>.
-            </td>
-          </tr>
-          <tr>
-            <td><strong>404 Not Found</strong></td>
-            <td>Incorrect endpoint or resource ID</td>
-            <td>Verify you are using the correct URL and resource identifiers.</td>
-          </tr>
-          <tr>
-            <td><strong>429 Too Many Requests</strong></td>
-            <td>Rate limit exceeded</td>
-            <td>
-              Wait before sending more requests. Consult Trello’s 
-              <a href="https://developer.atlassian.com/cloud/trello/guides/rest-api/rate-limits/" target="_blank" rel="noopener noreferrer">
-                rate limit guidelines
-              </a>.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- ===== NEXT STEPS SECTION ===== -->
-    <section>
-      <h2>Next Steps</h2>
-      <p>
-        Once you’ve authenticated successfully, you can explore various API endpoints to manage boards, lists, and cards. We recommend starting with the following:
-      </p>
-      <ul>
-        <li><a href="../endpoints/create-board.html">Create a Board</a></li>
-        <li><a href="../endpoints/add-list.html">Add a List</a></li>
-        <li><a href="../endpoints/add-card.html">Add a Card</a></li>
-      </ul>
-      <p>
-        For real-world usage, check out our 
-        <a href="../use-cases/automating-task-creation.html">Use Cases</a> section to see how to automate task creation and streamline workflows.
-      </p>
-    </section>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>
-      &copy; 2024 Trello API Documentation (v1). All rights reserved.
-      <br />
-      Need more help? Visit the 
-      <a href="https://developer.atlassian.com/cloud/trello/" target="_blank" rel="noopener noreferrer">
-        Official Trello Developer Site
-      </a>.
-    </p>
-  </footer>
-
-  <!-- ===== OPTIONAL JAVASCRIPT FOR CODE TABS ===== -->
-  <script>
-    function showCode(language) {
-      // Hide all code snippet blocks
-      document.querySelectorAll('.code-blocks > pre').forEach(pre => {
-        pre.classList.remove('active');
-      });
-      // Display the selected code snippet
-      document.getElementById(`code-${language}`).classList.add('active');
-    }
-    // Default to showing the cURL snippet on page load
-    showCode('curl');
-  </script>
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+    </footer>
 </body>
 </html>
