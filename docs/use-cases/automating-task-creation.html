@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Step-by-step guide for automating task creation using the Trello API, including screenshots and detailed instructions.">
+    <meta name="description" content="Step-by-step guide for automating task creation using the Trello API, including detailed instructions and examples.">
     <title>Trello API: Automating Task Creation</title>
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
-    
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
@@ -40,51 +39,45 @@
 
     <!-- ===== Main Content ===== -->
     <main>
-        <h1 class="spaced-title">Trello API: Automating Task Creation</h1>
-        <p>
-            This section demonstrates how to automate task creation using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.
-        </p>
+        <h1>Trello API: Automating Task Creation</h1>
+        <p>This guide explains how to automate task creation using the Trello API.</p>
 
-        <h2>🔑 Step 1: Obtain Your API Key</h2>
-        <p>
-            Navigate to your Trello account and retrieve your <b>API Key</b> from the API settings page. Ensure you add <b>"https://www.postman.com"</b> to the <b>Allowed Origins</b> field.
-        </p>
+        <h2>Step 1: Obtain Your API Key</h2>
+        <p>Retrieve your <strong>API Key</strong> from the Trello API settings page. Ensure you add "https://www.postman.com" to the <strong>Allowed Origins</strong> field.</p>
         <img src="../Content/Resources/Images/APIkey.png" alt="Example API Key Screenshot" class="screenshot">
-        
-        <h2>🔐 Step 2: Generate a Token</h2>
-        <p>
-            Generate a token by clicking the "Generate Token" link on the API Key page and copy it for later use.
-        </p>
-        <img src="../Content/Resources/Images/Token.png" alt="Generate Token Screenshot" class="screenshot">
-        
-        <h2>📌 Step 3: Retrieve the Short ID</h2>
-        <p>
-            Find the <b>Short ID</b> in the Trello board URL for referencing specific lists and tasks.
-        </p>
-        <img src="../Content/Resources/Images/Short_id.png" alt="Retrieve Short ID Screenshot" class="screenshot">
 
-        <h2>⚙️ Step 4: Create a Task Using a POST Request</h2>
-        <p>
-            Use your API Key, Token, and List ID to create a task with the following JSON body:
-        </p>
-        <pre><code>{
+        <h2>Step 2: Generate a Token</h2>
+        <p>Click "Generate Token" on the API Key page and copy it for later use.</p>
+        <img src="../Content/Resources/Images/Token.png" alt="Generate Token Screenshot" class="screenshot">
+
+        <h2>Step 3: Retrieve the List ID</h2>
+        <p>Use the following GET request to retrieve the List ID where tasks will be created:</p>
+        <pre><code class="language-json">GET https://api.trello.com/1/boards/{boardID}/lists?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
+        <img src="../Content/Resources/Images/Short_id.png" alt="Retrieve List ID Screenshot" class="screenshot">
+
+        <h2>Step 4: Create a Task Using a POST Request</h2>
+        <p>Use the following request to create a task:</p>
+        <pre><code class="language-json">POST https://api.trello.com/1/cards
+Content-Type: application/json
+
+{
   "name": "Automated Task Example",
-  "desc": "Task created as part of the API automation.",
-  "idList": "{ListID}",
+  "desc": "Task created via API automation.",
+  "idList": "{LIST_ID}",
   "pos": "top",
-  "due": "2024-12-10T09:00:00.000Z"
+  "due": "2024-12-10T09:00:00.000Z",
+  "key": "YOUR_API_KEY",
+  "token": "YOUR_ACCESS_TOKEN"
 }</code></pre>
         <img src="../Content/Resources/Images/Add_BODY.png" alt="Create Task with POST Request" class="screenshot">
-        
-        <h2>🎯 Expected Outcome</h2>
-        <p>
-            A new task titled "Automated Task Example" will appear in the specified list on your Trello board.
-        </p>
+
+        <h2>Expected Outcome</h2>
+        <p>A new task titled "Automated Task Example" will appear in the specified Trello list.</p>
         <img src="../Content/Resources/Images/New_Card.png" alt="Task Created Screenshot" class="screenshot">
 
         <div class="footer-nav">
-            <a href="../docs/endpoints/create-board.html">⬅️ Previous: Create Board</a>
-            <a href="../docs/use-cases/deleting-a-card-or-list.html">Next: Deleting a Card or List ➡️</a>
+            <a href="../docs/endpoints/create-board.html">&larr; Previous: Create Board</a>
+            <a href="../docs/use-cases/deleting-a-card-or-list.html">Next: Deleting a Card or List &rarr;</a>
         </div>
     </main>
 
