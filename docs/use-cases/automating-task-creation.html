@@ -11,22 +11,22 @@
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../docs/authentication.html">Authentication</a></li>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../docs/authentication.html">Authentication</a></li>
             <li>
                 <a href="#">API Endpoints</a>
                 <ul class="dropdown">
-                    <li><a href="../docs/endpoints/add-card.html">Add Card</a></li>
-                    <li><a href="../docs/endpoints/add-list.html">Add List</a></li>
-                    <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
+                    <li><a href="../../docs/endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../../docs/endpoints/add-list.html">Add List</a></li>
+                    <li><a href="../../docs/endpoints/create-board.html">Create Board</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#" class="active">Use Cases</a>
                 <ul class="dropdown">
-                    <li><a href="../docs/use-cases/automating-task-creation.html" class="active">Automating Task Creation</a></li>
-                    <li><a href="../docs/use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
-                    <li><a href="../docs/use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
+                    <li><a href="../../docs/use-cases/automating-task-creation.html" class="active">Automating Task Creation</a></li>
+                    <li><a href="../../docs/use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
+                    <li><a href="../../docs/use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
                 </ul>
             </li>
         </ul>
@@ -34,7 +34,7 @@
 
     <!-- ===== Trello Logo ===== -->
     <div class="logo-container">
-        <img src="https://github.com/GFiorino/Trello-API-Automating-Task-Management-with-Postman/blob/main/Content/Resources/Images/trello_Logo.png?raw=true" alt="Trello Logo" class="trello-logo">
+        <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
     </div>
 
     <!-- ===== Main Content ===== -->
@@ -44,16 +44,16 @@
 
         <h2>Step 1: Obtain Your API Key</h2>
         <p>Retrieve your <strong>API Key</strong> from the Trello API settings page. Ensure you add "https://www.postman.com" to the <strong>Allowed Origins</strong> field.</p>
-        <img src="../../Content/Resources/Images/APIkey.png" alt="Example API Key Screenshot" class="screenshot">
+        <img src="../../Content/Resources/Images/APIkey.png" alt="Example API Key Screenshot" class="screenshot small-image">
 
         <h2>Step 2: Generate a Token</h2>
         <p>Click "Generate Token" on the API Key page and copy it for later use.</p>
-        <img src="../../Content/Resources/Images/Token.png" alt="Generate Token Screenshot" class="screenshot">
+        <img src="../../Content/Resources/Images/Token.png" alt="Generate Token Screenshot" class="screenshot small-image">
 
         <h2>Step 3: Retrieve the List ID</h2>
         <p>Use the following GET request to retrieve the List ID where tasks will be created:</p>
         <pre><code class="language-json">GET https://api.trello.com/1/boards/{boardID}/lists?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
-        <img src="../../Content/Resources/Images/Short_id.png" alt="Retrieve List ID Screenshot" class="screenshot">
+        <img src="../../Content/Resources/Images/Short_id.png" alt="Retrieve List ID Screenshot" class="screenshot small-image">
 
         <h2>Step 4: Create a Task Using a POST Request</h2>
         <p>Use the following request to create a task:</p>
@@ -69,15 +69,15 @@ Content-Type: application/json
   "key": "YOUR_API_KEY",
   "token": "YOUR_ACCESS_TOKEN"
 }</code></pre>
-        <img src="../../Content/Resources/Images/Add_BODY.png" alt="Create Task with POST Request" class="screenshot">
+        <img src="../../Content/Resources/Images/Add_BODY.png" alt="Create Task with POST Request" class="screenshot small-image">
 
         <h2>Expected Outcome</h2>
         <p>A new task titled "Automated Task Example" will appear in the specified Trello list.</p>
-        <img src="../../Content/Resources/Images/New_Card.png" alt="Task Created Screenshot" class="screenshot">
+        <img src="../../Content/Resources/Images/New_Card.png" alt="Task Created Screenshot" class="screenshot small-image">
 
         <div class="footer-nav">
-            <a href="../docs/endpoints/create-board.html">&larr; Previous: Create Board</a>
-            <a href="../docs/use-cases/deleting-a-card-or-list.html">Next: Deleting a Card or List &rarr;</a>
+            <a href="../../docs/endpoints/create-board.html">&larr; Previous: Create Board</a>
+            <a href="../../docs/use-cases/deleting-a-card-or-list.html">Next: Deleting a Card or List &rarr;</a>
         </div>
     </main>
 
