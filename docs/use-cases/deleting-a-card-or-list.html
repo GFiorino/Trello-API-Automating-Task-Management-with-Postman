@@ -1,101 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO-optimized description -->
-  <meta name="description" content="Learn how to delete a card from your Trello board using the Trello API, with detailed steps and screenshots.">
-  <title>Trello API (v1): Deleting a Card</title>
-  <link rel="stylesheet" type="text/css" href="../../styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to delete a card from your Trello board using the Trello API, with detailed steps and screenshots.">
+    <title>Trello API: Deleting a Card</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
-  <!-- ===== HEADER & NAVIGATION ===== -->
-  <header>
+    
+    <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../authentication.html">Authentication</a></li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
-          <ul class="dropdown" aria-label="API Endpoints">
-            <li><a href="../endpoints/add-card.html">Add Card</a></li>
-            <li><a href="../endpoints/add-list.html">Add List</a></li>
-            <li><a href="../endpoints/create-board.html">Create Board</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
-          <ul class="dropdown" aria-label="Use Cases">
-            <li><a href="../use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-            <li><a href="../use-cases/deleting-a-card-or-list.html" class="active">Deleting a Card or List</a></li>
-            <li><a href="../use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
-          </ul>
-        </li>
-      </ul>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../docs/authentication.html">Authentication</a></li>
+            <li>
+                <a href="#">API Endpoints</a>
+                <ul class="dropdown">
+                    <li><a href="../docs/endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../docs/endpoints/add-list.html">Add List</a></li>
+                    <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="active">Use Cases</a>
+                <ul class="dropdown">
+                    <li><a href="../docs/use-cases/automating-task-creation.html">Automating Task Creation</a></li>
+                    <li><a href="../docs/use-cases/deleting-a-card-or-list.html" class="active">Deleting a Card or List</a></li>
+                    <li><a href="../docs/use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
-  </header>
 
-  <!-- ===== LOGO / BRANDING ===== -->
-  <div class="logo-container">
-    <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo for the API Documentation" class="trello-logo">
-  </div>
+    <!-- ===== Trello Logo ===== -->
+    <div class="logo-container">
+        <img src="../Content/Resources/Images/trello_logo.png" alt="Trello Logo" class="trello-logo">
+    </div>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
-    <h1 class="spaced-title">Trello API (v1): Deleting a Card</h1>
-    <p>
-      This guide explains how to delete a card from your Trello board using the API. Follow the steps below to retrieve the card ID and then delete the card.
-    </p>
+    <!-- ===== Main Content ===== -->
+    <main>
+        <h1 class="spaced-title">Trello API: Deleting a Card</h1>
+        <p>
+            This section demonstrates how to delete a card from your Trello board using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.
+        </p>
 
-    <!-- Step 1: Retrieve the Card ID -->
-    <section>
-      <h2>Step 1: Retrieve the Card ID</h2>
-      <p>
-        Make a <code>GET</code> request to obtain the card ID:
-      </p>
-      <pre><code class="language-json">GET https://api.trello.com/1/cards/{cardID}</code></pre>
-      <p>
-        The response will include the card's unique <strong>ID</strong>.
-      </p>
-      <img src="../../public/images/card_id.png" alt="Screenshot showing retrieval of Card ID" class="screenshot">
-    </section>
+        <h2>🔍 Step 1: Retrieve the Card ID</h2>
+        <p>
+            To delete a card, you first need to retrieve its ID. Make a <b>GET</b> request to the following endpoint:
+        </p>
+        <pre><code>https://api.trello.com/1/cards/{cardID}</code></pre>
+        <p>The response will include the card's details, including its unique <b>Card ID</b>.</p>
+        <img src="../Content/Resources/Images/Card_ID_Retrieval.png" alt="Retrieving the Card ID with GET request in Trello API" class="screenshot">
 
-    <!-- Step 2: Delete the Card -->
-    <section>
-      <h2>Step 2: Delete the Card</h2>
-      <p>
-        Use the retrieved card ID in a <code>DELETE</code> request to remove the card:
-      </p>
-      <pre><code class="language-json">DELETE https://api.trello.com/1/cards/{cardID}</code></pre>
-      <p>
-        Replace <code>{cardID}</code> with the actual card ID.
-      </p>
-      <img src="../../public/images/delete_card.png" alt="Screenshot of Delete Card API Request" class="screenshot">
-    </section>
+        <h2>🗑️ Step 2: Delete the Card</h2>
+        <p>
+            Once you have the Card ID, make a <b>DELETE</b> request to the following endpoint:
+        </p>
+        <pre><code>https://api.trello.com/1/cards/{cardID}</code></pre>
+        <p>Replace <code>{cardID}</code> with the ID of the card you want to delete.</p>
+        <ol>
+            <li>Set the <b>HTTP method</b> to <code>DELETE</code>.</li>
+            <li>Enter the endpoint, replacing <code>{cardID}</code> with the card's unique ID.</li>
+            <li>Click <b>Send</b> to execute the request.</li>
+        </ol>
+        <img src="../Content/Resources/Images/Confirmation_Delete.png" alt="Confirmation of Card Deletion in Trello API" class="screenshot">
 
-    <!-- Expected Output -->
-    <section>
-      <h2>Expected Output</h2>
-      <p>
-        Once the request is successfully processed, the card will be removed from Trello and you will receive a <code>200 OK</code> response.
-      </p>
-    </section>
-  </main>
+        <h2>✅ Expected Outcome</h2>
+        <p>
+            The specified card will be successfully deleted from your Trello board, and it will no longer appear in the list. A <b>200 OK</b> response will confirm the deletion.
+        </p>
 
-  <!-- ===== FOOTER NAVIGATION ===== -->
-  <nav class="footer-nav" aria-label="Use Case Navigation">
-    <a href="../use-cases/automating-task-creation.html">← Previous: Automating Task Creation</a>
-    <a href="../use-cases/managing-cards-and-lists.html">Next: Managing Cards and Lists →</a>
-  </nav>
+        <div class="footer-nav">
+            <a href="../docs/use-cases/automating-task-creation.html">⬅️ Previous: Automating Task Creation</a>
+            <a href="../docs/use-cases/managing-cards-and-lists.html">Next: Managing Cards and Lists ➡️</a>
+        </div>
+    </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>
-      &copy; 2024 Trello API Documentation (v1). All rights reserved.
-      <br>
-      For further assistance, visit the 
-      <a href="https://developer.atlassian.com/cloud/trello/" target="_blank" rel="noopener noreferrer">Official Trello Developer Site</a>.
-    </p>
-  </footer>
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+    </footer>
 </body>
 </html>
