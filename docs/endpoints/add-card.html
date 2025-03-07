@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Detailed guide for adding cards using Trello API. Learn the request structure, parameters, and common errors.">
     <title>Trello API: Add Card</title>
-    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 <body>
-    
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../docs/authentication.html">Authentication</a></li>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../docs/authentication.html">Authentication</a></li>
             <li>
                 <a href="#" class="active">API Endpoints</a>
                 <ul class="dropdown">
-                    <li><a href="../docs/endpoints/add-card.html" class="active">Add Card</a></li>
-                    <li><a href="../docs/endpoints/add-list.html">Add List</a></li>
-                    <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
+                    <li><a href="../../docs/endpoints/add-card.html" class="active">Add Card</a></li>
+                    <li><a href="../../docs/endpoints/add-list.html">Add List</a></li>
+                    <li><a href="../../docs/endpoints/create-board.html">Create Board</a></li>
                 </ul>
             </li>
         </ul>
@@ -27,7 +26,7 @@
 
     <!-- ===== Trello Logo ===== -->
     <div class="logo-container">
-        <img src="../Content/Resources/Images/trello_logo.png" alt="Trello Logo" class="trello-logo">
+        <img src="../../Content/Resources/Images/trello_logo.png" alt="Trello Logo" class="trello-logo">
     </div>
 
     <!-- ===== Main Content ===== -->
@@ -37,14 +36,14 @@
             This endpoint allows you to add a new card to a specified list within a Trello board. It is commonly used to create tasks or items in project management workflows.
         </p>
 
-        <h2>🔗 Request Details</h2>
+        <h2>Request Details</h2>
         <ul>
-            <li><b>Method:</b> <code>POST</code></li>
-            <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/cards</code></li>
-            <li><b>Authentication:</b> Requires <code>key</code> and <code>token</code> as query parameters.</li>
+            <li><strong>Method:</strong> <code>POST</code></li>
+            <li><strong>Endpoint URL:</strong> <code>https://api.trello.com/1/cards</code></li>
+            <li><strong>Authentication:</strong> Requires <code>key</code> and <code>token</code> as query parameters.</li>
         </ul>
 
-        <h2>📌 Required Parameters</h2>
+        <h2>Required Parameters</h2>
         <table>
             <thead>
                 <tr>
@@ -67,7 +66,7 @@
             </tbody>
         </table>
 
-        <h2>⚙️ Optional Parameters</h2>
+        <h2>Optional Parameters</h2>
         <table>
             <thead>
                 <tr>
@@ -95,9 +94,35 @@
             </tbody>
         </table>
 
+        <h2>Example Request</h2>
+        <pre><code class="language-json">
+POST https://api.trello.com/1/cards
+Content-Type: application/json
+
+{
+  "name": "New Task",
+  "idList": "60d21b4967d0d810b8f8b456",
+  "desc": "This is a sample task.",
+  "due": "2024-12-10T09:00:00.000Z",
+  "pos": "top",
+  "key": "YOUR_API_KEY",
+  "token": "YOUR_ACCESS_TOKEN"
+}
+        </code></pre>
+
+        <h2>Example Response</h2>
+        <pre><code class="language-json">
+{
+  "id": "60d21b4967d0d810b8f8b456",
+  "name": "New Task",
+  "desc": "This is a sample task.",
+  "url": "https://trello.com/c/12345abcd/NewTask"
+}
+        </code></pre>
+
         <div class="footer-nav">
-            <a href="../docs/endpoints/create-board.html">⬅️ Previous: Create Board</a>
-            <a href="../docs/endpoints/add-list.html">Next: Add List ➡️</a>
+            <a href="../../docs/endpoints/create-board.html">&larr; Previous: Create Board</a>
+            <a href="../../docs/endpoints/add-list.html">Next: Add List &rarr;</a>
         </div>
     </main>
 
