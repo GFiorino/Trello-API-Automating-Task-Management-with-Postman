@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
-    
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
@@ -37,14 +36,14 @@
             The Create Board endpoint allows you to create a new board in Trello. You need to provide a name for the board and, optionally, other parameters like default lists and organization ID.
         </p>
 
-        <h2>🔗 Request Details</h2>
+        <h2>Request Details</h2>
         <ul>
-            <li><b>Method:</b> <code>POST</code></li>
-            <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/boards</code></li>
-            <li><b>Authentication:</b> Requires <code>key</code> and <code>token</code> as query parameters.</li>
+            <li><strong>Method:</strong> <code>POST</code></li>
+            <li><strong>Endpoint URL:</strong> <code>https://api.trello.com/1/boards</code></li>
+            <li><strong>Authentication:</strong> Requires <code>key</code> and <code>token</code> as query parameters.</li>
         </ul>
 
-        <h2>📌 Required Parameters</h2>
+        <h2>Required Parameters</h2>
         <table>
             <thead>
                 <tr>
@@ -62,7 +61,7 @@
             </tbody>
         </table>
 
-        <h2>⚙️ Optional Parameters</h2>
+        <h2>Optional Parameters</h2>
         <table>
             <thead>
                 <tr>
@@ -85,8 +84,9 @@
             </tbody>
         </table>
 
-        <h2>📨 Example Request</h2>
-        <pre><code>POST https://api.trello.com/1/boards
+        <h2>Example Request</h2>
+        <pre><code class="language-json">
+POST https://api.trello.com/1/boards
 Content-Type: application/json
 
 {
@@ -95,10 +95,12 @@ Content-Type: application/json
   "idOrganization": "60d21b4967d0d810b8f8b456",
   "key": "YOUR_API_KEY",
   "token": "YOUR_ACCESS_TOKEN"
-}</code></pre>
+}
+        </code></pre>
 
-        <h2>📨 Example Response</h2>
-        <pre><code>{
+        <h2>Example Response</h2>
+        <pre><code class="language-json">
+{
   "id": "60d21b4967d0d810b8f8b456",
   "name": "New Board Example",
   "url": "https://trello.com/b/12345abcd/NewBoardExample",
@@ -112,9 +114,10 @@ Content-Type: application/json
     "background": "blue",
     "calendarFeedEnabled": false
   }
-}</code></pre>
+}
+        </code></pre>
 
-        <h2>⚠️ Common Errors & Solutions</h2>
+        <h2>Common Errors & Solutions</h2>
         <table>
             <thead>
                 <tr>
@@ -143,8 +146,8 @@ Content-Type: application/json
         </table>
 
         <div class="footer-nav">
-            <a href="../docs/endpoints/add-list.html">⬅️ Previous: Add List</a>
-            <a href="../docs/use-cases/automating-task-creation.html">Next: Automating Task Creation ➡️</a>
+            <a href="../docs/endpoints/add-list.html">&larr; Previous: Add List</a>
+            <a href="../docs/use-cases/automating-task-creation.html">Next: Automating Task Creation &rarr;</a>
         </div>
     </main>
 
