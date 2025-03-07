@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Guide for adding lists using Trello API. Includes request details, required parameters, and troubleshooting tips.">
     <title>Trello API: Add List</title>
-    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 <body>
-    
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../docs/authentication.html">Authentication</a></li>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../docs/authentication.html">Authentication</a></li>
             <li>
                 <a href="#" class="active">API Endpoints</a>
                 <ul class="dropdown">
-                    <li><a href="../docs/endpoints/add-card.html">Add Card</a></li>
-                    <li><a href="../docs/endpoints/add-list.html" class="active">Add List</a></li>
-                    <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
+                    <li><a href="../../docs/endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../../docs/endpoints/add-list.html" class="active">Add List</a></li>
+                    <li><a href="../../docs/endpoints/create-board.html">Create Board</a></li>
                 </ul>
             </li>
         </ul>
@@ -27,7 +26,7 @@
 
     <!-- ===== Trello Logo ===== -->
     <div class="logo-container">
-        <img src="../Content/Resources/Images/trello_logo.png" alt="Trello Logo" class="trello-logo">
+        <img src="../../Content/Resources/Images/trello_logo.png" alt="Trello Logo" class="trello-logo">
     </div>
 
     <!-- ===== Main Content ===== -->
@@ -37,14 +36,14 @@
             The Add List endpoint allows you to create a new list on an existing board. You need to provide the board ID and the list name to use this endpoint.
         </p>
 
-        <h2>🔗 Request Details</h2>
+        <h2>Request Details</h2>
         <ul>
-            <li><b>Method:</b> <code>POST</code></li>
-            <li><b>Endpoint URL:</b> <code>https://api.trello.com/1/lists</code></li>
-            <li><b>Authentication:</b> Requires <code>key</code> and <code>token</code> as query parameters.</li>
+            <li><strong>Method:</strong> <code>POST</code></li>
+            <li><strong>Endpoint URL:</strong> <code>https://api.trello.com/1/lists</code></li>
+            <li><strong>Authentication:</strong> Requires <code>key</code> and <code>token</code> as query parameters.</li>
         </ul>
 
-        <h2>📌 Required Parameters</h2>
+        <h2>Required Parameters</h2>
         <table>
             <thead>
                 <tr>
@@ -67,8 +66,9 @@
             </tbody>
         </table>
 
-        <h2>⚙️ Example Request</h2>
-        <pre><code>POST https://api.trello.com/1/lists
+        <h2>Example Request</h2>
+        <pre><code class="language-json">
+POST https://api.trello.com/1/lists
 Content-Type: application/json
 
 {
@@ -77,19 +77,22 @@ Content-Type: application/json
   "pos": "top",
   "key": "your_api_key",
   "token": "your_access_token"
-}</code></pre>
+}
+        </code></pre>
 
-        <h2>📨 Example Response</h2>
-        <pre><code>{
+        <h2>Example Response</h2>
+        <pre><code class="language-json">
+{
   "id": "60d21b4967d0d810b8f8b456",
   "name": "New List Example",
   "idBoard": "12345abcdef",
   "pos": "top",
   "subscribed": false,
   "closed": false
-}</code></pre>
+}
+        </code></pre>
 
-        <h2>⚠️ Common Errors & Solutions</h2>
+        <h2>Common Errors & Solutions</h2>
         <table>
             <thead>
                 <tr>
@@ -107,19 +110,19 @@ Content-Type: application/json
                 <tr>
                     <td>400 Bad Request</td>
                     <td>Missing required parameters.</td>
-                    <td>Ensure <b>idBoard</b> and <b>name</b> are provided.</td>
+                    <td>Ensure <strong>idBoard</strong> and <strong>name</strong> are provided.</td>
                 </tr>
                 <tr>
                     <td>404 Not Found</td>
                     <td>Board ID does not exist or is invalid.</td>
-                    <td>Check the <b>idBoard</b> value.</td>
+                    <td>Check the <strong>idBoard</strong> value.</td>
                 </tr>
             </tbody>
         </table>
 
         <div class="footer-nav">
-            <a href="../docs/endpoints/add-card.html">⬅️ Previous: Add Card</a>
-            <a href="../docs/endpoints/create-board.html">Next: Create Board ➡️</a>
+            <a href="../../docs/endpoints/add-card.html">&larr; Previous: Add Card</a>
+            <a href="../../docs/endpoints/create-board.html">Next: Create Board &rarr;</a>
         </div>
     </main>
 
