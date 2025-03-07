@@ -1,109 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- SEO-optimized description -->
-  <meta name="description" content="Comprehensive guide to managing cards and lists using the Trello API, including instructions, code examples, and detailed screenshots.">
-  <title>Trello API (v1): Managing Cards and Lists</title>
-  <link rel="stylesheet" type="text/css" href="../../styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to managing cards and lists using Trello API, including screenshots and detailed instructions.">
+    <title>Trello API: Managing Cards and Lists</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
-  <!-- ===== HEADER & NAVIGATION ===== -->
-  <header>
+    
+    <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../authentication.html">Authentication</a></li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">API Endpoints</a>
-          <ul class="dropdown" aria-label="API Endpoints">
-            <li><a href="../endpoints/add-card.html">Add Card</a></li>
-            <li><a href="../endpoints/add-list.html">Add List</a></li>
-            <li><a href="../endpoints/create-board.html">Create Board</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">Use Cases</a>
-          <ul class="dropdown" aria-label="Use Cases">
-            <li><a href="../use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-            <li><a href="../use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
-            <li><a href="../use-cases/managing-cards-and-lists.html" class="active">Managing Cards and Lists</a></li>
-          </ul>
-        </li>
-      </ul>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../docs/authentication.html">Authentication</a></li>
+            <li>
+                <a href="#">API Endpoints</a>
+                <ul class="dropdown">
+                    <li><a href="../docs/endpoints/add-card.html">Add Card</a></li>
+                    <li><a href="../docs/endpoints/add-list.html">Add List</a></li>
+                    <li><a href="../docs/endpoints/create-board.html">Create Board</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="active">Use Cases</a>
+                <ul class="dropdown">
+                    <li><a href="../docs/use-cases/automating-task-creation.html">Automating Task Creation</a></li>
+                    <li><a href="../docs/use-cases/deleting-a-card-or-list.html">Deleting a Card or List</a></li>
+                    <li><a href="../docs/use-cases/managing-cards-and-lists.html" class="active">Managing Cards and Lists</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
-  </header>
 
-  <!-- ===== LOGO / BRANDING ===== -->
-  <div class="logo-container">
-    <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo for the API Documentation" class="trello-logo">
-  </div>
+    <!-- ===== Trello Logo ===== -->
+    <div class="logo-container">
+        <img src="../Content/Resources/Images/trello_logo.png" alt="Trello Logo" class="trello-logo">
+    </div>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
-    <h1 class="spaced-title">Trello API (v1): Managing Cards and Lists</h1>
-    <p>
-      This guide explains how to manage cards and lists using the Trello API. Follow the steps below to retrieve card IDs, move cards between lists, add labels to cards, and archive lists.
-    </p>
+    <!-- ===== Main Content ===== -->
+    <main>
+        <h1>Trello API: Managing Cards and Lists</h1>
+        <p>
+            This section demonstrates how to manage cards and lists using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.
+        </p>
 
-    <!-- Step 1: Retrieve the Card ID -->
-    <section>
-      <h2>Step 1: Retrieve the Card ID</h2>
-      <p>
-        To perform operations on a specific card, first retrieve its unique ID. Make a <code>GET</code> request:
-      </p>
-      <pre><code class="language-json">GET https://api.trello.com/1/boards/{boardID}/cards</code></pre>
-      <p>
-        The response will contain details of all cards on the board, including their unique IDs.
-      </p>
-      <img src="../../public/images/card_id.png" alt="Screenshot showing retrieval of Card ID" class="screenshot">
-    </section>
+        <h2>📌 Step 1: Retrieve the Card ID</h2>
+        <p>
+            To move or update a specific card, you first need to retrieve its ID. In Postman, make a <b>GET</b> request to the following endpoint using your API Key and Token:
+        </p>
+        <pre><code>https://api.trello.com/1/boards/{boardID}/cards</code></pre>
+        <img src="../Content/Resources/Images/ID-Card.png" alt="Retrieve Card ID" class="screenshot">
 
-    <!-- Step 2: Move a Card to Another List -->
-    <section>
-      <h2>Step 2: Move a Card to Another List</h2>
-      <p>
-        To move a card, update its <code>idList</code> by making a <code>PUT</code> request:
-      </p>
-      <pre><code class="language-json">PUT https://api.trello.com/1/cards/{cardID}?idList={newListID}</code></pre>
-      <p>
-        Replace <code>{cardID}</code> with the actual card ID and <code>{newListID}</code> with the target list ID.
-      </p>
-      <img src="../../public/images/move_card.png" alt="Screenshot demonstrating moving a card" class="screenshot">
-    </section>
+        <h2>🔀 Step 2: Move a Card to Another List</h2>
+        <p>
+            Once you have the Card ID, move the card to a new list by making a <b>PUT</b> request:
+        </p>
+        <pre><code>https://api.trello.com/1/cards/{cardID}?idList={newListID}</code></pre>
+        <img src="../Content/Resources/Images/PUT_to_move.png" alt="Move Card Step" class="screenshot">
 
-    <!-- Step 3: Add a Label to a Card -->
-    <section>
-      <h2>Step 3: Add a Label to a Card</h2>
-      <p>
-        To assign a label to a card, first retrieve the available labels, then use a <code>POST</code> request to add a label:
-      </p>
-      <pre><code class="language-json">POST https://api.trello.com/1/cards/{cardID}/idLabels</code></pre>
-      <p>
-        Ensure you replace <code>{cardID}</code> with the actual card ID.
-      </p>
-      <img src="../../public/images/add_label.png" alt="Screenshot showing how to add a label to a card" class="screenshot">
-    </section>
+        <h2>🏷️ Step 3: Add a Label to a Card</h2>
+        <p>
+            Retrieve available labels and add a label to your card:
+        </p>
+        <pre><code>https://api.trello.com/1/cards/{cardID}/idLabels</code></pre>
+        <img src="../Content/Resources/Images/Label_ID.png" alt="Add Label to Card" class="screenshot">
 
-    <!-- Step 4: Archive a List -->
-    <section>
-      <h2>Step 4: Archive a List</h2>
-      <p>
-        To archive a list, update the list's <code>closed</code> parameter by making a <code>PUT</code> request:
-      </p>
-      <pre><code class="language-json">PUT https://api.trello.com/1/lists/{listID}?closed=true</code></pre>
-      <p>
-        Replace <code>{listID}</code> with the actual ID of the list you wish to archive.
-      </p>
-      <img src="../../public/images/archive_list.png" alt="Screenshot of archiving a list" class="screenshot">
-    </section>
-  </main>
+        <h2>📂 Step 4: Archive a List</h2>
+        <p>
+            Archive a list by setting the <code>closed</code> parameter to <code>true</code>:
+        </p>
+        <pre><code>https://api.trello.com/1/lists/{listID}</code></pre>
+        <img src="../Content/Resources/Images/Archiving_with_PUT.png" alt="Archive List" class="screenshot">
 
-  <!-- ===== FOOTER NAVIGATION ===== -->
-  <nav class="footer-nav" aria-label="Use Case Navigation">
-    <a href="../use-cases/deleting-a-card-or-list.html">← Previous: Deleting a Card or List</a>
-    <a href="../../index.html">Back to Home →</a>
-  </nav>
+        <div class="footer-nav">
+            <a href="../docs/use-cases/deleting-a-card-or-list.html">⬅️ Previous: Deleting a Card or List</a>
+            <a href="../index.html">Back to Home ➡️</a>
+        </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
+    </footer>
 </body>
 </html>
