@@ -200,8 +200,8 @@ footer {
   margin-top: 40px;
 }
 .small-image {
-    max-width: 100%;
-    width: 500px; /* Adjust this value as needed */
+    max-width: 50%;
+    width: 100px; /* Adjust this value as needed */
     height: auto;
     display: block;
     margin: 20px auto;
