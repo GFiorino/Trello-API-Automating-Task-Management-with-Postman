@@ -51,7 +51,7 @@
             To move or update a specific card, you first need to retrieve its ID. In Postman, make a <b>GET</b> request to the following endpoint using your API Key and Token:
         </p>
         <pre><code class="language-json">GET https://api.trello.com/1/boards/{boardID}/cards?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
-        <img src="../../Content/Resources/Images/ID-Card.png" alt="Retrieve Card ID" class="screenshot">
+        <img src="../../Content/Resources/Images/ID-Card.png" alt="Retrieve Card ID"class="screenshot small-image">
 
         <h2>Step 2: Move a Card to Another List</h2>
         <p>
@@ -63,7 +63,7 @@ Content-Type: application/json
 {
   "idList": "{newListID}"
 }</code></pre>
-        <img src="../../Content/Resources/Images/PUT_to_move.png" alt="Move Card Step" class="screenshot">
+        <img src="../../Content/Resources/Images/PUT_to_move.png" alt="Move Card Step" class="screenshot small-image">
 
         <h2>Step 3: Add a Label to a Card</h2>
         <p>
@@ -75,7 +75,7 @@ Content-Type: application/json
 {
   "value": "{labelID}"
 }</code></pre>
-        <img src="../../Content/Resources/Images/Label_ID.png" alt="Add Label to Card" class="screenshot">
+        <img src="../../Content/Resources/Images/Label_ID.png" alt="Add Label to Card" class="screenshot small-image">
 
         <h2>Step 4: Archive a List</h2>
         <p>
@@ -87,7 +87,7 @@ Content-Type: application/json
 {
   "closed": true
 }</code></pre>
-        <img src="../../Content/Resources/Images/Archiving_with_PUT.png" alt="Archive List" class="screenshot">
+        <img src="../../Content/Resources/Images/Archiving_with_PUT.png" alt="Archive List" class="screenshot small-image">
 
         <div class="footer-nav">
             <a href="../../docs/use-cases/deleting-a-card-or-list.html">&larr; Previous: Deleting a Card or List</a>
