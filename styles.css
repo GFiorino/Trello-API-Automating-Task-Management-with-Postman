@@ -249,3 +249,63 @@ footer {
     padding-left: 20px;
     font-size: 0.95em;
 }
+/* General Styling for Authentication Page */
+.auth-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust Steps Spacing */
+.auth-container ol {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    line-height: 1.8; /* Improve readability */
+}
+
+/* Highlight important text */
+.auth-container strong {
+    color: #1B263B;
+    font-weight: bold;
+}
+
+/* Code Block Styling */
+pre {
+    background: #F3F4F6;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.95em;
+    margin: 15px 0;
+}
+
+/* Increase spacing between sections */
+.auth-container h2 {
+    margin-top: 30px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Links Styling */
+.auth-container a {
+    color: #007BFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* Fix for Inline Code (client_id, secrets, etc.) */
+code {
+    background: #f3f4f6;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #D63384;
+}
