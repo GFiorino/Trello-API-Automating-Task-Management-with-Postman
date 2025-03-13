@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Step-by-step guide for setting up API authentication with Trello. Learn how to generate API keys and tokens.">
-    <title>Trello API: Setting Up API Authentication</title>
+    <meta name="description" content="Step-by-step guide for setting up OAuth 2.0 authentication with Trello API. Learn how to register an app, obtain tokens, and authenticate requests.">
+    <title>Trello API: Setting Up OAuth 2.0 Authentication</title>
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
-      </nav>
 
- <!-- ===== Navigation ===== -->
+    <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="../index.html">Home</a></li>
@@ -33,7 +32,7 @@
             </li>
         </ul>
     </nav>    
- 
+
     <!-- ===== Trello Logo ===== -->
     <div class="logo-container">
         <img src="../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
@@ -41,25 +40,41 @@
 
     <!-- ===== Main Content ===== -->
     <main>
-        <h1 class="spaced-title">Trello API: Setting Up API Authentication</h1>
+        <h1 class="spaced-title">Trello API: Setting Up OAuth 2.0 Authentication</h1>
         <p>
-            To access the Trello API, you must authenticate your requests. Trello uses an API key and a token-based system to ensure secure communication.
+            Trello now requires OAuth 2.0 for authentication. This method ensures secure access to Trello's API while improving security and user control.
         </p>
 
-       <h2>Authentication Process</h2>
-<p>Follow these steps to authenticate your API requests:</p>
-<ol>
-    <li><strong>Generate an API Key:</strong> 
-        <a href="https://trello.com/app-key" target="_blank" rel="noopener noreferrer">Visit Trello API Key Page</a>.
-    </li>
-    <li><strong>Generate an Access Token:</strong> 
-        Follow the instructions on the API Key page to obtain your token.
-    </li>
-</ol>
+       <h2>OAuth 2.0 Authentication Process</h2>
+       <p>Follow these steps to authenticate your API requests using OAuth 2.0:</p>
+       
+       <ol>
+            <li><strong>Register an Application:</strong> 
+                <a href="https://developer.atlassian.com/cloud/trello/guides/rest-api/oauth-2/" target="_blank" rel="noopener noreferrer">
+                Visit Trello OAuth 2.0 Guide</a> and register your application.</li>
 
-        <h2>Example API Request</h2>
-        <p>Use the following request to verify authentication:</p>
-        <pre><code class="language-json">GET https://api.trello.com/1/members/me?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
+            <li><strong>Obtain Your Client ID & Secret:</strong> After registering, retrieve your <code>client_id</code> and <code>client_secret</code>.</li>
+
+            <li><strong>Get an Authorization Code:</strong> Redirect users to Trello’s authorization page:
+                <pre><code>https://trello.com/1/authorize?response_type=code&client_id=YOUR_CLIENT_ID&scope=read,write&redirect_uri=YOUR_REDIRECT_URI&state=optional_state</code></pre>
+            </li>
+
+            <li><strong>Exchange Authorization Code for Access Token:</strong> Make a POST request to the token endpoint:
+                <pre><code>
+POST https://trello.com/1/OAuthGetAccessToken
+Content-Type: application/x-www-form-urlencoded
+
+client_id=YOUR_CLIENT_ID
+&client_secret=YOUR_CLIENT_SECRET
+&code=AUTHORIZATION_CODE
+&redirect_uri=YOUR_REDIRECT_URI
+                </code></pre>
+            </li>
+
+            <li><strong>Use the Access Token:</strong> Attach the token in API requests:
+                <pre><code>GET https://api.trello.com/1/members/me?token=YOUR_ACCESS_TOKEN</code></pre>
+            </li>
+        </ol>
 
         <h2>Common Errors & Solutions</h2>
         <table>
@@ -72,19 +87,19 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>400 Bad Request</td>
+                    <td>Invalid Client ID or Secret</td>
+                    <td>Verify credentials in <a href="https://developer.atlassian.com/" target="_blank">Trello Developer Portal</a>.</td>
+                </tr>
+                <tr>
                     <td>401 Unauthorized</td>
-                    <td>Invalid API Key</td>
-                    <td>Verify your API Key at <a href="https://trello.com/app-key" target="_blank">Trello API Page</a>.</td>
+                    <td>Access Token Expired</td>
+                    <td>Re-authenticate and obtain a new token.</td>
                 </tr>
                 <tr>
                     <td>403 Forbidden</td>
-                    <td>Invalid Access Token</td>
-                    <td>Ensure the token is correctly generated and has the required permissions.</td>
-                </tr>
-                <tr>
-                    <td>404 Not Found</td>
-                    <td>Incorrect API Endpoint</td>
-                    <td>Check the API documentation for the correct endpoint URL.</td>
+                    <td>Insufficient Permissions</td>
+                    <td>Ensure your app has the correct scopes (e.g., read, write).</td>
                 </tr>
             </tbody>
         </table>
@@ -94,5 +109,6 @@
     <footer>
         <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
