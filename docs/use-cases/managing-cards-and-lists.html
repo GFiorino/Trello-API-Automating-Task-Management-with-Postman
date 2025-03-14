@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 <body>
-    
+
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
@@ -35,59 +35,102 @@
 
     <!-- ===== Trello Logo ===== -->
     <div class="logo-container">
-        <img src="https://github.com/GFiorino/Trello-API-Automating-Task-Management-with-Postman/blob/main/Content/Resources/Images/trello_Logo.png?raw=true" alt="Trello Logo" class="trello-logo">
+        <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
     </div>
 
-    
     <!-- ===== Main Content ===== -->
     <main>
-        <h1>Trello API: Managing Cards and Lists</h1>
+        <h1 class="spaced-title">Trello API: Managing Cards and Lists</h1>
         <p>
-            This section demonstrates how to manage cards and lists using the Trello API. Follow the steps below to understand the process, illustrated with screenshots.
+            This guide demonstrates how to manage Trello cards and lists using the Trello API. Follow the steps below to move cards, apply labels, and archive lists.
         </p>
 
         <h2>Step 1: Retrieve the Card ID</h2>
         <p>
-            To move or update a specific card, you first need to retrieve its ID. In Postman, make a <b>GET</b> request to the following endpoint using your API Key and Token:
+            To update or move a card, you must first retrieve its unique ID. Use the following GET request:
         </p>
-        <pre><code class="language-json">GET https://api.trello.com/1/boards/{boardID}/cards?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
-        <img src="../../Content/Resources/Images/ID-Card.png" alt="Retrieve Card ID"class="screenshot small-image">
+        <pre><code class="language-json">
+GET https://api.trello.com/1/boards/{boardID}/cards?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN
+        </code></pre>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/ID-Card.png" alt="Retrieve Card ID" class="small-image">
+        </div>
 
         <h2>Step 2: Move a Card to Another List</h2>
         <p>
-            Once you have the Card ID, move the card to a new list by making a <b>PUT</b> request:
+            Once you have the Card ID, move it to another list by making a <code>PUT</code> request:
         </p>
-        <pre><code class="language-json">PUT https://api.trello.com/1/cards/{cardID}
+        <pre><code class="language-json">
+PUT https://api.trello.com/1/cards/{cardID}
 Content-Type: application/json
 
 {
   "idList": "{newListID}"
-}</code></pre>
-        <img src="../../Content/Resources/Images/PUT_to_move.png" alt="Move Card Step" class="screenshot small-image">
+}
+        </code></pre>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/PUT_to_move.png" alt="Move Card Step" class="small-image">
+        </div>
 
         <h2>Step 3: Add a Label to a Card</h2>
         <p>
-            Retrieve available labels and add a label to your card:
+            Retrieve available labels and apply one to a card using a <code>POST</code> request:
         </p>
-        <pre><code class="language-json">POST https://api.trello.com/1/cards/{cardID}/idLabels
+        <pre><code class="language-json">
+POST https://api.trello.com/1/cards/{cardID}/idLabels
 Content-Type: application/json
 
 {
   "value": "{labelID}"
-}</code></pre>
-        <img src="../../Content/Resources/Images/Label_ID.png" alt="Add Label to Card" class="screenshot small-image">
+}
+        </code></pre>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/Label_ID.png" alt="Add Label to Card" class="small-image">
+        </div>
 
         <h2>Step 4: Archive a List</h2>
         <p>
-            Archive a list by setting the <code>closed</code> parameter to <code>true</code>:
+            To archive a list, send a <code>PUT</code> request setting <code>closed</code> to <code>true</code>:
         </p>
-        <pre><code class="language-json">PUT https://api.trello.com/1/lists/{listID}
+        <pre><code class="language-json">
+PUT https://api.trello.com/1/lists/{listID}
 Content-Type: application/json
 
 {
   "closed": true
-}</code></pre>
-        <img src="../../Content/Resources/Images/Archiving_with_PUT.png" alt="Archive List" class="screenshot small-image">
+}
+        </code></pre>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/Archiving_with_PUT.png" alt="Archive List" class="small-image">
+        </div>
+
+        <h2>Common Errors & Troubleshooting</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>401 Unauthorized</td>
+                    <td>Invalid API Key or Token</td>
+                    <td>Ensure your API Key and Token are correct.</td>
+                </tr>
+                <tr>
+                    <td>400 Bad Request</td>
+                    <td>Missing required parameters</td>
+                    <td>Confirm that the <code>idList</code> or <code>cardID</code> parameter is included.</td>
+                </tr>
+                <tr>
+                    <td>404 Not Found</td>
+                    <td>Card or List ID does not exist</td>
+                    <td>Verify that the <code>cardID</code> or <code>listID</code> is valid.</td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="footer-nav">
             <a href="../../docs/use-cases/deleting-a-card-or-list.html">&larr; Previous: Deleting a Card or List</a>
@@ -99,5 +142,6 @@ Content-Type: application/json
     <footer>
         <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
