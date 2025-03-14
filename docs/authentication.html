@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
+
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
@@ -44,41 +45,38 @@
             Trello now requires OAuth 2.0 for authentication. This method ensures secure access to Trello's API while improving security and user control.
         </p>
 
-       <h2>Step 1: Create a Trello Account</h2>
-       <p>If you don’t have a Trello account, create one at <a href="https://trello.com/" target="_blank">Trello’s website</a>.</p>
+       <h2>OAuth 2.0 Authentication Process</h2>
+       <p>Follow these steps to authenticate your API requests using OAuth 2.0:</p>
+       
+       <ol>
+            <li><strong>Register an Application:</strong> 
+                <a href="https://developer.atlassian.com/cloud/trello/guides/rest-api/oauth-2/" target="_blank" rel="noopener noreferrer">
+                Visit Trello OAuth 2.0 Guide</a> and register your application.</li>
 
-       <h2>Step 2: Access the Power-Up Admin Portal</h2>
-       <p>To generate an API key, you must create a Power-Up. Visit the <a href="https://trello.com/power-ups/admin" target="_blank">Power-Up Admin Portal</a> and click on <strong>New</strong> to create a Power-Up.</p>
+            <li><strong>Obtain Your Client ID & Secret:</strong> After registering, retrieve your <code>client_id</code> and <code>client_secret</code>.</li>
 
-       <h2>Step 3: Generate an API Key</h2>
-       <p>Once inside your Power-Up page, click on <strong>Generate a new API key</strong>.</p>
-    <div style="text-align: center;">
-    <img src="../Content/Resources/Images/generate-api-key.png" 
-         alt="Generate a new API key in Trello" 
-         width="600">
-</div>
-       <h2>Step 4: Retrieve Your API Key & Set Up Security</h2>
-       <p>Your API key will be displayed. Copy and store it securely. You can also configure the following settings:</p>
-       <ul>
-           <li><strong>Allowed Origins:</strong> Define trusted domains that can use your API key.</li>
-           <li><strong>API Secret:</strong> Add an extra security layer to your API key.</li>
-       </ul>
+            <li><strong>Get an Authorization Code:</strong> Redirect users to Trello’s authorization page:
+                <pre><code>https://trello.com/1/authorize?response_type=code&client_id=YOUR_CLIENT_ID&scope=read,write&redirect_uri=YOUR_REDIRECT_URI&state=optional_state</code></pre>
+            </li>
 
-       <h2>Step 5: Obtain an OAuth 2.0 Access Token</h2>
-       <p>Use OAuth 2.0 to get an access token:</p>
-       <pre><code>POST https://trello.com/1/OAuthGetAccessToken
+            <li><strong>Exchange Authorization Code for Access Token:</strong> Make a POST request to the token endpoint:
+                <pre><code>
+POST https://trello.com/1/OAuthGetAccessToken
 Content-Type: application/x-www-form-urlencoded
 
 client_id=YOUR_CLIENT_ID
 &client_secret=YOUR_CLIENT_SECRET
 &code=AUTHORIZATION_CODE
-&redirect_uri=YOUR_REDIRECT_URI</code></pre>
+&redirect_uri=YOUR_REDIRECT_URI
+                </code></pre>
+            </li>
 
-       <h2>Step 6: Use the Access Token in API Requests</h2>
-       <p>Attach the token when making API requests:</p>
-       <pre><code>GET https://api.trello.com/1/members/me?token=YOUR_ACCESS_TOKEN</code></pre>
+            <li><strong>Use the Access Token:</strong> Attach the token in API requests:
+                <pre><code>GET https://api.trello.com/1/members/me?token=YOUR_ACCESS_TOKEN</code></pre>
+            </li>
+        </ol>
 
-       <h2>Common Errors & Solutions</h2>
+        <h2>Common Errors & Solutions</h2>
         <table>
             <thead>
                 <tr>
@@ -111,5 +109,6 @@ client_id=YOUR_CLIENT_ID
     <footer>
         <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
