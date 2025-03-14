@@ -8,15 +8,16 @@
     <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 <body>
+
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../docs/authentication.html">Authentication</a></li>
             <li>
-                <a href="#"class="active">API Endpoints</a>
+                <a href="#" class="active">API Endpoints</a>
                 <ul class="dropdown">
-                    <li><a href="../../docs/endpoints/add-card.html"class="active">Add Card</a></li>
+                    <li><a href="../../docs/endpoints/add-card.html" class="active">Add Card</a></li>
                     <li><a href="../../docs/endpoints/add-list.html">Add List</a></li>
                     <li><a href="../../docs/endpoints/create-board.html">Create Board</a></li>
                 </ul>
@@ -36,6 +37,7 @@
     <div class="logo-container">
         <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
     </div>
+
     <!-- ===== Main Content ===== -->
     <main>
         <h1 class="spaced-title">Trello API: Add Card</h1>
@@ -43,7 +45,7 @@
             This endpoint allows you to add a new card to a specified list within a Trello board. It is commonly used to create tasks or items in project management workflows.
         </p>
 
-        <h2>Request Details</h2>
+        <h2>Endpoint Details</h2>
         <ul>
             <li><strong>Method:</strong> <code>POST</code></li>
             <li><strong>Endpoint URL:</strong> <code>https://api.trello.com/1/cards</code></li>
@@ -101,7 +103,7 @@
             </tbody>
         </table>
 
-        <h2>Example Request</h2>
+        <h2>Example API Request</h2>
         <pre><code class="language-json">
 POST https://api.trello.com/1/cards
 Content-Type: application/json
@@ -117,7 +119,7 @@ Content-Type: application/json
 }
         </code></pre>
 
-        <h2>Example Response</h2>
+        <h2>Example API Response</h2>
         <pre><code class="language-json">
 {
   "id": "60d21b4967d0d810b8f8b456",
@@ -126,6 +128,34 @@ Content-Type: application/json
   "url": "https://trello.com/c/12345abcd/NewTask"
 }
         </code></pre>
+
+        <h2>Common Errors & Solutions</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>400 Bad Request</td>
+                    <td>Missing required parameters</td>
+                    <td>Ensure <code>name</code> and <code>idList</code> are provided.</td>
+                </tr>
+                <tr>
+                    <td>401 Unauthorized</td>
+                    <td>Invalid API key or token</td>
+                    <td>Check API credentials and re-authenticate.</td>
+                </tr>
+                <tr>
+                    <td>404 Not Found</td>
+                    <td>Invalid list ID</td>
+                    <td>Verify the <code>idList</code> parameter matches an existing Trello list.</td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="footer-nav">
             <a href="../../docs/endpoints/create-board.html">&larr; Previous: Create Board</a>
