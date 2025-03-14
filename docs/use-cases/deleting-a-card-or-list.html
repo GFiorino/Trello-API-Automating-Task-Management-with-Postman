@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 <body>
-   
- <!-- ===== Navigation ===== -->
+
+    <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="../../index.html">Home</a></li>
@@ -26,7 +26,7 @@
                 <a href="#" class="active">Use Cases</a>
                 <ul class="dropdown">
                     <li><a href="../../docs/use-cases/automating-task-creation.html">Automating Task Creation</a></li>
-                    <li><a href="../../docs/use-cases/deleting-a-card-or-list.html"class="active">Deleting a Card or List</a></li>
+                    <li><a href="../../docs/use-cases/deleting-a-card-or-list.html" class="active">Deleting a Card or List</a></li>
                     <li><a href="../../docs/use-cases/managing-cards-and-lists.html">Managing Cards and Lists</a></li>
                 </ul>
             </li>
@@ -38,35 +38,79 @@
         <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
     </div>
 
-
-    
     <!-- ===== Main Content ===== -->
     <main>
-        <h1>Trello API: Deleting a Card</h1>
-        <p>This guide explains how to delete a card from your Trello board using the Trello API.</p>
+        <h1 class="spaced-title">Trello API: Deleting a Card</h1>
+        <p>
+            This guide explains how to delete a card from your Trello board using the Trello API. Follow the steps below to retrieve a card ID and send a request to remove it.
+        </p>
 
         <h2>Step 1: Retrieve the Card ID</h2>
-        <p>To delete a card, you first need to retrieve its ID. Use the following GET request:</p>
-        <pre><code class="language-json">GET https://api.trello.com/1/cards/{cardID}?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
-        <img src="../../Content/Resources/Images/Card_ID_Retrieval.png" alt="Retrieving the Card ID" class="screenshot small-image">
+        <p>
+            To delete a card, you must first obtain its ID. Use the following GET request to fetch the card details:
+        </p>
+        <pre><code class="language-json">
+GET https://api.trello.com/1/cards/{cardID}?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN
+        </code></pre>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/Card_ID_Retrieval.png" alt="Retrieving the Card ID" class="small-image">
+        </div>
 
         <h2>Step 2: Delete the Card</h2>
-        <p>Once you have the Card ID, use the following DELETE request:</p>
-        <pre><code class="language-json">DELETE https://api.trello.com/1/cards/{cardID}?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
-        <p>Replace <code>{cardID}</code> with the ID of the card you want to delete.</p>
+        <p>
+            Once you have the Card ID, use the following DELETE request to remove it:
+        </p>
+        <pre><code class="language-json">
+DELETE https://api.trello.com/1/cards/{cardID}?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN
+        </code></pre>
+        <p>
+            Replace <code>{cardID}</code> with the actual ID of the card you want to delete.
+        </p>
         <ol>
             <li>Set the <strong>HTTP method</strong> to <code>DELETE</code>.</li>
-            <li>Enter the endpoint, replacing <code>{cardID}</code> with the correct ID.</li>
+            <li>Enter the API endpoint, replacing <code>{cardID}</code> with the correct ID.</li>
             <li>Click <strong>Send</strong> to execute the request.</li>
         </ol>
-        <img src="../../Content/Resources/Images/Confirmation_Delete.png" alt="Confirmation of Card Deletion"class="screenshot small-image">
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/Confirmation_Delete.png" alt="Confirmation of Card Deletion" class="small-image">
+        </div>
 
         <h2>Expected Outcome</h2>
-        <p>The specified card will be successfully deleted from your Trello board. A <strong>200 OK</strong> response confirms the deletion.</p>
+        <p>
+            The specified card will be permanently deleted from your Trello board. If successful, the API will return a <strong>200 OK</strong> response, confirming the deletion.
+        </p>
+
+        <h2>Common Errors & Troubleshooting</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>401 Unauthorized</td>
+                    <td>Invalid API Key or Token</td>
+                    <td>Ensure your API Key and Token are correct.</td>
+                </tr>
+                <tr>
+                    <td>400 Bad Request</td>
+                    <td>Missing required parameters</td>
+                    <td>Confirm that the <code>cardID</code> parameter is included.</td>
+                </tr>
+                <tr>
+                    <td>404 Not Found</td>
+                    <td>Card ID is invalid or does not exist</td>
+                    <td>Verify the <code>cardID</code> and ensure the card is in an accessible board.</td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="footer-nav">
-            <a href="../docs/use-cases/automating-task-creation.html">&larr; Previous: Automating Task Creation</a>
-            <a href="../docs/use-cases/managing-cards-and-lists.html">Next: Managing Cards and Lists &rarr;</a>
+            <a href="../../docs/use-cases/automating-task-creation.html">&larr; Previous: Automating Task Creation</a>
+            <a href="../../docs/use-cases/managing-cards-and-lists.html">Next: Managing Cards and Lists &rarr;</a>
         </div>
     </main>
 
@@ -74,5 +118,6 @@
     <footer>
         <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
