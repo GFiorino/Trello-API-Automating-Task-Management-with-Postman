@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../../styles.css">
 </head>
 <body>
+
     <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
@@ -39,25 +40,44 @@
 
     <!-- ===== Main Content ===== -->
     <main>
-        <h1>Trello API: Automating Task Creation</h1>
-        <p>This guide explains how to automate task creation using the Trello API.</p>
+        <h1 class="spaced-title">Trello API: Automating Task Creation</h1>
+        <p>
+            This guide provides a step-by-step process for automating task creation in Trello using the API. Learn how to obtain necessary credentials, retrieve a list ID, and create a new task programmatically.
+        </p>
 
         <h2>Step 1: Obtain Your API Key</h2>
-        <p>Retrieve your <strong>API Key</strong> from the Trello API settings page. Ensure you add "https://www.postman.com" to the <strong>Allowed Origins</strong> field.</p>
-        <img src="../../Content/Resources/Images/APIkey.png" alt="Example API Key Screenshot" class="screenshot small-image">
+        <p>
+            Retrieve your <strong>API Key</strong> from the Trello API settings page. Make sure to add <code>https://www.postman.com</code> to the <strong>Allowed Origins</strong> field for API access.
+        </p>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/APIkey.png" alt="Example API Key Screenshot" class="small-image">
+        </div>
 
         <h2>Step 2: Generate a Token</h2>
-        <p>Click "Generate Token" on the API Key page and copy it for later use.</p>
-        <img src="../../Content/Resources/Images/Token.png" alt="Generate Token Screenshot" class="screenshot small-image">
+        <p>
+            Click <strong>Generate Token</strong> on the API Key page and copy the generated token for authentication.
+        </p>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/Token.png" alt="Generate Token Screenshot" class="small-image">
+        </div>
 
         <h2>Step 3: Retrieve the List ID</h2>
-        <p>Use the following GET request to retrieve the List ID where tasks will be created:</p>
-        <pre><code class="language-json">GET https://api.trello.com/1/boards/{boardID}/lists?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN</code></pre>
-        <img src="../../Content/Resources/Images/Short_id.png" alt="Retrieve List ID Screenshot" class="screenshot small-image">
+        <p>
+            Use the following GET request to retrieve the List ID where tasks will be created:
+        </p>
+        <pre><code class="language-json">
+GET https://api.trello.com/1/boards/{boardID}/lists?key=YOUR_API_KEY&token=YOUR_ACCESS_TOKEN
+        </code></pre>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/Short_id.png" alt="Retrieve List ID Screenshot" class="small-image">
+        </div>
 
         <h2>Step 4: Create a Task Using a POST Request</h2>
-        <p>Use the following request to create a task:</p>
-        <pre><code class="language-json">POST https://api.trello.com/1/cards
+        <p>
+            Use the following request to create a task in Trello:
+        </p>
+        <pre><code class="language-json">
+POST https://api.trello.com/1/cards
 Content-Type: application/json
 
 {
@@ -68,12 +88,47 @@ Content-Type: application/json
   "due": "2024-12-10T09:00:00.000Z",
   "key": "YOUR_API_KEY",
   "token": "YOUR_ACCESS_TOKEN"
-}</code></pre>
-        <img src="../../Content/Resources/Images/Add_BODY.png" alt="Create Task with POST Request" class="screenshot small-image">
+}
+        </code></pre>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/Add_BODY.png" alt="Create Task with POST Request" class="small-image">
+        </div>
 
         <h2>Expected Outcome</h2>
-        <p>A new task titled "Automated Task Example" will appear in the specified Trello list.</p>
-        <img src="../../Content/Resources/Images/New_Card.png" alt="Task Created Screenshot" class="screenshot small-image">
+        <p>
+            A new task titled <strong>"Automated Task Example"</strong> will be created in the specified Trello list.
+        </p>
+        <div class="image-container">
+            <img src="../../Content/Resources/Images/New_Card.png" alt="Task Created Screenshot" class="small-image">
+        </div>
+
+        <h2>Common Errors & Troubleshooting</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Error Code</th>
+                    <th>Possible Cause</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>401 Unauthorized</td>
+                    <td>Invalid API Key or Token</td>
+                    <td>Verify that the API Key and Token are correct.</td>
+                </tr>
+                <tr>
+                    <td>400 Bad Request</td>
+                    <td>Missing required parameters</td>
+                    <td>Ensure all required fields (e.g., <code>idList</code>, <code>name</code>) are provided.</td>
+                </tr>
+                <tr>
+                    <td>404 Not Found</td>
+                    <td>Invalid List ID</td>
+                    <td>Double-check that the List ID exists and is accessible.</td>
+                </tr>
+            </tbody>
+        </table>
 
         <div class="footer-nav">
             <a href="../../docs/endpoints/create-board.html">&larr; Previous: Create Board</a>
@@ -85,5 +140,6 @@ Content-Type: application/json
     <footer>
         <p>&copy; 2024 Trello API: Automating Task Management with Postman. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
