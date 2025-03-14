@@ -9,7 +9,7 @@
 </head>
 <body>
 
-     <!-- ===== Navigation ===== -->
+    <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="../../index.html">Home</a></li>
@@ -45,7 +45,7 @@
             The Add List endpoint allows you to create a new list on an existing board. You need to provide the board ID and the list name to use this endpoint.
         </p>
 
-        <h2>Request Details</h2>
+        <h2>Endpoint Details</h2>
         <ul>
             <li><strong>Method:</strong> <code>POST</code></li>
             <li><strong>Endpoint URL:</strong> <code>https://api.trello.com/1/lists</code></li>
@@ -75,7 +75,25 @@
             </tbody>
         </table>
 
-        <h2>Example Request</h2>
+        <h2>Optional Parameters</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>pos</code></td>
+                    <td>String</td>
+                    <td>Position of the list in the board (e.g., "top" or "bottom").</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Example API Request</h2>
         <pre><code class="language-json">
 POST https://api.trello.com/1/lists
 Content-Type: application/json
@@ -84,12 +102,12 @@ Content-Type: application/json
   "name": "New List Example",
   "idBoard": "12345abcdef",
   "pos": "top",
-  "key": "your_api_key",
-  "token": "your_access_token"
+  "key": "YOUR_API_KEY",
+  "token": "YOUR_ACCESS_TOKEN"
 }
         </code></pre>
 
-        <h2>Example Response</h2>
+        <h2>Example API Response</h2>
         <pre><code class="language-json">
 {
   "id": "60d21b4967d0d810b8f8b456",
@@ -105,26 +123,26 @@ Content-Type: application/json
         <table>
             <thead>
                 <tr>
-                    <th>Error</th>
+                    <th>Error Code</th>
                     <th>Possible Cause</th>
                     <th>Solution</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>401 Unauthorized</td>
-                    <td>Invalid API key or token.</td>
-                    <td>Verify your API key and token are correct.</td>
+                    <td>400 Bad Request</td>
+                    <td>Missing required parameters</td>
+                    <td>Ensure <code>name</code> and <code>idBoard</code> are provided.</td>
                 </tr>
                 <tr>
-                    <td>400 Bad Request</td>
-                    <td>Missing required parameters.</td>
-                    <td>Ensure <strong>idBoard</strong> and <strong>name</strong> are provided.</td>
+                    <td>401 Unauthorized</td>
+                    <td>Invalid API key or token</td>
+                    <td>Check API credentials and re-authenticate.</td>
                 </tr>
                 <tr>
                     <td>404 Not Found</td>
-                    <td>Board ID does not exist or is invalid.</td>
-                    <td>Check the <strong>idBoard</strong> value.</td>
+                    <td>Invalid board ID</td>
+                    <td>Verify that the <code>idBoard</code> corresponds to an existing Trello board.</td>
                 </tr>
             </tbody>
         </table>
