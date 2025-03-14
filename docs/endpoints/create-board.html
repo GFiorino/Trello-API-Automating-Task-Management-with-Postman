@@ -9,13 +9,13 @@
 </head>
 <body>
 
-     <!-- ===== Navigation ===== -->
+    <!-- ===== Navigation ===== -->
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../docs/authentication.html">Authentication</a></li>
             <li>
-                <a href="#">API Endpoints</a>
+                <a href="#" class="active">API Endpoints</a>
                 <ul class="dropdown">
                     <li><a href="../../docs/endpoints/add-card.html">Add Card</a></li>
                     <li><a href="../../docs/endpoints/add-list.html">Add List</a></li>
@@ -37,15 +37,15 @@
     <div class="logo-container">
         <img src="../../Content/Resources/Images/trello_Logo.png" alt="Trello Logo" class="trello-logo">
     </div>    
-    
+
     <!-- ===== Main Content ===== -->
     <main>
         <h1 class="spaced-title">Trello API: Create Board</h1>
         <p>
-            The Create Board endpoint allows you to create a new board in Trello. You need to provide a name for the board and, optionally, other parameters like default lists and organization ID.
+            The <strong>Create Board</strong> endpoint allows you to create a new board in Trello. You need to provide a board name, and optionally, additional parameters such as default lists and organization ID.
         </p>
 
-        <h2>Request Details</h2>
+        <h2>Endpoint Details</h2>
         <ul>
             <li><strong>Method:</strong> <code>POST</code></li>
             <li><strong>Endpoint URL:</strong> <code>https://api.trello.com/1/boards</code></li>
@@ -83,17 +83,17 @@
                 <tr>
                     <td><code>defaultLists</code></td>
                     <td>Boolean</td>
-                    <td>Whether to include default lists (To Do, Doing, Done).</td>
+                    <td>Determines whether default lists (To Do, Doing, Done) should be created.</td>
                 </tr>
                 <tr>
                     <td><code>idOrganization</code></td>
                     <td>String</td>
-                    <td>The ID of the organization to which the board will belong.</td>
+                    <td>The ID of the organization to which the board belongs.</td>
                 </tr>
             </tbody>
         </table>
 
-        <h2>Example Request</h2>
+        <h2>Example API Request</h2>
         <pre><code class="language-json">
 POST https://api.trello.com/1/boards
 Content-Type: application/json
@@ -107,7 +107,7 @@ Content-Type: application/json
 }
         </code></pre>
 
-        <h2>Example Response</h2>
+        <h2>Example API Response</h2>
         <pre><code class="language-json">
 {
   "id": "60d21b4967d0d810b8f8b456",
@@ -130,26 +130,26 @@ Content-Type: application/json
         <table>
             <thead>
                 <tr>
-                    <th>Error</th>
+                    <th>Error Code</th>
                     <th>Possible Cause</th>
                     <th>Solution</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>401 Unauthorized</td>
-                    <td>Invalid API key or token.</td>
-                    <td>Verify your API key and token are correct.</td>
+                    <td>400 Bad Request</td>
+                    <td>Missing required parameters</td>
+                    <td>Ensure the <code>name</code> parameter is included.</td>
                 </tr>
                 <tr>
-                    <td>400 Bad Request</td>
-                    <td>Missing required parameters (e.g., <b>name</b>).</td>
-                    <td>Ensure all required parameters are provided.</td>
+                    <td>401 Unauthorized</td>
+                    <td>Invalid API key or token</td>
+                    <td>Check API credentials and re-authenticate.</td>
                 </tr>
                 <tr>
                     <td>404 Not Found</td>
-                    <td>Invalid <b>idOrganization</b> value.</td>
-                    <td>Verify the <b>idOrganization</b> is valid.</td>
+                    <td>Invalid <code>idOrganization</code> value</td>
+                    <td>Ensure the provided <code>idOrganization</code> exists and is accessible.</td>
                 </tr>
             </tbody>
         </table>
